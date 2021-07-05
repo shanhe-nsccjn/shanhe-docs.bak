@@ -1,0 +1,61 @@
+// Code formatting.
+
+.td-content {
+	// Highlighted code.
+    .highlight {
+        @extend .card;
+        
+        margin: 10px 0;
+        padding: 1rem;
+        background-color:#263546;
+
+        pre, div {
+            background-color: inherit !important;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    // Inline code
+    p code, li > code, table code {
+        color: #00a971;
+        line-height: 1.71;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        word-break: normal;
+        background-color: #dff7f0;
+        border-radius: 2px;
+
+        br {
+            display: none;
+        }
+    }
+
+
+    // Code blocks
+    pre {
+        word-wrap: normal;
+        background-color: #263546;
+        border-radius:3px;
+        padding: $spacer;
+     
+
+        > code {
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            word-break: normal;
+            white-space: pre;
+            border: 0;
+            color: #fff;
+        }
+    }
+
+    ol,ul{
+        margin: 8px;
+    }
+}

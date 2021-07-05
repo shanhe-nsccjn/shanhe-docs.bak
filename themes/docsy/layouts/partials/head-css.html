@@ -1,0 +1,15 @@
+<link href="https://jn1.is.shanhe.com/shanhe/docs/static/css/bulma.css" rel="stylesheet">
+<link href="/css/autocomplete.css" rel="stylesheet" />
+{{ $scssMain := "scss/main.scss"}}
+{{ if .Site.Params.IsConsole }}
+    {{ $scssMain = "scss/console.scss"}}
+{{ end }}
+{{ if .Site.IsServer }}
+{{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
+{{ else }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+{{ end }}

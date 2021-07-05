@@ -1,0 +1,120 @@
+//
+// Style Markdown content
+//
+
+.td-content {
+    order: 1;
+
+    p, li, td {
+        font-weight: normal;
+        font-size: 14px;
+        color: #324558;
+        line-height: 1.8;
+    }
+
+    > h1 {
+        margin-bottom: 16px;
+        color: #1d2c39;
+    }
+
+    > h2 {
+        margin-bottom: 1rem;
+    }
+
+    > h2:not(:first-child) {
+        margin-top: 24px;
+    }
+
+    > h2 + h3 {
+         margin-top: 1rem;
+    }
+
+    > h3, > h4, > h5, > h6 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    img {
+        @extend .img-fluid;
+    }
+
+    > table {
+        @extend .table-striped;
+
+        @extend .table-responsive;
+
+        @extend .table;
+    }
+
+    > blockquote {
+        padding: 10px 24px;
+        margin-bottom: $spacer;
+        color: $gray-600;
+        border-radius: 4px;
+        background-color: #f6f8fa;
+        border-left: 3px solid #00a971;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        > p {
+            font-size: 14px;
+            color: #939ea9;
+            line-height: 1.71;
+            margin-bottom:0;
+        }
+    }
+
+    > ul li, > ol li {
+        margin-bottom: .25rem;
+        list-style: decimal;
+        margin-left: 1em;
+        > blockquote {
+            padding: 10px 24px;
+            margin-bottom: $spacer;
+            color: $gray-600;
+            border-radius: 4px;
+            background-color: #f6f8fa;
+            border-left: 3px solid #00a971;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            > p {
+                font-size: 14px;
+                color: #a1a6ab;
+                line-height: 1.71;
+                margin-bottom:0;
+            }
+        }
+    }
+
+    > ul li {
+        list-style: disc;
+        margin-left: 1em;
+
+    }
+    strong {
+        font-weight: $font-weight-bold;
+    }
+
+    > pre, > .highlight, > .lead, > h1, > h2, > ul, > ol, > p, > blockquote, > dl dd, .footnotes, > .alert {
+        @extend .td-max-width-on-larger-screens;
+    }
+
+    .alert:not(:first-child) {
+        margin-top: 2 * $spacer;
+        margin-bottom: 2 * $spacer;
+    }
+
+    .lead {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.td-title {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 3rem;
+    }
+}
