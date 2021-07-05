@@ -1,0 +1,34 @@
+<div class="container is-size-7 {{ if and (ne .Params.LinkTitle "Document") (ne .Params.type "product")}}doc-container-width {{ end }}" data-path="1">
+{{if ne .Site.Params.IsConsole true}}
+<a href="/" class="has-text-primary">文档</a><img class="container_span_space" src="/images/icons/path.svg">
+{{end}}
+{{ if ne .Params.LinkTitle "Document"}}
+	<!-- console嵌入时产品页不要面包屑导航 -->
+	{{ if or (ne .Params.type "product") (ne .Site.Params.IsConsole true) }}
+		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+	{{ end }}
+{{ end }}
+</div>
+
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+  {{ if not .p1.Parent.IsHome }}
+  {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+  {{ end }}
+{{ end }}
+{{ if eq .p1 .p2 }}
+{{ $length := len .p1.LinkTitle}}
+	{{if and (ne .Params.type "product") (eq .p1.Site.Params.IsConsole true)}}
+	<span class="crumb-last-color">{{ if ge $length 20 }}详情{{else}}{{ .p1.LinkTitle }}{{end}}</span>
+	{{else}}
+	<span class="crumb-last-color">{{ .p1.LinkTitle }}</span>
+	{{end}}
+{{ else}}
+	
+	{{if ne .p1.LinkTitle "Document"}}
+	<a href="{{ .p1.RelPermalink }}" class="has-text-primary">{{ .p1.LinkTitle }}</a><img class="container_span_space" src="/images/icons/path.svg">
+	{{ end }}
+
+{{ end }}
+
+{{ end }}

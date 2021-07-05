@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+    <defs>
+        <path id="puprn3lj1a" d="M0 0H240V240H0z"/>
+        <path id="so3sylcpvc" d="M0 125.9C0 56.366 55.964 0 125 0s125 56.367 125 125.9c0 47.632-30 90.647-65 125.582-9.047 9.03-15.713 32.636-20 70.82C158.333 340.767 145 350 125 350s-33.333-9.233-40-27.698c-2.237-36.824-8.904-60.43-20-70.82-40-37.453-65-77.95-65-125.583z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-190 -702) translate(190 702)">
+                <mask id="zxkq06snwb" fill="#fff">
+                    <use xlink:href="#puprn3lj1a"/>
+                </mask>
+                <g mask="url(#zxkq06snwb)" opacity=".306">
+                    <g transform="translate(35 6)">
+                        <mask id="o0wqzj1trd" fill="#fff">
+                            <use xlink:href="#so3sylcpvc"/>
+                        </mask>
+                        <use fill="#3D3E49" xlink:href="#so3sylcpvc"/>
+                        <path fill="#0091FF" fill-rule="nonzero" d="M0 0H250V290H0z" mask="url(#o0wqzj1trd)"/>
+                        <path fill="#67D0FA" fill-rule="nonzero" d="M0 0H130V290H0z" mask="url(#o0wqzj1trd)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

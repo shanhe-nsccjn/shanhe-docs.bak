@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{ with .Params.keyword }}
+<meta name="keywords" content="{{ . }}">
+{{ end }}
+{{ hugo.Generator }}
+{{ if eq (getenv "HUGO_ENV") "production" }}
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+{{ else }}
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+{{ end }}
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+{{ partialCached "favicons.html" . }}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+
+{{ partialCached "head-css.html" . "asdf" }}
+<script
+  src="https://jn1.is.shanhe.com/shanhe/docs/static/js/jquery-2.2.4.js?v=1510299508"
+  ></script>
+	<!-- <script src="https://static.runoob.com/assets/js/jquery-treeview/jquery.treeview.js" type="text/javascript"></script> -->
+{{ partial "hooks/head-end.html" . }}
+<script src="/js/common.js"></script>
