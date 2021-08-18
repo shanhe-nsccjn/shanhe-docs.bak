@@ -4,12 +4,12 @@ description: Test description
 draft: false
 weight: 9
 enableToc: false
-keyword: PolonDB, shanhe, 数据库
+keyword: 云数据库PolonDB, shanhe, 数据库
 ---
 
 
 
-* PolonDB 默认采用半同步模式
+* 云数据库PolonDB 默认采用半同步模式
 
   当集群正常时，采用同步模式运行。当备机出现异常时，会自动转换成异步模式。当备机恢复正常时，再次自动转换为同步模式。
 

@@ -3,7 +3,7 @@ title: "产品特性"
 description: Test description
 draft: false
 enableToc: false
-keyword: MySQL Plus, shanhe, 数据库
+keyword: 云数据库MySQL Plus, shanhe, 数据库
 ---
 
 

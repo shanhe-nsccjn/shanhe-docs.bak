@@ -6,7 +6,7 @@ draft: false
 weight: 1
 ---
 
-本小节主要介绍如何在 shanhe 创建 ClickHouse 集群。 
+本小节主要介绍如何在 shanhe 创建 云数据库ClickHouse 集群。 
 
 ## 基本设置
 

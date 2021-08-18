@@ -1,6 +1,6 @@
 ---
 title: "共享存储"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 draft: false
 enableToc: false
@@ -23,9 +23,9 @@ shanhe 提供两种共享存储：企业级分布式 SAN（NeonSAN）和 Virtual
 ### 企业核心数据库
 
 
-企业 OLTP 在线访问类业务，如财务、采购、生产、客户管理系统需应对大量用户频繁访问的场景，要求系统能快速响应；企业 OLAP 后台分析型业务，如经营与风险分析、销售与财务分析、生产与供应预测等要求系统具备高性能和高可用。NeonSAN 提供高性能、低延时、大容量的数据存储服务，充分满足 Oracle RAC、RadonDB 等核心数据库 OLTP/OLAP 的处理能力；同时，NeonSAN 的数据分片及多副本策略，确保核心数据库高可用。
+企业 OLTP 在线访问类业务，如财务、采购、生产、客户管理系统需应对大量用户频繁访问的场景，要求系统能快速响应；企业 OLAP 后台分析型业务，如经营与风险分析、销售与财务分析、生产与供应预测等要求系统具备高性能和高可用。NeonSAN 提供高性能、低延时、大容量的数据存储服务，充分满足 Oracle RAC、云数据库RadonDB 等核心数据库 OLTP/OLAP 的处理能力；同时，NeonSAN 的数据分片及多副本策略，确保核心数据库高可用。
 
-推荐方案：Oracle RAC / MySQL Plus + NeonSAN
+推荐方案：Oracle RAC / 云数据库MySQL Plus + NeonSAN
 
 ### 弹性裸金属服务器高可用架构
 

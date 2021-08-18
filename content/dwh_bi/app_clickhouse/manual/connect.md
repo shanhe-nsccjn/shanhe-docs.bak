@@ -7,7 +7,7 @@ weight: 3
 ---
 
 
-ClickHouse on shanhe 与原生 ClickHouse 高度兼容，可直接使用 ClickHouse 的任何连接方式连接 ClickHouse on shanhe 。
+云数据库ClickHouse on shanhe 与原生 云数据库ClickHouse 高度兼容，可直接使用 云数据库ClickHouse 的任何连接方式连接 云数据库ClickHouse on shanhe 。
 
 可选用以下方式连接集群和导入数据。
 

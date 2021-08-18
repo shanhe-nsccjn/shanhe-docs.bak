@@ -37,11 +37,11 @@ weight: 10
 1. 内置 NFS，Ceph RBD，Glusterfs 客户端程序
 1. 优化 KubeSphere console 链接地址显示
 1. 禁止将 shanhe 镜像仓库地址设置为 registry mirror
-1. QKE 集群自动伸缩
+1. 容器集群服务QKE 集群自动伸缩
 1. 删除私有镜像仓库服务环境参数
 1. 优化预制资源名
 1. 内置 KubeSphere v2.0.2
-1. 删除 Harbor 和 Gitlab 容器镜像
+1. 删除 容器服务镜像仓库 和 Gitlab 容器镜像
 1. 在支持的区创建 NeonSAN 存储类型
 1. 支持 EIP 访问 Kubernetes
 1. 新增安装 KubeSphere 选项，默认安装
@@ -64,5 +64,5 @@ weight: 10
 1. 集成 shanhe CSI v0.2.1，Pod 可直接挂载云平台块存储
 1. 集成 shanhe Cloud Controller Manager v1.3.4，可自动创建云平台负载均衡器并暴露服务
 1. 支持 Master 节点高可用
-1. 可选内置或者外置 etcd 集群
+1. 可选内置或者外置存储服务etcd 集群
 1. 可选内置或者外置 ES 服务

@@ -43,7 +43,7 @@ Json 消息体
 
 | Name | Type | Description |
 | --- | --- | --- |
-| domain | String | 要绑定给存储空间的域名。该域名必须已完成备案，否则将返回错误 (domain_not_recorded)。并且该域名到存储空间域名 (e.g. mybucket.jn1a.is.shanhe.com) 的 CNAME 记录必须已于域名服务商处成功 注册且生效，否则将返回错误 (cname_record_not_added)。如果该域名已成功绑 定给另外一个存储空间， 则返回错误 (domain_occupied)。 |
+| domain | String | 要绑定给存储空间的域名。该域名必须已完成备案，否则将返回错误 (domain_not_recorded)。并且该域名到存储空间域名 (e.g. mybucket.jn1.is.shanhe.com) 的 CNAME 记录必须已于域名服务商处成功 注册且生效，否则将返回错误 (cname_record_not_added)。如果该域名已成功绑 定给另外一个存储空间， 则返回错误 (domain_occupied)。 |
 | type | String | 绑定的域名的用途。目前支持两种类型，普通 (“normal”) 和网站 (“website”)。 |
 
 ## Response Headers
@@ -56,7 +56,7 @@ Json 消息体
 
 ```http
 PUT /?cname HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Content-Length: 30
 Authorization: authorization string

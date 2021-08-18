@@ -1,24 +1,24 @@
 ---
-title: "ChronusDB 使用方法"
+title: "云数据库ChronusDB 使用方法"
 description: Test description
 weight: 3
 ---
 
-作为分布式时序数据库，ChronusDB 支持：
+作为分布式时序数据库，云数据库ChronusDB 支持：
 
 > * 数据副本功能。
 > * 分布式存储功能。
 
 如果希望使用这些功能，需要在建立表的时候指定不同的表引擎。
 
-|ChronusDB 功能|表引擎|
+|云数据库ChronusDB 功能|表引擎|
 |:--:|--:|
 |无数据副本|MergeTree|
 |多数据副本|ReplicatedMergeTree|
 |分布式存储|Disdtributed|
 
-## ChronusDB 使用示例
-如果希望使用 ChronusDB 的分布式存储数据能力，需要使用 `Distributed` + `MergeTree`/`ReplicateMergeTree` 引擎。数据分布方式分为两类：
+## 云数据库ChronusDB 使用示例
+如果希望使用 云数据库ChronusDB 的分布式存储数据能力，需要使用 `Distributed` + `MergeTree`/`ReplicateMergeTree` 引擎。数据分布方式分为两类：
 
 * 逻辑一致：数据内容完全一致，数据存储格式不完全一致。
 * 物理一致：数据内容完全一致，数据存储格式完全一致

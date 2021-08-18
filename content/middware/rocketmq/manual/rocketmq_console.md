@@ -1,5 +1,5 @@
 ---
-title: "RocketMQ Console使用示例"
+title: "消息队列RocketMQ Console使用示例"
 description: test
 weight: 12
 draft: false

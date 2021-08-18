@@ -5,13 +5,13 @@ weight: 6
 draft: false
 ---
 
-## PolonDB 纵向扩容缩容
+## 云数据库PolonDB 纵向扩容缩容
 
 ![image-ZhiLing](../../_images/image-ZhiLing.png)
 
 * 点击 `扩容集群` ，并根据提示进行扩容
 
-## PolonDB 横向扩容缩容
+## 云数据库PolonDB 横向扩容缩容
 
 ### 前提条件
 
@@ -39,7 +39,7 @@ draft: false
 ### 特殊操作说明
 #### 配置组
 
-PolonDB 会逐表进行处理，因此表的处理都是独立的
+云数据库PolonDB 会逐表进行处理，因此表的处理都是独立的
 
 - 当需要将两个业务相关表同时处理，以降低最小影响时。
 
@@ -54,7 +54,7 @@ insert into qc_rebalance_params(dbname, group_table) values ('qctest', '3-public
 
 #### 处理顺序优先级
 
-PolonDB 会逐表进行处理，因此表的处理顺序会有先后之分
+云数据库PolonDB 会逐表进行处理，因此表的处理顺序会有先后之分
 
 - 当需要优先处理重要的表，以降低最小影响时，可以配置优先级
 

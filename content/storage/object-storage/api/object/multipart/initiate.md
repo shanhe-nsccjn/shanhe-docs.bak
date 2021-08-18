@@ -69,7 +69,7 @@ Authorization: <authorization-string>
 
 ```http
 POST /large-object?uploads HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 13:25:10 GMT
 Authorization: authorization string
 ```

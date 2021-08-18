@@ -8,12 +8,12 @@ draft: false
 ---
 ---
 
-# QingMR 用户指南
+# 大数据基础服务SMR 用户指南
 
 
 ## 简介
 
-山河 shanhe 大数据相关服务将会统一在 *QingMR* 下。 *QingMR* 目前已经集成了:
+山河 shanhe 大数据相关服务将会统一在 大数据基础服务SMR 下。 大数据基础服务SMR 目前已经集成了:
 
 - 分布式文件系统 *HDFS* 
 
@@ -25,25 +25,25 @@ draft: false
 
 - 极速海量数据 OLAP 分析引擎 *Kylin*
 
-陆续会有更多的基于 *HDFS* 的大数据应用被纳入到 *QingMR* 中。其他的大数据服务如 *Storm* ，*Kafka* ， *ZooKeeper* 等也将统一在 *QingMR* 品牌下。
+陆续会有更多的基于 *HDFS* 的大数据应用被纳入到 大数据基础服务SMR 中。其他的大数据服务如 *大数据服务Storm* ，*消息队列消息队列Kafka* ， *大数据服务ZooKeeper* 等也将统一在 大数据基础服务SMR 品牌下。
 
-此外 *QingMR* 中的 *Hadoop MapReduce* ，*Spark* 和 *Hive* 都与 *对象存储服务OIS* 对象存储服务进行了有效的集成，使得用户可以高效地进行海量数据的低成本存储。
+此外 大数据基础服务SMR 中的 *Hadoop MapReduce* ，*Spark* 和 *Hive* 都与 *对象存储服务OIS* 对象存储服务进行了有效的集成，使得用户可以高效地进行海量数据的低成本存储。
 
 当前支持的组件及版本如下：
 
 | | Hadoop | Spark | Hive | Flink |
 | :------: | ------: | ------: | ------: | ------: |
-| QingMR - Core 1.2.1 | 2.7.3 | 2.2.0 | 1.2.2 | - |
-| QingMR - Core 1.3.0 | 2.7.3 | 2.2.0 | 2.3.4 | - |
-| QingMR - Core 2.0.0 | 2.9.2 | 2.2.3 | 2.3.5 | - |
-| QingMR - Core 2.5.2 | 2.9.2 | 2.2.3 | 2.3.5 | 1.9.0 |
+| 大数据基础服务SMR - Core 1.2.1 | 2.7.3 | 2.2.0 | 1.2.2 | - |
+| 大数据基础服务SMR - Core 1.3.0 | 2.7.3 | 2.2.0 | 2.3.4 | - |
+| 大数据基础服务SMR - Core 2.0.0 | 2.9.2 | 2.2.3 | 2.3.5 | - |
+| 大数据基础服务SMR - Core 2.5.2 | 2.9.2 | 2.2.3 | 2.3.5 | 1.9.0 |
 
- 备注：*Kyligence Enterprise* 作为 *Kylin* 的企业版也是构建在 *QingMR* 之上，如需使用可以[点击这里](https://appcenter.shanhe.com/apps/app-66xhycwj/Kyligence%20Enterprise%20%20-%20Apache%20Kylin%20%E4%BC%81%E4%B8%9A%E7%89%88)获取。
+ 备注：*Kyligence Enterprise* 作为 *Kylin* 的企业版也是构建在 大数据基础服务SMR 之上，如需使用可以[点击这里](https://appcenter.shanhe.com/apps/app-66xhycwj/Kyligence%20Enterprise%20%20-%20Apache%20Kylin%20%E4%BC%81%E4%B8%9A%E7%89%88)获取。
 
   > 更多组件，敬请期待
 
 
-### *QingMR* 功能概览
+### 大数据基础服务SMR 功能概览
 
 #### *Hadoop* 服务简介
 
@@ -58,11 +58,11 @@ draft: false
 - 为了方便用户开发 Python Spark 机器学习类的应用， 分别在 Anaconda 发行版的 Python2 和 Python3 内提供了 Anaconda 发行版的数据科学包 numpy, scikit-learn, scipy, Pandas, NLTK and Matplotlib
 - 为了方便用户开发 Spark R 应用，提供了R语言运行时。
 - 支持上传自定义的 Spark 应用内调度器 Fair Schudeler，并支持 spark 应用内调度模式在 FIFO 和 FAIR 切换
-- 支持基于 Spark 的分布式深度学习框架 BigDL （从 QingMR 2.0.0 开始支持）
+- 支持基于 Spark 的分布式深度学习框架 BigDL （从 大数据基础服务SMR 2.0.0 开始支持）
 
 #### *Hive* 服务简介
 提供 *Hive*  的以 SQL 语法读、写和管理分布式大规模数据集的 SQL on Hadoop 数据仓库服务，其他特色功能包括：
-- 同时支持 Hive on MapReduce 和 Hive on Spark 两种模式并可进行切换 (其中 Hive on Spark 从 QingMR 1.3.0 开始支持)
+- 同时支持 Hive on MapReduce 和 Hive on Spark 两种模式并可进行切换 (其中 Hive on Spark 从 大数据基础服务SMR 1.3.0 开始支持)
 
 #### *Flink* 服务简介
 提供 *Flink* 的 DataStream and DataSet、CEP、Table、FlinkML、Gelly 等服务，其他特色功能包括：
@@ -74,17 +74,17 @@ draft: false
 - Hadoop, Spark 和 Hive 均可通过 S3 协议与 对象存储服务OIS集成
 - 支持水平与垂直扩容
 - 可选 Client 节点（为了使用上述全部功能，建议 Client 节点为必选），全自动配置无需任何手动操作
-- 指定依赖服务，自动添加依赖服务中的所有节点到 QingMR 所有节点的 hosts 文件中
+- 指定依赖服务，自动添加依赖服务中的所有节点到 大数据基础服务SMR 所有节点的 hosts 文件中
 
-## 部署 QingMR 服务
+## 部署 大数据基础服务SMR 服务
 
 ### 第 1 步：基本设置
 
 ![第 1 步：基本设置](../basic_config.png)
 
 填写服务`名称`和`描述`，选择版本 
-> QingMR 版本越高，其包含的 Hadoop, Spark, Hive, Flink 等组件的版本也越高 (详见简介部分)，请根据业务需求选择相应版本。
-> QingMR 包含众多角色的节点，区分`基础型`及`增强型`两种资源配置类型是为了方便用户快速创建 QingMR 服务，两种资源配置类型的区别是各角色节点的 CPU, 内存等规格不同，用户也可以选择自定义各节点的规格。以下第 2 ~ 5 步均为用户选择`自定义`配置时生效，选择`基础型`或`增强型`请直接从第 6 步开始。
+> 大数据基础服务SMR 版本越高，其包含的 Hadoop, Spark, Hive, Flink 等组件的版本也越高 (详见简介部分)，请根据业务需求选择相应版本。
+> 大数据基础服务SMR 包含众多角色的节点，区分`基础型`及`增强型`两种资源配置类型是为了方便用户快速创建 大数据基础服务SMR 服务，两种资源配置类型的区别是各角色节点的 CPU, 内存等规格不同，用户也可以选择自定义各节点的规格。以下第 2 ~ 5 步均为用户选择`自定义`配置时生效，选择`基础型`或`增强型`请直接从第 6 步开始。
 
 ### 第 2 步：HDFS 主节点设置
 
@@ -121,7 +121,7 @@ draft: false
 
 ![第 7 步：依赖服务设置](../dependency_config.png)
 
-依赖服务 External Service , 选择所依赖的服务可以将其中所有节点加入本服务所有节点的 hosts 文件中。 HBase 与 Hadoop 或者 Spark 集成的场景经常会有这种需求，选定依赖 HBase 集群即可自动添加 hosts ，无需由工程师在后台手动添加。
+依赖服务 External Service , 选择所依赖的服务可以将其中所有节点加入本服务所有节点的 hosts 文件中。 大数据服务HBase 与 Hadoop 或者 Spark 集成的场景经常会有这种需求，选定依赖 大数据服务HBase 集群即可自动添加 hosts ，无需由工程师在后台手动添加。
 
 ### 第 8 步：服务环境参数设置
 
@@ -135,7 +135,7 @@ draft: false
 
 
 
-## QingMR 使用指南
+## 大数据基础服务SMR 使用指南
 
 ### 查看服务详情
 
@@ -272,7 +272,7 @@ bin/spark-submit --master yarn --deploy-mode cluster /opt/spark/examples/src/mai
 #### 1.5 更新自定义 Spark 应用内调度器
 
 Spark 支持两种应用内调度器 FIFO（默认）和 FAIR。
-为了支持用户自定义 Spark 应用内 FAIR 调度器的需求，QingMR 支持用户上传自定义的 FAIR 调度器，步骤如下：
+为了支持用户自定义 Spark 应用内 FAIR 调度器的需求，大数据基础服务SMR 支持用户上传自定义的 FAIR 调度器，步骤如下：
 
 1. 自定义 Spark 应用内 FAIR 调度器 spark-fair-scheduler.xml（文件名必须为 spark-fair-scheduler.xml）
 2. 将这两个自定义调度器上传至 HDFS 的 /tmp/hadoop-yarn/ 目录
@@ -305,7 +305,7 @@ scala > lzoTest.saveAsTextFile("/test_lzo", classOf[LzopCodec])
 
 #### 1.9 在 Spark 上使用 BigDL
 
-从 QingMR 2.0.0 开始支持基于 Spark 的分布式深度学习框架 BigDL 。以下以训练经典卷积神经网络模型 LeNet5 进行示例：
+从 大数据基础服务SMR 2.0.0 开始支持基于 Spark 的分布式深度学习框架 BigDL 。以下以训练经典卷积神经网络模型 LeNet5 进行示例：
 - scala  
 
 ```shell
@@ -423,7 +423,7 @@ bin/spark-submit --master yarn --deploy-mode client examples/src/main/python/pi.
 #### 2.5 更新自定义 YARN 调度器
 
 YARN 支持两种调度器 CapacityScheduler（默认）和 FairScheduler。
-为了支持用户更多自定义调度器的需求，QingMR 支持用户上传自定义调度器，步骤如下：
+为了支持用户更多自定义调度器的需求，大数据基础服务SMR 支持用户上传自定义调度器，步骤如下：
 
 - 第一步：自定义 CapacityScheduler capacity-scheduler.xml 或者 FairScheduler fair-scheduler.xml（文件名必须为 capacity-scheduler.xml 或者 fair-scheduler.xml）
 - 第二步：将这两个自定义调度器上传至 HDFS 的 /tmp/hadoop-yarn/ 目录
@@ -442,7 +442,7 @@ YARN 支持两种调度器 CapacityScheduler（默认）和 FairScheduler。
 
 #### 2.6 YARN log 收集
 
-QingMR 支持将 YARN log 收集到 HDFS 指定目录，并可指定保持时间、保持目录等，可在配置参数页面配置：
+大数据基础服务SMR 支持将 YARN log 收集到 HDFS 指定目录，并可指定保持时间、保持目录等，可在配置参数页面配置：
 ![YARN log 收集](../yarn_log_aggregation.png)
 
 #### 2.7 控制 HDFS、YARN 占用的内存
@@ -456,7 +456,7 @@ YARN 及 HDFS 进程最大占用内存
 
 #### 2.8 MapReduce 中使用 LZO 压缩
 
-Hadoop 从 QingMR 2.0.0 开始支持 lzo 压缩，使用时请注意以下事项：
+Hadoop 从 大数据基础服务SMR 2.0.0 开始支持 lzo 压缩，使用时请注意以下事项：
 
 - lzo 文件默认不支持分片，需为其添加索引文件，才能支持多个 map 并行地对 lzo 文件进行处理。  
 - 作业的输入格式需设置为 `job.setInputFormatClass(LzoTextInputFormat.class)` ，该类在 `${HADOOP_HOME}/share/hadoop/common/lib/hadoop-lzo-0.4.20.jar` 中。
@@ -477,7 +477,7 @@ mysql> grant all privileges on hive.* to '<username>'@'%';
 # 刷写权限：
 mysql> flush privileges;
 ```
-如果以 spark 作为 Hive 的执行引擎 (从 QingMR 1.3.0 开始支持，且作为默认执行引擎)，在操作 Hive 之前请先在 hdfs 上创建相应的用户目录。例如若以用户 ubuntu 操作 Hive，需首先以 root 用户运行以下命令：
+如果以 spark 作为 Hive 的执行引擎 (从 大数据基础服务SMR 1.3.0 开始支持，且作为默认执行引擎)，在操作 Hive 之前请先在 hdfs 上创建相应的用户目录。例如若以用户 ubuntu 操作 Hive，需首先以 root 用户运行以下命令：
 ```
 # 切换 root 用户请使用命令 sudo su , 密码 p12cHANgepwD
 /opt/hadoop/bin/hdfs dfs -mkdir -p /user/ubuntu/
@@ -538,7 +538,7 @@ hive> SELECT AVG(a.foo) FROM invites a WHERE a.ds='2008-08-15';
 ```
 
 #### 3.5 Hive 执行引擎
-支持 mr 和 spark 两种执行引擎(其中 spark 引擎从 QingMR 1.3.0 开始支持，并且作为默认执行引擎)，可以通过以下方式进行切换：
+支持 mr 和 spark 两种执行引擎(其中 spark 引擎从 大数据基础服务SMR 1.3.0 开始支持，并且作为默认执行引擎)，可以通过以下方式进行切换：
 - 集群级别的切换  
 在整个集群生效，具体请在配置参数页面进行切换：
 ![配置hive_engine](../hive_engine_switch.png)
@@ -557,7 +557,7 @@ hive> set hive.execution.engine=spark;
 >以 spark 作为 hive 的执行引擎时，对 cpu 、内存等硬件资源的要求较高，请注意根据业务情况对集群进行扩容。
 
 #### 3.6 Hive 中使用 LZO 压缩
-Hive 从 QingMR 2.0.0 开始支持 lzo 压缩：
+Hive 从 大数据基础服务SMR 2.0.0 开始支持 lzo 压缩：
 ```shell
 # 创建支持 lzo 压缩的表
 hive> use test;
@@ -613,7 +613,7 @@ beeline -u jdbc:hive2:///
 - 在 Spark 中读取到 HDFS 上的文件后将其存储到 对象存储服务OIS 中
 
 ```shell
-# 首先需要将本地的一个测试文件上传到 QingMR 集群的 HDFS 存储节点上：
+# 首先需要将本地的一个测试文件上传到 大数据基础服务SMR 集群的 HDFS 存储节点上：
 cd /opt/hadoop
 bin/hdfs dfs -mkdir /input
 bin/hdfs dfs -put /opt/spark/README.md /input/
@@ -746,7 +746,7 @@ hive> INSERT OVERWRITE table invites partition (ds) select se.foo,se.bar,se.ds f
 
 ### 5. Flink 使用指南
 
-QingMR 中的 Flink 以 Flink on YARN 模式运行，支持创建 Flink YARN Session ( Flink Cluster on YARN )，以及在  YARN 上运行 Standalone Flink job。
+大数据基础服务SMR 中的 Flink 以 Flink on YARN 模式运行，支持创建 Flink YARN Session ( Flink Cluster on YARN )，以及在  YARN 上运行 Standalone Flink job。
 
 #### 5.1 Flink YARN Session ( Flink Cluster on YARN )
 
@@ -852,14 +852,14 @@ Flink 日志存放在 /data/flink/log 目录下，默认保存 30 个文件，�
 
 ### 增加节点
 
-可以在 QingMR 详情页点击 `新增节点` 按钮增加 `从节点` 或 `Client 节点`，可以对每个新增节点指定 IP 或选择自动分配。
+可以在 大数据基础服务SMR 详情页点击 `新增节点` 按钮增加 `从节点` 或 `Client 节点`，可以对每个新增节点指定 IP 或选择自动分配。
 ![增加节点](../add_node.png)
 
 ### 删除节点
 
-可以在 QingMR 详情页选中需要删除的节点，然后点击 `删除` 按钮，只能一次删除一个，并且必须等到上个节点删除后且 decommission 结束才能删除下一个节点，否则数据会丢失。删除节点过程中会锁定QingMR集群不让对其进行其它生命周期操作。
+可以在 大数据基础服务SMR 详情页选中需要删除的节点，然后点击 `删除` 按钮，只能一次删除一个，并且必须等到上个节点删除后且 decommission 结束才能删除下一个节点，否则数据会丢失。删除节点过程中会锁定大数据基础服务SMR集群不让对其进行其它生命周期操作。
 
-- HDFS 的 decommission 状态可以从 HDFS Name Node 的 50070 端口提供的监控信息观察到。 Decommission 是在复制即将删除节点上的数据到别的节点上，如果您的数据量比较大，这个过程会比较长。因为山河的 HDFS 副本因子默认为 2，所以当您的 QingMR 从节点数为 2 的时候就不能再删除节点。同时要预先知道其它节点的总硬盘空间足够拷贝删除节点的内容，才能进行删除。
+- HDFS 的 decommission 状态可以从 HDFS Name Node 的 50070 端口提供的监控信息观察到。 Decommission 是在复制即将删除节点上的数据到别的节点上，如果您的数据量比较大，这个过程会比较长。因为山河的 HDFS 副本因子默认为 2，所以当您的 大数据基础服务SMR 从节点数为 2 的时候就不能再删除节点。同时要预先知道其它节点的总硬盘空间足够拷贝删除节点的内容，才能进行删除。
 
 - YARN 的 decommission 会相对较快，删除节点后会在比较短的时间内在主节点的 8088 端口观察到集群的 CPU 及内存资源的下降
 
@@ -869,28 +869,28 @@ Flink 日志存放在 /data/flink/log 目录下，默认保存 30 个文件，�
 
 ### 纵向伸缩
 
-QingMR 允许分别对各种角色的节点进行纵向的扩容及缩容。右键点击集群 ID, 选择`扩容集群`即可出现如下扩容集群界面： 
+大数据基础服务SMR 允许分别对各种角色的节点进行纵向的扩容及缩容。右键点击集群 ID, 选择`扩容集群`即可出现如下扩容集群界面： 
 ![纵向伸缩](../scale_up_down.png)
 
 ## 监控告警
 
 ### 资源级别的监控与告警
 
-我们对 QingMR 集群的每个节点提供了资源级别的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。
+我们对 大数据基础服务SMR 集群的每个节点提供了资源级别的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。
 
 ### Hadoop、Spark 和 Hive 原生的监控
 
 YARN、HDFS、Spark 和 Hive 提供了丰富的监控信息。如果需要通过公网访问这些信息您需要先申请一个公网 IP 绑定在路由器上，在路由器上设置端口转发，同时打开防火墙相应的下行端口。
 
-`主节点` 中 Resource Manager 默认端口 `8088` ， `HDFS 主节点` 默认端口是 `50070`，Spark 主节点 和主节点是同一个，其默认端口是 `8080`，HiveServer2 WEB UI 默认端口 `10002`。 (其中 HiveServer2 WEB UI 从 QingMR 1.3.0 开始支持)
+`主节点` 中 Resource Manager 默认端口 `8088` ， `HDFS 主节点` 默认端口是 `50070`，Spark 主节点 和主节点是同一个，其默认端口是 `8080`，HiveServer2 WEB UI 默认端口 `10002`。 (其中 HiveServer2 WEB UI 从 大数据基础服务SMR 1.3.0 开始支持)
 
-为方便查看 QingMR UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置 VPN，VPN 建立后可查看下述界面。
+为方便查看 大数据基础服务SMR UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置 VPN，VPN 建立后可查看下述界面。
 
 - http://< 主节点IP >:8088
 
 ![YARN](../yarn_monitoring.png)
 
-- http://< 主节点IP >:8088/ui2  ( yarn 新版 UI，从 QingMR 2.0.0 开始支持)
+- http://< 主节点IP >:8088/ui2  ( yarn 新版 UI，从 大数据基础服务SMR 2.0.0 开始支持)
 
 ![YARN](../yarn_monitoring_ui2.png)
 
@@ -902,21 +902,21 @@ YARN、HDFS、Spark 和 Hive 提供了丰富的监控信息。如果需要通过
 
 ![YARN](../spark_monitoring.png)
 
-- http://< 主节点IP >:10002 (从 QingMR 1.3.0 开始支持)
+- http://< 主节点IP >:10002 (从 大数据基础服务SMR 1.3.0 开始支持)
 ![HIVE_SERVER2](../hive_server2_monitoring.png)
 > HiveServer2 WEB UI 展示的 sessions 和 queries 仅包含以 beeline 远程模式或其他方式提交到 HiveServer2 服务的任务
 
-- http://< JobManager-Web-Interface > (从 QingMR 2.5.0 开始支持)
+- http://< JobManager-Web-Interface > (从 大数据基础服务SMR 2.5.0 开始支持)
 ![Flink session WEB UI](../flink_session_dashboard.png)
 > Flink YARN Session WEB UI 展示的是此 Session 正在运行的 job 和 1 小时内的已完成 job，可以通过此 WEB UI 向 Flink YARN Session 提交 job。 `JobManager-Web-Interface` 为 JobManager 地址，详见 [创建 Flink YARN Session](#511)。
 
-- http://< HDFS-MASTER-IP >:8082 (从 QingMR 2.5.0 开始支持)
+- http://< HDFS-MASTER-IP >:8082 (从 大数据基础服务SMR 2.5.0 开始支持)
 ![Flink historyserver WEB UI](../flink_dashboard.png)
 > Flink historyserver WEB UI 展示的是已完成 job 信息，包括向 Flink YARN Session 提交的 job，和 Standalone Flink job。
 
 ### 服务级别分角色的监控与告警
 
-为了帮助用户更好的管理和维护 QingMR 集群，我们提供了部分针对 YARN、 HDFS 以及 Spark 服务级别分角色的监控：
+为了帮助用户更好的管理和维护 大数据基础服务SMR 集群，我们提供了部分针对 YARN、 HDFS 以及 Spark 服务级别分角色的监控：
 
 - YARN 服务监控，包括 YARN 管理的各 NodeManager 节点状态、运行中的 YARN 应用、 YARN 应用状态、 YARN 集群总内存、 YARN 集群 virtual cores、YARN containers、NodeManger 节点内存等。
 
@@ -946,11 +946,11 @@ YARN、HDFS、Spark 和 Hive 提供了丰富的监控信息。如果需要通过
 
 ## 配置参数
 
-QingMR 提供了 80 多个配置参数，可以通过 `配置参数` 来定制个性化的 QingMR 服务并进行调优。
+大数据基础服务SMR 提供了 80 多个配置参数，可以通过 `配置参数` 来定制个性化的 大数据基础服务SMR 服务并进行调优。
 
 ### 修改配置参数
 
-在 QingMR 详情页，点击 `配置参数` Tab 页，点击 `修改属性`，修改完后，需要进行 "保存"。如图所示：
+在 大数据基础服务SMR 详情页，点击 `配置参数` Tab 页，点击 `修改属性`，修改完后，需要进行 "保存"。如图所示：
 
 ![配置参数](../env_modify.png)
 
@@ -975,7 +975,7 @@ QingMR 提供了 80 多个配置参数，可以通过 `配置参数` 来定制�
 - **hive.server2.idle.operation.timeout**: hiveserver2 的 session 中 operation 超过该时间时将被取消，置零或负值时将禁用。需填入时间值，单位( d/day, h/hour, m/min, s/sec, ms/msec, us/usec, ns/nsec )，不指定时默认 msec。
 - **hive.server2.session.check.interval**： hiveserver2 中检查 session 和 operation 超时的间隔时间，该值应该大于等于 3000msec ，置零或负值时将禁用。需填入时间值，单位( d/day, h/hour, m/min, s/sec, ms/msec, us/usec, ns/nsec )，不指定时默认 msec。
 - **对象存储服务OIS**: 是否将 对象存储服务OIS 与 Hadoop , Spark 和 Hive 集成，如需集成则必须输入相应的 access_key 及 secret_key 。
-- **对象存储服务OIS_zone**: 指定 对象存储服务OIS 的分区，目前开放了 jn1 。 其他分区何时开放请关注 QingMR 用户指南。
+- **对象存储服务OIS_zone**: 指定 对象存储服务OIS 的分区，目前开放了 jn1 。 其他分区何时开放请关注 大数据基础服务SMR 用户指南。
 - **s3.endpoint**: 兼容 S3 的对象存储的 endpoint, 如果指定了该值 对象存储服务OIS_zone 将被忽略，常用于私有云中无法访问公有云对象存储的场景。通常公有云不用指定该值，如果指定须以 s3.<zone>.is.shanhe.com 格式
 - **access_key**: 指定 对象存储服务OIS 的 access_key 。
 - **secret_key**: 指定 对象存储服务OIS 的 secret_key 。
@@ -1067,13 +1067,13 @@ QingMR 提供了 80 多个配置参数，可以通过 `配置参数` 来定制�
 
 ### v1.2.0
 
-- 名称由 SparkMR 变更为 QingMR
+- 名称由 SparkMR 变更为 大数据基础服务SMR
 - 支持 *Kyligence Analytics Platform* ( Kylin 的企业级产品 )
 
 ### v1.2.1
 
 - 所有节点升级 confd 到 v0.13.12。
-- 修改 QingMR 在基础网络环境下 hive 启动错误的问题。
+- 修改 大数据基础服务SMR 在基础网络环境下 hive 启动错误的问题。
 - 修改各个角色中 hosts 文件和 authorized_keys文件用户的修改被覆盖的问题。
 - client 节点增加 hdfs-site.xml 模板文件。
 - client 节点 spark-env.sh 修改被覆盖的问题。
@@ -1110,7 +1110,7 @@ QingMR 提供了 80 多个配置参数，可以通过 `配置参数` 来定制�
 
 ## 原大数据平台文档
 
-山河 shanhe 的大数据平台已经迁移到 AppCenter 上，不建议继续使用原大数据平台下的 Hadoop, Spark, HBase, Elasticsearch, Kafka, ZooKeeper 等服务，原大数据平台老版本组件的相关文档如下：
+山河 shanhe 的大数据平台已经迁移到 AppCenter 上，不建议继续使用原大数据平台下的 Hadoop, Spark, HBase, Elasticsearch, 消息队列Kafka, 大数据服务ZooKeeper 等服务，原大数据平台老版本组件的相关文档如下：
 
 ### 旧版 Hadoop
 若要查看旧版 Hadoop 2.6 的相关文档请点击[这里](../hadoop.html)

@@ -1,14 +1,14 @@
 ---
-title: "创建RocketMQ"
+title: "创建消息队列RocketMQ"
 description: 
 draft: false
 ---
 
 ## 创建步骤
 
-创建RocketMQ集群前，您需要先创建一个VPC网络。
+创建消息队列RocketMQ集群前，您需要先创建一个VPC网络。
 
-> 为了保障数据安全，RocketMQ集群需要运行在受管私有网络中。所以在创建一个RocketMQ集群之前，需要创建一个VPC和一个受管私有网络，受管私有网络需要加入VPC，并开启DHCP服务（默认开启）。
+> 为了保障数据安全，消息队列RocketMQ集群需要运行在受管私有网络中。所以在创建一个消息队列RocketMQ集群之前，需要创建一个VPC和一个受管私有网络，受管私有网络需要加入VPC，并开启DHCP服务（默认开启）。
 
 ### 第一步：基本设置
 
@@ -31,7 +31,7 @@ draft: false
 
 ![](../../_images/sevice_parameter.png)
 
-按照实际需求配置RocketMQ集群的参数。
+按照实际需求配置消息队列RocketMQ集群的参数。
 
 ### 第四步：用户协议
 

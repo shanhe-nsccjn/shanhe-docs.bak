@@ -66,7 +66,7 @@ Json 消息体
 
 ```http
 PUT /?mirror HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 14 Aug 2016 09:05:00 GMT
 Authorization: authorization string
 {

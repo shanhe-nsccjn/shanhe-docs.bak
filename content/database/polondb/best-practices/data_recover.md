@@ -4,7 +4,7 @@ description: Test description
 weight: 3
 ---
 
-PolonDB可以找回 `update` `delete` `drop column` `rollback` 的数据。
+云数据库PolonDB可以找回 `update` `delete` `drop column` `rollback` 的数据。
 
 - 准备数据
 
@@ -183,5 +183,5 @@ PolonDB可以找回 `update` `delete` `drop column` `rollback` 的数据。
 
   
 
-PolonDB默认可以找回最近至少 `10000` 个事务内的数据，可以通过修改参数进行控制找回数据数据的多少。
+云数据库PolonDB默认可以找回最近至少 `10000` 个事务内的数据，可以通过修改参数进行控制找回数据数据的多少。
 

@@ -5,13 +5,13 @@ weight: 3
 ---
 
 
-RadonDB 目前只支持 go-mydumper 方式的数据导入和导出。
+云数据库RadonDB 目前只支持 go-mydumper 方式的数据导入和导出。
 
-[XeLabs/go-mydumper](https://github.com/XeLabs/go-mydumper) 是一个使用 go 语言开发的开源工具，与 [maxbube/mydumper](https://github.com/maxbube/mydumper) 格式完全兼容，但是对并行处理进行了优化，性能更加卓越。该工具不仅限于 RadonDB 使用，MySQL 也可以使用。
+[XeLabs/go-mydumper](https://github.com/XeLabs/go-mydumper) 是一个使用 go 语言开发的开源工具，与 [maxbube/mydumper](https://github.com/maxbube/mydumper) 格式完全兼容，但是对并行处理进行了优化，性能更加卓越。该工具不仅限于 云数据库RadonDB 使用，MySQL 也可以使用。
 
-导入数据到 RadonDB，go-mydumper 会批量并行式导入，非常快捷。
+导入数据到 云数据库RadonDB，go-mydumper 会批量并行式导入，非常快捷。
 
-从 RadonDB 导出数据时，go-mydumper 会批量并行流式导出，资源占用率较低。
+从 云数据库RadonDB 导出数据时，go-mydumper 会批量并行流式导出，资源占用率较低。
 
 ## 1. 安装 go-mydumper
 
@@ -59,7 +59,7 @@ Usage: ./bin/myloader -h [HOST] -P [PORT] -u [USER] -p [PASSWORD] -d  [DIR]
         Username with privileges to run the loader
 ```
 
-## 2. 如何导入数据到 RadonDB
+## 2. 如何导入数据到 云数据库RadonDB
 
 ### 2.1 从数据源导出数据
 
@@ -119,7 +119,7 @@ CREATE TABLE `benchyou0` (
 ) ENGINE=InnoDB PARTITION BY HASH(id);
 ```
 
-### 2.3 导入数据到 RadonDB
+### 2.3 导入数据到 云数据库RadonDB
 
 ```plain
 $ ./bin/myloader -h 192.168.0.2 -P 3306 -u radondb -p radondb -d sbtest.sql
@@ -149,9 +149,9 @@ $ ./bin/myloader -h 192.168.0.2 -P 3306 -u radondb -p radondb -d sbtest.sql
 ```
 
 
-## 3. 如何导出 RadonDB 数据
+## 3. 如何导出 云数据库RadonDB 数据
 
-可以使用 mydumper 导出 RadonDB 数据，此过程是流式获取 (select 语句加 `/*+ streaming */` hint) 并导出，基本不占用系统内存。
+可以使用 mydumper 导出 云数据库RadonDB 数据，此过程是流式获取 (select 语句加 `/*+ streaming */` hint) 并导出，基本不占用系统内存。
 
 ```plain
 $ ./bin/mydumper -h 192.168.0.2 -P 3306 -u radondb -p radondb -db sbtest  -o sbtest.sql

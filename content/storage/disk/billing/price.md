@@ -12,4 +12,4 @@ draft: false
 基础型硬盘和SSD企业型硬盘的起步容量是10GB，增长步长是10GB。 
 容量型和企业级分布式SAN硬盘的起步容量是100GB，增长步长是50GB。
 
-详情可参考价格计算器： https://www.shanhe.com/pricing#/Volume
+详情可参考价格计算器： https://docsv3.shanhe.com/middware/kafka/billing/price/

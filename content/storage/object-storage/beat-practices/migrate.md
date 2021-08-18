@@ -23,11 +23,11 @@ QingStor 推出了无缝数据迁移方案，帮助用户将业务数据从自�
 ![](bucket_external_mirror_diagram.png)
 
 
-下面结合示意图，说明外部镜像的工作原理: 假设用户的外部镜像源站为 [http://img.example.com](http://img.example.com) , 在QingStor 的 Bucket 的默认域名为 [http://bucketname.jn1a.is.shanhe.com](http://bucketname.jn1a.is.shanhe.com) 。
+下面结合示意图，说明外部镜像的工作原理: 假设用户的外部镜像源站为 [http://img.example.com](http://img.example.com) , 在QingStor 的 Bucket 的默认域名为 [http://bucketname.jn1.is.shanhe.com](http://bucketname.jn1.is.shanhe.com) 。
 
 **示意图左侧为首次请求:**
 
-1. 用户发起获取对象的请求，如 [http://bucketname.jn1a.is.shanhe.com/blog.png](http://bucketname.jn1a.is.shanhe.com/blog.png)
+1. 用户发起获取对象的请求，如 [http://bucketname.jn1.is.shanhe.com/blog.png](http://bucketname.jn1.is.shanhe.com/blog.png)
 1. 对象在 QingStor Bucket 中不存在，且已经为 Bucket 设置了外部镜像源站，服务端把对象名称 blog.png 拼接到源站，生成源链接 [http://img.example.com/blog.png](http://img.example.com/blog.png)
 1. QingStor 服务端从该源链接抓取。
 1. 在抓取过程中，请求这个对象的客户端，有可能会下载到源站文件，也有可能收到重定向到源站相应路径的 302 请求。

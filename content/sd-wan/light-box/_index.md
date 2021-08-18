@@ -8,7 +8,7 @@ type: "product"
 section1:
   title: 光盒
   vice_title: 光盒是光格网络 SD-WAN 服务的重要接入组件，便于用户最后一公里快速接入到 WAN 网。
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 Section2:

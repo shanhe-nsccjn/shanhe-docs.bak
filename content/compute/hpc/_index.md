@@ -9,7 +9,7 @@ section1:
   title: HPC高性能计算
   vice_title: HPC高性能计算是山河shanhe推出的一站式超算平台，提供弹性和可扩展的HPC计算资源，是传统HPC技术与云计算技术的融合升级。提供丰富多样的使用模式适配多种应用场景，统一的管理系统提供最优的使用体验，工程师、研究人员可以突破本地 HPC 基础设施限制，快速开始设计创新。
   # todo add 对象存储服务OIS introduction video
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 Section2:

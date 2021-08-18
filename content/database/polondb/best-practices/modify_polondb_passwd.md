@@ -1,5 +1,5 @@
 ---
-title: "修改PolonDB账户密码"
+title: "修改云数据库PolonDB账户密码"
 description: Test description
 date: 2021-04-10T00:38:25+09:00
 draft: false
@@ -8,9 +8,9 @@ enableToc: false
 keyword: 
 ---
 
-#### 背景：用户创建完PolonDB数据库后，如果想修改PolonDB账户密码，控制台"配置参数"无法完成次操作
+#### 背景：用户创建完云数据库PolonDB数据库后，如果想修改云数据库PolonDB账户密码，控制台"配置参数"无法完成次操作
 
-假设PolonDB的集群id为cl-on372zmc，协调器节点的ip地址为192.168.8.12，Worker 节点的ip地址为192.168.8.11和192.168.8.13，创建集群时设置的数据库名称/账户/密码为shanhe/shanhe/shanhe1234
+假设云数据库PolonDB的集群id为cl-on372zmc，协调器节点的ip地址为192.168.8.12，Worker 节点的ip地址为192.168.8.11和192.168.8.13，创建集群时设置的数据库名称/账户/密码为shanhe/shanhe/shanhe1234
 
 ![modify_polondb_passwd_1](/database/polondb/_images/modify_polondb_passwd_1.png)
 

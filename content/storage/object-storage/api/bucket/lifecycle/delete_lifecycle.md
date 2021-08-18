@@ -20,7 +20,7 @@ weight: 2
 
 ```http
 DELETE /?lifecycle HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -57,7 +57,7 @@ Authorization: <authorization-string>
 
 ```http
 DELETE /?lifecycle HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Content-Length: 30
 Authorization: authorization string

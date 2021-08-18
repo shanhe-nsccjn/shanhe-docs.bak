@@ -32,7 +32,7 @@ draft: false
 
 | Name | Type | Description |
 | --- | --- | --- |
-| is_static | Integer | 是否是静态配置项；1 表示静态配置项，修改后会重启 MongoDB；0 表示动态配置项，修改后不会重启 MongoDB |
+| is_static | Integer | 是否是静态配置项；1 表示静态配置项，修改后会重启 云数据库MongoDB；0 表示动态配置项，修改后不会重启 云数据库MongoDB |
 | parameter_value | String | 配置值 |
 | parameter_type | String | 配置值数据类型；包括 string, int, bool 三种 |
 | is_readonly | Integer | 该配置项是否为只读，1 表示只读配置项；0 表示非只读配置项 |

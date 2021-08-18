@@ -1,5 +1,5 @@
 ---
-title: "什么是RabbitMQ"
+title: "什么是消息队列RabbitMQ"
 date: 2020-01-30T00:40:25+09:00
 description: 
 draft: false
@@ -7,9 +7,9 @@ enableToc: false
 keyword: 
 ---
 
-[RabbitMQ](https://www.rabbitmq.com/)实现了AMQP协议，具有可靠性、灵活的路由、事务、高可用的队列、消息排序、可视化管理工具等功能，服务器端用Erlang语言编写，天生具备高可用和高并发的特性。
+[消息队列RabbitMQ](https://www.rabbitmq.com/)实现了AMQP协议，具有可靠性、灵活的路由、事务、高可用的队列、消息排序、可视化管理工具等功能，服务器端用Erlang语言编写，天生具备高可用和高并发的特性。
 
-`RabbitMQ on shanhe AppCenter`将RabbitMQ通过云应用的形式在shanhe AppCenter部署，具有如下特性:
+`消息队列RabbitMQ on shanhe AppCenter`将消息队列RabbitMQ通过云应用的形式在shanhe AppCenter部署，具有如下特性:
 
 - 支持横向与纵向在线伸缩
 - 系统自动运维，降低企业使用成本
@@ -17,4 +17,4 @@ keyword:
 - 与Haproxy+Keepalived集成，具备高可用负载均衡特性
 - 开箱即用，支持AMQP、MQTT、STOMP、WebSockets等多种丰富协议
 - 磁盘节点支持消息延迟队列插件，[使用方法参考](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange)
-- RabbitMQ节点支持消息追踪插件，[使用方法参考](http://www.rabbitmq.com/firehose.html)
+- 消息队列RabbitMQ节点支持消息追踪插件，[使用方法参考](http://www.rabbitmq.com/firehose.html)

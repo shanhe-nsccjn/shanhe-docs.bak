@@ -40,7 +40,7 @@ draft: false
 | cache_node_id | String | 缓存服务节点ID |
 | cache_id | String | 缓存服务ID |
 | cache_node_name | String | 缓存服务节点名称 |
-| cache_role | String | 缓存服务节点角色，目前有 “master” 和 “slave” 两种。<br/>master： 主节点。目前 Redis 集群只拥有一个主节点，Memcached 集群节点都是主节点。<br/>slave： 从节点。目前只有 Redis 集群才有从节点。 |
+| cache_role | String | 缓存服务节点角色，目前有 “master” 和 “slave” 两种。<br/>master： 主节点。目前 Redis 集群只拥有一个主节点，存储服务存储服务Memcached 集群节点都是主节点。<br/>slave： 从节点。目前只有 Redis 集群才有从节点。 |
 | cache_type | String | 缓存服务类型 |
 | private_ip | String | 缓存服务节点IP |
 | status | String | 缓存服务状态, 有效值为pending, active, down，suspended。<br/>pending： 等待被创建<br/>active： 正常运行中<br/>down： 同步中断<br/>suspended : 由于欠费, 已被暂停使用 |

@@ -1,6 +1,6 @@
 ---
 title: "SSH秘钥无法登录云服务器，提示未注册题"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 weight: 20
 draft: false

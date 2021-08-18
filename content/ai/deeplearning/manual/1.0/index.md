@@ -1,7 +1,7 @@
 ---
 ---
 
-# Deep Learning on shanhe AppCenter 用户指南
+#深度学习基础服务on shanhe AppCenter 用户指南
 
 
 ## 深度学习简介
@@ -24,13 +24,13 @@ PyTorch 从 Torch 发展而来，并经过了大量改进，由 FaceBook AI 团�
 
 Keras 是一个高层神经网络 API，由 Python 编写，通过调用其他深度学习框架来进行计算，如 TensorFlow、Theano 以及 CNTK。Keras 高度模块化，能快速搭建神经网络，并且非常容易上手。
 
-## 山河深度学习平台
+## 山河深度学习基础服务
 
-基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习平台配置了 CUDA8.0 和 cuDNN5，并安装了流行的深度学习框架，如 Caffe(BVLC)，TensorFlow(1.2.1)，Keras(2.0.9)，PyTorch(0.2.0_4)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
+基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习基础服务配置了 CUDA8.0 和 cuDNN5，并安装了流行的深度学习框架，如 Caffe(BVLC)，TensorFlow(1.2.1)，Keras(2.0.9)，PyTorch(0.2.0_4)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
 
 > <font color=red>目前仅 pek3a , pek3b , sh1a 支持 GPU，如需在其他区创建可以将 GPU 数量设置为 0。TensorFlow，PyTorch 和 Keras 支持用 CPU 进行深度学习应用的训练和测试，Caffe 需要重新编译才可以。</font>
 
-## 部署 Deep Learning 服务
+## 部署深度学习基础服务
 
 ### 第1步：基本设置
 
@@ -54,17 +54,17 @@ Keras 是一个高层神经网络 API，由 Python 编写，通过调用其他�
 
 ![第4步：环境设置](env_config.png)
 
-- Deep Learning app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/command_line_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
+-深度学习基础服务app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/command_line_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
 
-## Deep Learning 测试
+##深度学习基础服务测试
 
 ### 测试环境
 
-深度学习平台使用 miniconda2 来管理 Python 环境，Python 的版本为2.7，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
+深度学习基础服务使用 miniconda2 来管理 Python 环境，Python 的版本为2.7，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
 
 > [MNIST](http://yann.lecun.com/exdb/mnist/) 是著名的手写数字数据集，包含 0~9 十个各种风格的手写数字，经常用于深度学习入门及测试。其内容分为训练集和测试集，训练数据集包含 60,000 个样本，测试数据集包含 10,000 样本，数据集中的每张图片由 28x28 个像素点构成。
 
-Deep Learning 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/command_line_tools/qsctl.html))，从 对象存储服务OIS 获取数据：    
+深度学习基础服务 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/command_line_tools/qsctl.html))，从 对象存储服务OIS 获取数据：    
 
 ```shell
 cd /home/ubuntu/tensorflow  

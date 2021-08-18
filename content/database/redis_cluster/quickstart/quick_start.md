@@ -4,7 +4,7 @@ description: test
 draft: false
 ---
 
-## 创建 Redis Cluster APP
+## 创建 云数据库Redis Cluster APP
 
 > 在创建 APP 之前，您需要创建一个 VPC 网络和关联一个私有网络，详情见 ([VPC 指南](https://docs.shanhe.com/product/network/vpc))。
 

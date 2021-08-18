@@ -1,7 +1,7 @@
 ---
 ---
 
-# Deep Learning on shanhe AppCenter 用户指南
+#深度学习基础服务on shanhe AppCenter 用户指南
 
 
 ## 深度学习简介
@@ -24,10 +24,10 @@ PyTorch 从 Torch 发展而来，并经过了大量改进，由 FaceBook AI 团�
 
 Keras 是一个高层神经网络 API，由 Python 编写，通过调用其他深度学习框架来进行计算，如 TensorFlow、Theano 以及 CNTK。Keras 高度模块化，能快速搭建神经网络，并且非常容易上手。
 
-## 山河深度学习平台
+## 山河深度学习基础服务
 
-基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习平台提供了 CUDA9.1+cuDNN7.1.3 ， CUDA8.0+cuDNN7.1.3 和 CPU 等3套配置，并安装了流行的深度学习框架，如 TensorFlow(1.6.0/1.7.0)，Caffe(BVLC)，PyTorch(0.3.1)，Keras(2.1.5)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
-山河深度学习平台组件版本对照表
+基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习基础服务提供了 CUDA9.1+cuDNN7.1.3 ， CUDA8.0+cuDNN7.1.3 和 CPU 等3套配置，并安装了流行的深度学习框架，如 TensorFlow(1.6.0/1.7.0)，Caffe(BVLC)，PyTorch(0.3.1)，Keras(2.1.5)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
+山河深度学习基础服务组件版本对照表
 
 App版本 | TensorFlow | Caffe | PyTorch | Keras
 -------- | ----- | ----- | ----- | -----
@@ -37,9 +37,9 @@ CPU      | 1.7.0 | Intel | 0.3.1 | 2.1.5
 
 > <span style="color:red">目前仅 pek3a , pek3b , sh1a 支持 GPU，如需在其他区创建请选择CPU版。TensorFlow，Caffe ， PyTorch 和 Keras 均支持用 CPU 进行深度学习应用的训练和测试。</span>
 
-本说明文档仅对应山河深度学习平台1.1版本，1.0版本说明文档请参考[山河深度学习平台1.0](https://docs.shanhe.com/product/ai/deeplearning/1.0/)。
+本说明文档仅对应山河深度学习基础服务1.1版本，1.0版本说明文档请参考[山河深度学习基础服务1.0](https://docs.shanhe.com/product/ai/deeplearning/1.0/)。
 
-## 部署 Deep Learning 服务
+## 部署深度学习基础服务
 
 ### 第1步：基本设置
 
@@ -63,13 +63,13 @@ CPU      | 1.7.0 | Intel | 0.3.1 | 2.1.5
 
 ![第4步：环境设置](env_config.png)
 
-- Deep Learning app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
+-深度学习基础服务app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
 
-## Deep Learning 测试
+##深度学习基础服务测试
 
 ### 测试环境
 
-深度学习平台使用 VirtualEnv 来管理 Python 环境，Python 的版本为 2.7 和 3.6 ，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
+深度学习基础服务使用 VirtualEnv 来管理 Python 环境，Python 的版本为 2.7 和 3.6 ，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
 
 平台已经为用户安装好了Python 2.7和Python 3.6的VirtualEnv环境，并在其中预装了深度学习框架和常用工具包，放在ubuntu用户根目录的workspaces文件夹，py2和py3分别对应Python 2.7和3.6版本。用户登录后，使用如下命令激活和退出
 ```shell
@@ -86,10 +86,10 @@ VirtualEnv的激活和退出
 
 > <span style="color:red">在一个环境激活后，直接输入python命令即可运行对应版本的python，不需要显式指定python2或python3，输入命令前注意命令提示行开头小括号中的信息，py2和py3分别对应2.7和3.6版本的python。</span>
 
-深度学习平台为用户准备了环境完整性测试样例，放在ubuntu用户根目录的test文件夹，使用MNIST数据集对Caffe，TensorFlow，PyTorch和Keras进行测试。
+深度学习基础服务为用户准备了环境完整性测试样例，放在ubuntu用户根目录的test文件夹，使用MNIST数据集对Caffe，TensorFlow，PyTorch和Keras进行测试。
 > [MNIST](http://yann.lecun.com/exdb/mnist/) 是著名的手写数字数据集，包含 0~9 十个各种风格的手写数字，经常用于深度学习入门及测试。其内容分为训练集和测试集，训练数据集包含 60,000 个样本，测试数据集包含 10,000 样本，数据集中的每张图片由 28x28 个像素点构成。
 
-Deep Learning 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html))，从 对象存储服务OIS 获取数据：
+深度学习基础服务 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html))，从 对象存储服务OIS 获取数据：
 
 ```shell
 cd /home/ubuntu/tensorflow
@@ -101,7 +101,7 @@ qsctl cp -r qs://mydata/ data/
 
 ### Caffe 测试示例
 
-Caffe 支持 Python 接口，深度学习平台已经提供，目前不支持多机分布式训练，详情请见 [Caffe 文档](http://caffe.berkeleyvision.org)。(**GPU和CPU版本App分别内置了不同版本的 Caffe ，请依据硬件情况选择需要部署的版本。**)
+Caffe 支持 Python 接口，深度学习基础服务已经提供，目前不支持多机分布式训练，详情请见 [Caffe 文档](http://caffe.berkeleyvision.org)。(**GPU和CPU版本App分别内置了不同版本的 Caffe ，请依据硬件情况选择需要部署的版本。**)
 
 #### 单机
 
@@ -289,10 +289,10 @@ jupyter notebook 开发环境运行项目
 ![jupyter notebook 开发环境运行项目](jupyter_train.png)
 
 ### 平台性能测试
-为了让用户快速了解深度学习平台的性能指标以便于选择，我们使用 TensorFlow [性能测试代码](https://github.com/tensorflow/benchmarks)中的 CNN Benchmark ，对常用硬件配置组合进行了测试。
+为了让用户快速了解深度学习基础服务的性能指标以便于选择，我们使用 TensorFlow [性能测试代码](https://github.com/tensorflow/benchmarks)中的 CNN Benchmark ，对常用硬件配置组合进行了测试。
 我们选择 ResNet-50 模型，调用平台预装的 Python 3.6 + TensorFlow 1.7.0 环境，使用合成数据进行测试。
 
-山河深度学习平台组件版本对照表
+山河深度学习基础服务组件版本对照表
 
 App版本 | CPU | Memory | GPU | BatchSize | 项目 | Images/Sec (step time)
 -------- | ----- | ----- | ----- | ----- | ----- | -----

@@ -1,13 +1,13 @@
 ---
-title: "时序数据库 ChronusDB"
-linkTitle: "ChronusDB"
+title: "云数据库ChronusDB"
+linkTitle: "云数据库ChronusDB"
 weight: 05
 collapsible: true
 type: "product"
 
 section1:
-  title: ChronusDB
-  vice_title: ChronusDB 是一款基于 ClickHouse 定制的时序数据库产品。
+  title: 云数据库ChronusDB
+  vice_title: 云数据库ChronusDB 是一款基于云数据库ClickHouse 定制的时序数据库产品。
 
 Section2:
   title: 用户指南
@@ -25,11 +25,11 @@ Section2:
       url: "quickstart/quick_start/"
 
     - title: 操作指南
-      content: 学习上手如何管理 ChronusDB 集群，以及如何使用 ChronusDB 提供的相关服务等。
+      content: 学习上手如何管理 云数据库ChronusDB 集群，以及如何使用 云数据库ChronusDB 提供的相关服务等。
       url: "manual/cluster_info/"
 
     - title: 最佳实践
-      content: ChronusDB 的最佳实践
+      content: 云数据库ChronusDB 的最佳实践
       url: "best-practices/db_use/"
 
 section3:
@@ -50,17 +50,17 @@ section3:
 section4:
   children:
     - title: 了解
-      content: 什么是 ChronusDB
+      content: 什么是 云数据库ChronusDB
       vice_title: 了解的第一步
       children:
         - title: 产品简介
           url: "intro/introduction/"
 
     - title: 进阶
-      content: 学习如何创建、管理、使用 ChronusDB 集群
+      content: 学习如何创建、管理、使用 云数据库ChronusDB 集群
       vice_title: 上手的第一步
       children: 
-        - title: 创建 ChronusDB
+        - title: 创建 云数据库ChronusDB
           url: "quickstart/quick_start/"
 
 

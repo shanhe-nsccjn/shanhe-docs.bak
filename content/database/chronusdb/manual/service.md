@@ -32,9 +32,9 @@ draft: false
 
 > **注解：**
 >
-> 1.「ChronusDB on shanhe」在增加节点时，不支持对数据的重新分布。
+> 1.「云数据库ChronusDB on shanhe」在增加节点时，不支持对数据的重新分布。
 >
-> 2.「ChronusDB on shanhe」暂不支持对集群进行删除节点操作。
+> 2.「云数据库ChronusDB on shanhe」暂不支持对集群进行删除节点操作。
 
 ## 扩容集群
 

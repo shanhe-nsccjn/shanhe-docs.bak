@@ -312,7 +312,7 @@ vxnet|创建应用时所在网络ID
 
 | 参数| 描述 |
 | --- | --- |
-external\_service|此应用依赖外部应用信息，名称可以任意定义，即可以命名为 zk_service 表示依赖 ZooKeeper，用户可以选择在同一 VPC 中满足 limits 限定条件的集群作为此应用依赖的服务。<br>limits 限定条件可以指定应用所依赖服务的 app id 及 app version。<br>`allowed_operations`　定义了在集群创建完成后，用户可对集群依赖进行的操作。<br>`add` 表示用户可以在集群创建后添加外部依赖集群，即使现在仍然有集群，仍然可添加<br>`modify` 表示用户可以对集群中现有的依赖集群进行替换，替换成允许的应用版本的其它集群<br> `delete` 表示用户可以删除集群中现有的依赖集群，如果未定义 `add` 操作，则删除之后不能再添加回来
+external\_service|此应用依赖外部应用信息，名称可以任意定义，即可以命名为 zk_service 表示依赖 大数据服务ZooKeeper，用户可以选择在同一 VPC 中满足 limits 限定条件的集群作为此应用依赖的服务。<br>limits 限定条件可以指定应用所依赖服务的 app id 及 app version。<br>`allowed_operations`　定义了在集群创建完成后，用户可对集群依赖进行的操作。<br>`add` 表示用户可以在集群创建后添加外部依赖集群，即使现在仍然有集群，仍然可添加<br>`modify` 表示用户可以对集群中现有的依赖集群进行替换，替换成允许的应用版本的其它集群<br> `delete` 表示用户可以删除集群中现有的依赖集群，如果未定义 `add` 操作，则删除之后不能再添加回来
 resource\_group|用来说明当前这个集群支持哪些配置组合，必须定义range。<br>在 role 下的 cpu/memory/count/instance_class/volume_size/volume_class/replica 里面可以定义 resource_group,<br>表示每个 resource_group 对应的值。
 
 
@@ -591,7 +591,7 @@ volume、loadbalancer、eip、security_group、snapshot、nic。
 
 #### links
 
-新建应用可能会依赖外部应用，比如 Kafka 依赖 ZooKeeper，依赖名称可以任意命名，不一定是 external\_service，比如命名为 zk\_service；可以依赖多个外部应用，非必填项。
+新建应用可能会依赖外部应用，比如消息队列消息队列Kafka 依赖 大数据服务ZooKeeper，依赖名称可以任意命名，不一定是 external\_service，比如命名为 zk\_service；可以依赖多个外部应用，非必填项。
 
 > 集群创建完成后，可对集群的依赖进行修改。用户可进行的操作在 `config.json` 外部依赖 `allowed_operations` 定义   
 > `add` 表示用户可以在集群创建后添加外部依赖集群，即使现在仍然有集群，仍然可添加   
@@ -687,7 +687,7 @@ class|数据盘类型，支持 0、2、3、5、6、100、200 其中 0 表示性�
 
 ##### replica
 
-此类节点每个节点的副本个数，这是给分片式 (即多主多从，如 redis cluster) 分布式系统使用的功能，定义每个分片的 master 有多少个 replica。
+此类节点每个节点的副本个数，这是给分片式 (即多主多从，如 云数据库Redis Cluster) 分布式系统使用的功能，定义每个分片的 master 有多少个 replica。
 这类应用需要指定 role 名称比如 master，副本节点的 role 系统会自动在 master 添加 -replica 后缀，如 master-replica。
 因此开发者在定义节点角色名称时不能定义后缀为 "-replica"，这是一个系统保留命名规则。replica 为非必填项。
 
@@ -721,7 +721,7 @@ class|数据盘类型，支持 0、2、3、5、6、100、200 其中 0 表示性�
 
 ##### vertical\_scaling\_policy
 
-配置纵向伸缩时的操作策略，目前支持：sequential 和 parallel，默认是 parallel 即并行操作，非必填项。比如 ZooKeeper 在扩容时希望不影响对外服务，可设置该值为 sequential，串行重启。
+配置纵向伸缩时的操作策略，目前支持：sequential 和 parallel，默认是 parallel 即并行操作，非必填项。比如 大数据服务ZooKeeper 在扩容时希望不影响对外服务，可设置该值为 sequential，串行重启。
 
 ##### user_access　
 
@@ -737,7 +737,7 @@ class|数据盘类型，支持 0、2、3、5、6、100、200 其中 0 表示性�
 
 ##### server\_id\_upper\_bound
 
-节点的 index 的上限，从1开始记起，有些服务如 ZooKeeper 要求这个 index (myid) 必须控制在某一个范围内。缺省没有上限，非必填项。
+节点的 index 的上限，从1开始记起，有些服务如 大数据服务ZooKeeper 要求这个 index (myid) 必须控制在某一个范围内。缺省没有上限，非必填项。
 
 ##### services　
 
@@ -874,7 +874,7 @@ type |custom 表示这个服务是自定义的， 自定义的名字 (即 key，
 
 #### env
 
-应用参数配置，比如 ZooKeeper的 zoo.cfg 里的参数配置等。
+应用参数配置，比如 大数据服务ZooKeeper的 zoo.cfg 里的参数配置等。
 
 #### advanced\_actions
 
@@ -887,7 +887,7 @@ type |custom 表示这个服务是自定义的， 自定义的名字 (即 key，
 
 #### endpoints
 
-应用可定义 endpoints 供第三方使用，服务名称可以自定义，但建议使用通用的名称比如 client，manager 等，这样第三方应用使用的时候更方便一些，被第三方应用使用的可能性更大一些。详细的服务信息必须包括 port，但 protocol 非必须项，即可以不提供 protocol 信息。port 除可以是整数端口外，也可以是一个指向 env 的变量，如 "port":"env.port"或 "port":"role_name.env.port"，这样用户在更新这个变量的时候会自动更新其关联的 endpoint 端口。如果您的应用是一个大家熟知的且 enpoint 不会被修改，可以省略这一定义，比如 ZooKeeper，通用端口是 2181，所以可以省略掉。
+应用可定义 endpoints 供第三方使用，服务名称可以自定义，但建议使用通用的名称比如 client，manager 等，这样第三方应用使用的时候更方便一些，被第三方应用使用的可能性更大一些。详细的服务信息必须包括 port，但 protocol 非必须项，即可以不提供 protocol 信息。port 除可以是整数端口外，也可以是一个指向 env 的变量，如 "port":"env.port"或 "port":"role_name.env.port"，这样用户在更新这个变量的时候会自动更新其关联的 endpoint 端口。如果您的应用是一个大家熟知的且 enpoint 不会被修改，可以省略这一定义，比如 大数据服务ZooKeeper，通用端口是 2181，所以可以省略掉。
 
 #### reserved\_ips
 
@@ -1066,7 +1066,7 @@ config.json 文件里对每个变量需要定义其类型、取值范围、默�
 | 参数 | 参数 | 描述 |
 | --- | --- | --- |
 type|\-|变量数据类型，支持：integer、boolean、string、number (浮点数)、array、service、loadbalancer、password、accesskey、vxnet、eip。
-\-|service|新应用可能会依赖外部应用，比如 Kafka 依赖 ZooKeeper，应用使用该类型表示。
+\-|service|新应用可能会依赖外部应用，比如消息队列消息队列Kafka 依赖 大数据服务ZooKeeper，应用使用该类型表示。
 \-|loadbalancer|负载均衡器，可以使用该类型表示，定义时需要同时定义负载均衡器后端服务端口参数：port，比如搭建的 HTTP 的 web server，可以指定 port 为 80。需要使用负载均衡器监听多个 port 时，可将 port 定义为数组，如 port: \[80,443\] 
 \-|password|可在 env 或 service_params 变量中使用，界面会用密码形式显示输入。
 \-|accesskey|可在 env 变量中使用，用户选择当前账号下的 API 密钥 ID，系统会将其对应密钥一并注册到 metadata service，参见[Metadata 服务](/appcenter/dev-platform/cluster-developer-guide/metadata/metadata-service#env)以及[如何使用环境变量里的accesskey类型数据](/appcenter/dev-platform/faq/cluster-faqs#34-如何使用环境变量里的accesskey类型数据)。

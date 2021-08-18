@@ -83,13 +83,13 @@ x-qs-request-id: aa08cf7a43f611e5886952542e6ce14b
     {
       "name": "mybucket",
       "location": "jn1a",
-      "url": "https://mybucket.jn1a.is.shanhe.com",
+      "url": "https://mybucket.jn1.is.shanhe.com",
       "created": "2015-07-11T04:45:57Z"
     },
     {
       "name": "myphotos",
       "location": "jn1a",
-      "url": "https://myphotos.jn1a.is.shanhe.com",
+      "url": "https://myphotos.jn1.is.shanhe.com",
       "created": "2015-07-12T09:40:32Z"
     }
   ]

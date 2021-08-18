@@ -14,7 +14,7 @@ draft: false
 | --- | --- | --- | --- |
 | vxnet | String | 缓存服务运行的私有网络ID | Yes |
 | cache_size | Integer | 缓存服务节点内存大小，单位 GB. | Yes |
-| cache_type | String | 缓存服务类型，目前支持 Redis 2.8.17 和 Memcached 1.4.13. | Yes |
+| cache_type | String | 缓存服务类型，目前支持 Redis 2.8.17 和 存储服务Memcached 1.4.13. | Yes |
 | node_count | Integer | 缓存服务节点个数，默认为1. | No |
 | cache_name | String | 缓存服务名称 | No |
 | cache_parameter_group | String | 缓存服务配置组ID，如果不指定则为默认配置组。 | No |

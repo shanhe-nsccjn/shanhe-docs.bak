@@ -8,13 +8,13 @@ weight: 10
 
 ## 创建
 
-在山河上，您可以很方便的创建和管理一个 QKE 集群。支持横向在线伸缩，同时具有自我诊断功能，即当系统发现某节点坏死时在控制台显示状态。 另外我们还提供了监控告警等功能来帮助您更好的管理集群。集群将运行于私有网络内，结合山河提供的硬盘，在保障高性能的同时兼顾您的数据安全。
+在山河上，您可以很方便的创建和管理一个 容器集群服务QKE 集群。支持横向在线伸缩，同时具有自我诊断功能，即当系统发现某节点坏死时在控制台显示状态。 另外我们还提供了监控告警等功能来帮助您更好的管理集群。集群将运行于私有网络内，结合山河提供的硬盘，在保障高性能的同时兼顾您的数据安全。
 
 ### 准备工作
 
 #### 网络
 
-为了保障数据安全， QKE 集群需要运行在受管私有网络中。若还未创建 VPC 和私有网络，可根据页面提示创建一个，也可以参考 [创建 VPC](/network/vpc/manual/base/#创建) 和 [创建私有网络](/network/vpc/manual/base/#私有网络) 提前创建好。
+为了保障数据安全， 容器集群服务QKE 集群需要运行在受管私有网络中。若还未创建 VPC 和私有网络，可根据页面提示创建一个，也可以参考 [创建 VPC](/network/vpc/manual/base/#创建) 和 [创建私有网络](/network/vpc/manual/base/#私有网络) 提前创建好。
 
 ![创建依赖的网络资源](../../_images/create_network.png)
 
@@ -38,7 +38,7 @@ weight: 10
 
 #### 硬盘
 
-请确保至少 230GB、14 块硬盘配额。硬盘的默认类型与 QKE 集群云服务器类型一致。如果配额不足请通过工单申请。
+请确保至少 230GB、14 块硬盘配额。硬盘的默认类型与 容器集群服务QKE 集群云服务器类型一致。如果配额不足请通过工单申请。
 
 #### 负载均衡器和防火墙
 
@@ -52,7 +52,7 @@ weight: 10
 
 ### 配置
 
-在创建的对话框中，您需要填写名称 (可选)，选择 QKE 版本号以及选择计费方式。 
+在创建的对话框中，您需要填写名称 (可选)，选择 容器集群服务QKE 版本号以及选择计费方式。 
 
 ![](../../_images/create-basic-settings.png)
 
@@ -81,27 +81,27 @@ weight: 10
 
 ![](../../_images/create-external-service.png)
 
-##### etcd 服务
+##### 存储服务etcd
 
-k8s 集群使用 etcd 作为后端存储，建议使用山河提供的 [etcd 服务](https://console.shanhe.com/apps/app-fdyvu2wk) 单独部署和管理，以获得更好的可用性和容错性。
+k8s 集群使用存储服务etcd 作为后端存储，建议使用山河提供的 [etcd 服务](https://console.shanhe.com/apps/app-fdyvu2wk) 单独部署和管理，以获得更好的可用性和容错性。
 
-> etcd 集群和 QKE 集群需部署在同一 VPC 下。
+> 存储服务etcd 集群和 容器集群服务QKE 集群需部署在同一 VPC 下。
 
 > 更多详情可参考 k8s 官方文档 [Options for Highly Available topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology)。
 
-如果创建 QKE 集群时没有选择独立的 etcd 服务，系统将使用内置在主节点的 etcd。
+如果创建 容器集群服务QKE 集群时没有选择独立的 存储服务etcd 服务，系统将使用内置在主节点的 存储服务etcd。
 
-> 注意：内置 etcd 会占用 QKE 主节点的资源并无法增删节点，生产环境建议独立部署 [etcd 服务](https://console.shanhe.com/apps/app-fdyvu2wk)。
+> 注意：内置存储服务etcd 会占用 容器集群服务QKE 主节点的资源并无法增删节点，生产环境建议独立部署 [etcd 服务](https://console.shanhe.com/apps/app-fdyvu2wk)。
 
-##### ELK 服务
+##### 大数据服务NIFI 服务
 
-QKE 集群的日志组件使用 [Elasticsearch](https://github.com/elastic/elasticsearch) 作为后端存储，建议使用山河提供的 [ELK 服务](https://console.shanhe.com/apps/app-p6au3oyq) 单独部署和管理，以获得更好的可用性和可维护性。
+容器集群服务QKE 集群的日志组件使用 [Elasticsearch](https://github.com/elastic/elasticsearch) 作为后端存储，建议使用山河提供的 [大数据服务NIFI 服务](https://console.shanhe.com/apps/app-p6au3oyq) 单独部署和管理，以获得更好的可用性和可维护性。
 
-> ELK 集群和 QKE 集群需部署在同一 VPC 下。
+> 大数据服务NIFI 集群和 容器集群服务QKE 集群需部署在同一 VPC 下。
 
-如果创建 QKE 集群时没有选择独立的 ELK 服务，系统将使用内置的 Elasticsearch。
+如果创建 容器集群服务QKE 集群时没有选择独立的 大数据服务NIFI 服务，系统将使用内置的 Elasticsearch。
 
-> 注意：内置 Elasticsearch 会占用 k8s 集群的资源并依赖 k8s 进行管理，在 k8s 集群发生故障期间 Elasticsearch 可能无法正常工作。生产环境建议独立部署 [ELK 服务](https://console.shanhe.com/apps/app-p6au3oyq) 。
+> 注意：内置 Elasticsearch 会占用 k8s 集群的资源并依赖 k8s 进行管理，在 k8s 集群发生故障期间 Elasticsearch 可能无法正常工作。生产环境建议独立部署 [大数据服务NIFI 服务](https://console.shanhe.com/apps/app-p6au3oyq) 。
 
 #### 服务环境参数设置
 
@@ -139,17 +139,17 @@ registry-mirrors | 完整的 Docker 镜像服务地址，比如 `https://mirror.
 
 #### 开启选装组件
 
-QKE 默认仅最小化安装 KubeSphere，可通过“选装组件”参数开启其他组件，各组件的功能说明可参考 [KubeSphere 官方文档](https://kubesphere.com.cn/en/docs/pluggable-components/)。
+容器集群服务QKE 默认仅最小化安装 KubeSphere，可通过“选装组件”参数开启其他组件，各组件的功能说明可参考 [KubeSphere 官方文档](https://kubesphere.com.cn/en/docs/pluggable-components/)。
 
 ![开启选装组件](../../_images/install-modules.png)
 
 ### 创建成功
 
-当 QKE 创建完成之后，您可以查看每个节点的运行状态。当节点的服务状态显示为“正常”状态，表示该节点启动正常。 当每个节点都启动正常后 QKE 集群显示为“活跃”状态，表示您已经可以正常使用 QKE 服务了。
+当 容器集群服务QKE 创建完成之后，您可以查看每个节点的运行状态。当节点的服务状态显示为“正常”状态，表示该节点启动正常。 当每个节点都启动正常后 容器集群服务QKE 集群显示为“活跃”状态，表示您已经可以正常使用 容器集群服务QKE 服务了。
 
 ### 验证
 
-QKE 集群创建完成之后可以进行验证，创建集群一般在 612 分左右（视选装的组件而定）。找到客户端节点，点击 vnc 图标。
+容器集群服务QKE 集群创建完成之后可以进行验证，创建集群一般在 612 分左右（视选装的组件而定）。找到客户端节点，点击 vnc 图标。
 
 使用 `root / <cluster id>` 登录。首次登录需要修改密码。登录客户端节点后可以通过 ssh 免密登录其他节点。
 
@@ -175,9 +175,9 @@ kubectl get pods --all-namespaces
 
 ### 增加节点
 
-当 QKE 需增加节点以应付应用逐步增多带来的压力，您可以在 QKE 详情页点击“新增节点”按钮，建议新增节点类型与集群主节点类型一致。添加成功详情页会显示服务状态为活跃。
+当 容器集群服务QKE 需增加节点以应付应用逐步增多带来的压力，您可以在 容器集群服务QKE 详情页点击“新增节点”按钮，建议新增节点类型与集群主节点类型一致。添加成功详情页会显示服务状态为活跃。
 
-> __注意__：`QKE v1.0.1` 以及更老的版本只支持同一种类型的工作节点，如果之前是性能型节点，那么之后也只能增加性能型节点，如果增加了其他类型的节点，可能会导致需要挂载硬盘的工作负载无法启动。
+> __注意__：`容器集群服务QKE v1.0.1` 以及更老的版本只支持同一种类型的工作节点，如果之前是性能型节点，那么之后也只能增加性能型节点，如果增加了其他类型的节点，可能会导致需要挂载硬盘的工作负载无法启动。
 
 ![](../../_images/add-node-manually1.png)
 
@@ -185,7 +185,7 @@ kubectl get pods --all-namespaces
 
 ### 删除节点
 
-当客户端连接并不多的时候您也可以在 QKE 详情页选中需要删除的节点，然后点“删除”按钮删除节点，以节省资源和费用。此操作要保证 QKE 集群内有足够资源容纳迁移的 Pod。
+当客户端连接并不多的时候您也可以在 容器集群服务QKE 详情页选中需要删除的节点，然后点“删除”按钮删除节点，以节省资源和费用。此操作要保证 容器集群服务QKE 集群内有足够资源容纳迁移的 Pod。
 
 ![](../../_images/del-node-manually1.png)
 
@@ -193,7 +193,7 @@ kubectl get pods --all-namespaces
 
 ### 自动伸缩
 
-使用 Console 控制台运维工具的[自动伸缩](https://docs.shanhe.com/product/operation/autoscaling)功能，选择指定的 QKE 集群以及节点类型，操作类型选择“调整应用节点数量”
+使用 Console 控制台运维工具的[自动伸缩](https://docs.shanhe.com/product/operation/autoscaling)功能，选择指定的 容器集群服务QKE 集群以及节点类型，操作类型选择“调整应用节点数量”
 
 ![](../../_images/autoscale-node-qke.png)
 
@@ -205,7 +205,7 @@ kubectl get pods --all-namespaces
 
 ## 纵向伸缩
 
-如果需要给节点增强配置或降低配置，可以使用扩容集群的功能。`注意`：此操作会造成扩容节点暂时不可用，操作前请保证 QKE 集群内有足够资源容纳迁移的 Pod。
+如果需要给节点增强配置或降低配置，可以使用扩容集群的功能。`注意`：此操作会造成扩容节点暂时不可用，操作前请保证 容器集群服务QKE 集群内有足够资源容纳迁移的 Pod。
 
 ![](../../_images/vertical-scale-click.png)
 
@@ -215,7 +215,7 @@ kubectl get pods --all-namespaces
 
 ## 升级
 
-从 `QKE v2.0.0` 版本起支持原地升级，老版本高可用集群（三个主节点）可以在不中断现有业务的情况下升级到最新版本，单个主节点集群在升级过程中 k8s apiserver 会有短暂中断。
+从 `容器集群服务QKE v2.0.0` 版本起支持原地升级，老版本高可用集群（三个主节点）可以在不中断现有业务的情况下升级到最新版本，单个主节点集群在升级过程中 k8s apiserver 会有短暂中断。
 
 > **注意**：由于升级过程需要消耗较多的磁盘 IO 以及 CPU，**生产环境请在业务低谷期操作，升级过程中请避免部署新工作负载或者变更配置等操作**。
 
@@ -229,14 +229,14 @@ kubectl get pods --all-namespaces
 
 > 升级一般需要 12 小时，请耐心等待
 
-> 注意：`QKE v1.0.0` 基于 `Ubuntu 16.04` 操作系统，在升级完成后，可能会在 KubeSphere 页面上遇到 CPU 使用率显示不正确的情况，这是由操作系统内核原因造成，需要在升级后根据业务情况关闭集群然后再开启集群来解决（此操作会把操作系统替换成 `Ubuntu 18.04`）。
+> 注意：`容器集群服务QKE v1.0.0` 基于 `Ubuntu 16.04` 操作系统，在升级完成后，可能会在 KubeSphere 页面上遇到 CPU 使用率显示不正确的情况，这是由操作系统内核原因造成，需要在升级后根据业务情况关闭集群然后再开启集群来解决（此操作会把操作系统替换成 `Ubuntu 18.04`）。
 
 ## 监控
 
-使用 Console 控制台运维工具的 [监控Dashboard](/monitor_service/cloudsat/dashboard/intro/intro/) 功能，创建监控面板和图表，选择指定的 QKE 集群、节点以及指标，
+使用 Console 控制台运维工具的 [监控Dashboard](/monitor_service/cloudsat/dashboard/intro/intro/) 功能，创建监控面板和图表，选择指定的 容器集群服务QKE 集群、节点以及指标，
 
 ![](../../_images/dashboard-monitor.png)
 
 ## 删除
 
-用户删除集群可以在 APPCenter 集群列表页选中待删除集群，在更多操作中选择删除，可删除 QKE 集群。集群删除后会进入回收站，用户可以到回收站恢复或永久删除集群，回收站中资源保存 2 小时之后会自动永久删除。集群永久删除后用户可手动删除 QKE 集群残留资源，如硬盘、负载均衡器、防火墙。
+用户删除集群可以在 APPCenter 集群列表页选中待删除集群，在更多操作中选择删除，可删除 容器集群服务QKE 集群。集群删除后会进入回收站，用户可以到回收站恢复或永久删除集群，回收站中资源保存 2 小时之后会自动永久删除。集群永久删除后用户可手动删除 容器集群服务QKE 集群残留资源，如硬盘、负载均衡器、防火墙。

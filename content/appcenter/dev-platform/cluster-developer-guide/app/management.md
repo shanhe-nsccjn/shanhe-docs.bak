@@ -21,7 +21,7 @@ weight: 1
 
 ![应用管理首页](/appcenter/dev-platform/cluster-images/home.png)
 
-进入创建页面之后，输入应用名称，例如：HBase。
+进入创建页面之后，输入应用名称，例如：大数据服务HBase。
 
 ![输入应用名称](/appcenter/dev-platform/cluster-images/create_app.png)
 
@@ -45,7 +45,7 @@ weight: 1
 
 需要强调的是：若对于已发布的应用需要更新其中部分内容，需要等下次版本发布成功后才可体现在应用中心中。
 
-完善的 HBase 应用信息如下：
+完善的 大数据服务HBase 应用信息如下：
 
 ![应用信息1](/appcenter/dev-platform/cluster-images/app_info1.png)
 ![应用信息2](/appcenter/dev-platform/cluster-images/app_info2.png)

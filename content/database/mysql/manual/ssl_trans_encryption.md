@@ -6,7 +6,7 @@ draft: false
 ---
 
 
-shanhe MySQL Plus 云数据库支持开启 SSL传输加密服务，默认关闭。
+shanhe 云数据库MySQL Plus 云数据库支持开启 SSL传输加密服务，默认关闭。
 
 开启该服务后，获取 SSL 证书参考启动日志服务端中 wget `下载单个目录`（mysql-cert）的方法下载。
 

@@ -22,8 +22,8 @@ AWS S3 兼容接口的设计目标，是为了尽可能的方便那些曾基于 
 
 | Style | URL Format | Example |
 | --- | --- | --- |
-| Path | `s3.<zone-id>.is.shanhe.com/<bucket-name>/` | https://s3.jn1a.is.shanhe.com/mybucket/mykey |
-| Virtual-host | `<bucket-name>.s3.<zone-id>.is.shanhe.com/` | https://mybucket.s3.jn1a.is.shanhe.com/mykey |
+| Path | `s3.<zone-id>.is.shanhe.com/<bucket-name>/` | https://s3.jn1.is.shanhe.com/mybucket/mykey |
+| Virtual-host | `<bucket-name>.s3.<zone-id>.is.shanhe.com/` | https://mybucket.s3.jn1.is.shanhe.com/mykey |
 
 这里的”访问地址”在 AWS S3 语境里被称为 [Endpoint](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)。 当你的请求地址定为以上任何一种风格时，你将开始使用 AWS S3 接口访问 QingStor 服务。
 

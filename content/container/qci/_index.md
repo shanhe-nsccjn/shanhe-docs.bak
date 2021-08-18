@@ -1,13 +1,13 @@
 ---
-title: "弹性容器实例"
-linkTitle: "弹性容器实例"
+title: "容器实例服务"
+linkTitle: "容器实例服务"
 weight: 1
 collapsible: true
 type: "product"
 
 section1:
-  title: 弹性容器实例
-  vice_title: 弹性容器实例集成了云平台云服务器，存储以及网络等资源，在云平台上只需要完成指定容器镜像，指定存储卷，配置网络和指定基本信息四步，便可快速地创建弹性容器实例 ，以容器为单位支持容器自动巡检和修复。
+  title: 容器实例服务
+  vice_title: 容器实例服务集成了云平台云服务器，存储以及网络等资源，在云平台上只需要完成指定容器镜像，指定存储卷，配置网络和指定基本信息四步，便可快速地创建容器实例服务 ，以容器为单位支持容器自动巡检和修复。
 
 Section2:
   title: 用户指南
@@ -38,18 +38,18 @@ Section2:
 
 section4:
   children:
-    - title: 了解：什么是弹性容器实例
-      content: 弹性容器实例为用户提供开箱即用的容器化部署环境。
+    - title: 了解：什么是容器实例服务
+      content: 容器实例服务为用户提供开箱即用的容器化部署环境。
       vice_title: 了解的第一步
       children:
         - title: 产品概述（从这里进入示例目录）
           url: "/container/qci/intro/introduction"
 
     - title: 上手：创建弹性实例与部署应用
-      content: 弹性容器实例为用户提供灵活的Serverless 容器运行服务。
+      content: 容器实例服务为用户提供灵活的Serverless 容器运行服务。
       vice_title: 上手的第一步
       children: 
-        - title: 使用山河弹性容器 (QCI) 实例搭建一个Jenkins服务器
+        - title: 使用山河弹性容器 (ECI) 实例搭建一个Jenkins服务器
           url: "/container/qci/best-practices/jenkins"
 ---
 

@@ -1,4 +1,4 @@
----
+<!-- ---
 title: "HashData"
 linkTitle: "HashData"
 weight: 1
@@ -19,7 +19,7 @@ section2:
 
 
 
----
+--- -->
 
 <!-- type: "product" 这个参数表明这是一个产品index页面 -->
 <!-- section1 为产品index页面 主标题 副标题 video  video_img为视频图片  -->

@@ -27,7 +27,7 @@ draft: false
 
 #### 修改配置参数
 
-  点击`配置参数`可以修改 `PostgreSQL 参数` ，修改部分参数会导致 PostgreSQL 服务重启，具体可以参考参数说明。
+  点击`配置参数`可以修改 `云数据库PostgreSQL 参数` ，修改部分参数会导致 云数据库PostgreSQL 服务重启，具体可以参考参数说明。
   ![参数配置](../../_images/params_set.png)
 
 #### 查看当前主节点

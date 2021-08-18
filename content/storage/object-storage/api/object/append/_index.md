@@ -69,7 +69,7 @@ Authorization: <authorization-string>
 
 ```http
 POST /obj-append?append&position=0 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Dec, 16 Aug 2019 09:05:00 GMT
 Content-Length: 1024
 Authorization: authorization string

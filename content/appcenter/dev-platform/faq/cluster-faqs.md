@@ -11,8 +11,8 @@ weight: 1
 ### 1. 作为新手，如何从一个最简单的例子入手？    
 
 我们在 [GitHub](https://github.com/shanheAppcenter/) 上提供了大量的基于 AppCenter 开发的实例代码和配置文件，
-作为新手我们建议从 [Zookeeper](https://github.com/shanheAppcenter/Zookeeper) 或者 
-[Redis](https://github.com/shanheAppcenter/Redis-standalone) 入手。
+作为新手我们建议从 [大数据服务ZooKeeper](https://github.com/shanheAppcenter/Zookeeper) 或者 
+[云数据库云数据库Redis Cluster](https://github.com/shanheAppcenter/Redis-standalone) 入手。
 
 ### 2. app agent 是什么？如何安装 app agent 程序？   
 
@@ -31,7 +31,7 @@ weight: 1
 
 ### 4. 什么是 Metadata 服务，如何查询 Metadata 上的值？  
 
-山河 AppCenter 的 metadata service 是在 etcd 基础之上进行了二次开发，主要增加了 self 属性，
+山河 AppCenter 的 metadata service 是在存储服务etcd 基础之上进行了二次开发，主要增加了 self 属性，
 即每个节点只能从该服务获取到自身相关的信息，如本机 IP、server ID 等， 此项目已在 github 上开源。   
 在创建好一个集群后，登陆到任意一个节点，在文件 /etc/confd/confd.toml 里找到 nodes 这一行(这个文件是山河调度系统在用户创建集群的时候自动生成的)，
 这一行定义的是 metadata server 的 IP 地址，任取一个 IP，运行下面命令即可看到所有信息。   
@@ -507,8 +507,8 @@ incremental_backup_supported
 如果配置了此参数，在控制台上原来旧的版本的集群列表集群右侧会出现一个向上的升级箭头，关闭旧的集群，点击该图标就可以直接升级到最新的版本。  
 请注意 upgrade 脚本是在新的应用的集群上运行的。
 
-对于应用的大版本升级的问题，例如 PostgreSQL9.6 和 PostgreSQL10，如果直接采用上面的方法是不可用的，
-因为对于新版本的应用（PostgreSQL10）是无法驱动挂载盘下的旧版本（PostgreSQL9.6）格式的数据，
+对于应用的大版本升级的问题，例如 云数据库PostgreSQL9.6 和 云数据库PostgreSQL10，如果直接采用上面的方法是不可用的，
+因为对于新版本的应用（云数据库PostgreSQL10）是无法驱动挂载盘下的旧版本（云数据库PostgreSQL9.6）格式的数据，
 需要对挂载盘下的数据做转换才可以以升级后的新版本的应用读取数据。    
 因此，我们建议有以下2种方式进行升级处理。
 
@@ -1168,7 +1168,7 @@ curl http://metadata/self/env/access_key/secret_access_key
 
 ```json
 {
-  "notice_when_upgrade": "此版本包含不兼容 Kafka 1.x 版本的改动，可能会导致业务代码异常退出并无法回退！为避免损失，强烈建议先创建一个新集群进行验证，确保可以工作以后再进行升级操作。Kafka 2.3 版本说明请查看官方文档：https://kafka.apache.org/documentation/"
+  "notice_when_upgrade": "此版本包含不兼容消息队列消息队列Kafka 1.x 版本的改动，可能会导致业务代码异常退出并无法回退！为避免损失，强烈建议先创建一个新集群进行验证，确保可以工作以后再进行升级操作。消息队列Kafka 2.3 版本说明请查看官方文档：https://消息队列Kafka.apache.org/documentation/"
 }
 ```
 
@@ -1176,7 +1176,7 @@ curl http://metadata/self/env/access_key/secret_access_key
 
 ```json
 {
-  "notice_when_upgrade": "The new version app may need refit your kafka consumer code! Make sure you are using the new config!!!"
+  "notice_when_upgrade": "The new version app may need refit your 消息队列Kafka consumer code! Make sure you are using the new config!!!"
 }
 ```
 

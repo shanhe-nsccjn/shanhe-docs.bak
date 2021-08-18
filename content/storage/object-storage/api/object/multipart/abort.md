@@ -56,7 +56,7 @@ Authorization: <authorization-string>
 
 ```http
 DELETE /large-object?upload_id=4d26b37a469230619604ecdc0e314782 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 13:25:10 GMT
 Content-Length: 0
 Authorization: authorization string

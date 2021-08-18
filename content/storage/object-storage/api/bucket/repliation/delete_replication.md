@@ -46,7 +46,7 @@ Authorization: <authorization-string>
 
 ```http
 DELETE /?replication HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Mon, 1 Oct 2018 15:04:01 GMT
 Authorization: authorization string
 ```

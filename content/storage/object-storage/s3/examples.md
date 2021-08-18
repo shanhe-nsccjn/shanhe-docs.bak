@@ -21,7 +21,7 @@ title: "使用示例"
    conn = boto.connect_s3(
        aws_access_key_id='PLLZOBTTZXGBNOWUFHZZ',
        aws_secret_access_key='MnIjI58zC8AX07xotHXcm6grwFgOXhaJQHkTCX2X',
-       host='s3.jn1a.is.shanhe.com'
+       host='s3.jn1.is.shanhe.com'
    )
    bucket = conn.get_bucket('mybucket')
    key = bucket.get_key("mykey")
@@ -58,7 +58,7 @@ title: "使用示例"
 1. 命令行执行:
 
    ```bash
-   > aws s3api put-object --bucket mybucket --key puppy.jpg --body ~/Pictures/puppy.jpg --endpoint-url 'https://s3.jn1a.is.shanhe.com' --profile qingstor
+   > aws s3api put-object --bucket mybucket --key puppy.jpg --body ~/Pictures/puppy.jpg --endpoint-url 'https://s3.jn1.is.shanhe.com' --profile qingstor
    {
        "ETag": "\"c3872b49cb244269aad8cd4275a41c4a\""
    }
@@ -89,7 +89,7 @@ title: "使用示例"
 
    ```bash
    > mkdir -p /mnt/mybucket
-   > s3fs mybucket /mnt/mybucket -o passwd_file=/root/.s3fs/credentials -o url=http://s3.jn1a.is.shanhe.com
+   > s3fs mybucket /mnt/mybucket -o passwd_file=/root/.s3fs/credentials -o url=http://s3.jn1.is.shanhe.com
    > df -T | grep s3fs
    s3fs           fuse.s3fs 274877906944        0 274877906944   0% /mnt/mybucket
    ```
@@ -127,7 +127,7 @@ title: "使用示例"
    其中上述命令中的 your_xxx 信息需要根据您的 bucket name 等信息填入
    以下为一个实际例子：
    ```bash
-   s3fs#mybucket /mnt/mybucket fuse _netdev,url=http://s3.jn1a.is.shanhe.com,allow_other 0 0
+   s3fs#mybucket /mnt/mybucket fuse _netdev,url=http://s3.jn1.is.shanhe.com,allow_other 0 0
    ```
 
    第三步，保存 /etc/fstab 文件，执行 mount -a 命令，如果没有报错，则说明设置正常。
@@ -155,8 +155,8 @@ title: "使用示例"
    access_key = PLLZOBTTZXGBNOWUFHZZ
    secret_key = MnIjI58zC8AX07xotHXcm6grwFgOXhaJQHkTCX2X
    bucket_location = jn1a
-   host_base = s3.jn1a.is.shanhe.com
-   host_bucket = %(bucket)s.s3.jn1a.is.shanhe.com
+   host_base = s3.jn1.is.shanhe.com
+   host_bucket = %(bucket)s.s3.jn1.is.shanhe.com
    ```
 
 1. 命令行执行:

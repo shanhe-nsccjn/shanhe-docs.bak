@@ -50,7 +50,7 @@ Object 命名规范:
 
 |Name|Zone ID|URL Example|
 |-|-|-|
-|济南1区-A|jn1a|`http://mybucket1.jn1a.is.shanhe.com/myobject`|
+|济南1区-A|jn1a|`http://mybucket1.jn1.is.shanhe.com/myobject`|
 |           |         |                                                |
 |           |         |                                                |
 |           |         |                                                |

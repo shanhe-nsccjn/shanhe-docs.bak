@@ -5,22 +5,22 @@ weight: 16
 draft: false
 ---
 
-# HBase 指南
+# 大数据服务HBase 指南
 
-HBase 是一个开源的、分布式的、数据多版本的，列式存储的nosql数据库。依托 Hadoop 的分布式文件系统 HDFS 作为底层存储, 能够为数十亿行数百万列的海量数据表提供随机、实时的读写访问。 山河提供的 HBase 集群服务包含：HBase 数据库服务、HDFS 分布式文件系统、Phoenix 查询引擎。压缩格式方面支持 GZIP、BZIP2、LZO、SNAPPY，可自行在应用中指定。 关于 HBase 更多的详细信息，可参阅 [HBase 官方文档](http://hbase.apache.org/book.html)，关于 Phoenix 查询引擎的详细信息，可参阅 [Phoenix 官方网站](http://phoenix.apache.org/) 。
+大数据服务HBase 是一个开源的、分布式的、数据多版本的，列式存储的nosql数据库。依托 Hadoop 的分布式文件系统 HDFS 作为底层存储, 能够为数十亿行数百万列的海量数据表提供随机、实时的读写访问。 山河提供的 HBase 集群服务包含：HBase 数据库服务、HDFS 分布式文件系统、Phoenix 查询引擎。压缩格式方面支持 GZIP、BZIP2、LZO、SNAPPY，可自行在应用中指定。 关于 大数据服务HBase 更多的详细信息，可参阅 [大数据服务HBase 官方文档](http://hbase.apache.org/book.html)，关于 Phoenix 查询引擎的详细信息，可参阅 [Phoenix 官方网站](http://phoenix.apache.org/) 。
 
 ## 系统部署架构
 
-与 Hadoop 一样，HBase 集群采用的是 master/slave 架构，山河提供的 HBase 集群服务还包括在线伸缩、监控告警、配置修改等功能，帮助您更好地管理集群。 如下图所示，山河的 HBase 集群分三种节点类型：主节点 (HBase Master 和 HDFS NameNode)，从节点 (HBase RegionServer 和 HDFS DataNode) 和客户端节点 (HBase Client)。 用户在HBase 客户端可通过HBase Shell、Java API（本地或MapReduce）、Rest API 或其他工具来访问HBase。 若需要使用除java外的其他语言时，可在客户端节点 (HBase Client)自行启动 Thrift Server 以供支持。
+与 Hadoop 一样，大数据服务HBase 集群采用的是 master/slave 架构，山河提供的 大数据服务HBase 集群服务还包括在线伸缩、监控告警、配置修改等功能，帮助您更好地管理集群。 如下图所示，山河的 大数据服务HBase 集群分三种节点类型：主节点 (HBase Master 和 HDFS NameNode)，从节点 (HBase RegionServer 和 HDFS DataNode) 和客户端节点 (HBase Client)。 用户在HBase 客户端可通过HBase Shell、Java API（本地或MapReduce）、Rest API 或其他工具来访问HBase。 若需要使用除java外的其他语言时，可在客户端节点 (HBase Client)自行启动 Thrift Server 以供支持。
 
 ![](_images/hbase_architecture.png)
 
-## 创建 HBase 集群
+## 创建 大数据服务HBase 集群
 
-大数据平台包括 HBase 的运维是非常繁琐的，而在山河上，您可以在２到３分钟创建一个 HBase 集群，集群支持横向与纵向在线伸缩，还提供了监控告警等功能，使得管理集群非常方便。 集群将运行于 100% 二层隔离的私有网络内，结合山河提供的高性能硬盘，在保障高性能的同时兼顾您的数据安全。
+大数据平台包括 大数据服务HBase 的运维是非常繁琐的，而在山河上，您可以在２到３分钟创建一个 大数据服务HBase 集群，集群支持横向与纵向在线伸缩，还提供了监控告警等功能，使得管理集群非常方便。 集群将运行于 100% 二层隔离的私有网络内，结合山河提供的高性能硬盘，在保障高性能的同时兼顾您的数据安全。
 
 >注解
-为了保障数据安全, HBase 集群需要运行在受管私有网络中，同时由于 HBase 依赖于 ZooKeeper，所以在创建一个 HBase 集群之前，您至少需要一个路由器和一个与路由器连接的受管私有网络以及在该网络中创建一个 ZooKeeper 集群，并开启 DHCP 服务（默认开启）。
+为了保障数据安全, 大数据服务HBase 集群需要运行在受管私有网络中，同时由于 大数据服务HBase 依赖于 大数据服务ZooKeeper，所以在创建一个 大数据服务HBase 集群之前，您至少需要一个路由器和一个与路由器连接的受管私有网络以及在该网络中创建一个 大数据服务ZooKeeper 集群，并开启 DHCP 服务（默认开启）。
 
 **第一步：选择基本配置**
 
@@ -33,23 +33,23 @@ HBase 是一个开源的、分布式的、数据多版本的，列式存储的no
 
 **第二步：配置网络**
 
-在配置网络的过程中，首先需要选择 HBase 所需要的 ZooKeeper 集群，HBase 集群将加入该 ZooKeeper 所在的私有网络中，然后可以为 HBase 中的每个节点指定 IP， 也可以选择“自动分配”，让系统自动指定 IP。
+在配置网络的过程中，首先需要选择 大数据服务HBase 所需要的 大数据服务ZooKeeper 集群，大数据服务HBase 集群将加入该 大数据服务ZooKeeper 所在的私有网络中，然后可以为 大数据服务HBase 中的每个节点指定 IP， 也可以选择“自动分配”，让系统自动指定 IP。
 
 ![](_images/create_hbase_2.png)
 
 **第三步：创建成功**
 
-当 HBase 创建完成之后，您可以查看每个节点的运行状态。 如图所示，当节点显示为“活跃”状态，表示该节点启动正常。 当每个节点都启动正常后 HBase 集群显示为“活跃”状态，表示您已经可以正常使用 HBase 服务了。
+当 大数据服务HBase 创建完成之后，您可以查看每个节点的运行状态。 如图所示，当节点显示为“活跃”状态，表示该节点启动正常。 当每个节点都启动正常后 HBase 集群显示为“活跃”状态，表示您已经可以正常使用 大数据服务HBase 服务了。
 
 ![](_images/create_hbase_3.png)
 
-## 测试 HBase 集群
+## 测试 大数据服务HBase 集群
 
-HBase 创建完成之后可以测试其可用性。
+大数据服务HBase 创建完成之后可以测试其可用性。
 
-**创建 HBase Client 主机**
+**创建 大数据服务HBase Client 主机**
 
-在山河上创建 HBase Client 节点, 首先打开映像市场，在工具分类中找到 HBase Client，然后点击使用，选择主机类型、CPU、内存，并将该主机加入 HBase 集群同一路由器下的私有网络中。(假设主机名为 i-ahdf2uof )， 该主机已经安装了 HBase、Hadoop、JDK、Phoenix 等软件并且做了一些预定的配置。您可以直接用这个主机进行下面的测试。 HBase 集群的主机名是按照不同角色定义的:
+在山河上创建 HBase Client 节点, 首先打开映像市场，在工具分类中找到 HBase Client，然后点击使用，选择主机类型、CPU、内存，并将该主机加入 HBase 集群同一路由器下的私有网络中。(假设主机名为 i-ahdf2uof )， 该主机已经安装了 HBase、Hadoop、JDK、Phoenix 等软件并且做了一些预定的配置。您可以直接用这个主机进行下面的测试。 大数据服务HBase 集群的主机名是按照不同角色定义的:
 
 *   HBase Master Node: -hbase-master
 *   HDFS Master Node: -hbase-hdfs-master
@@ -68,7 +68,7 @@ HBase 创建完成之后可以测试其可用性。
 172.17.102.9     hbsn-ugmpsszk-hbase-slave
 ```
 
-其次，您需要根据创建的集群配置来修改 core-site.xml, hbase-site.xml 中的相应参数，为方便表述，假设ZooKeeper集群的ip分别是：172.17.102.2,172.17.102.3,172.17.102.4，该信息可通过大数据平台下 ZooKeeper 详情页查询得到。假设创建的 HBase 集群 ID 为 hbs-v7z6ux63，该信息可通过大数据平台下 HBase 详情页查询得到。依次按下列方式修改：
+其次，您需要根据创建的集群配置来修改 core-site.xml, hbase-site.xml 中的相应参数，为方便表述，假设大数据服务ZooKeeper集群的ip分别是：172.17.102.2,172.17.102.3,172.17.102.4，该信息可通过大数据平台下 大数据服务ZooKeeper 详情页查询得到。假设创建的 HBase 集群 ID 为 hbs-v7z6ux63，该信息可通过大数据平台下 HBase 详情页查询得到。依次按下列方式修改：
 
 ```
 $ cd /usr/local/hadoop
@@ -88,7 +88,7 @@ $ cd /usr/local/hbase
 
 $ vim conf/hbase-site.xml
 
-#将以下内容写入 hbase-site.xml 文件来配置 HBase 保存元数据的 zookeeper 地址
+#将以下内容写入 hbase-site.xml 文件来配置 HBase 保存元数据的 大数据服务ZooKeeper 地址
 	<property>
 		<name>hbase.zookeeper.quorum</name>
 		<value>172.17.102.2,172.17.102.3,172.17.102.4</value>
@@ -161,11 +161,11 @@ hbase(main):009:0> drop 'test'
 
 **测试二**
 
-这个测试是通过 HBase 自带的性能测试工具 PerformanceEvaluation 来测试 HBase 集群的随机写、顺序写、increment、append、随机读、顺序读、scan等操作的性能情况。测试过程中需要先写后读保证测试表中有数据。 测试结果中会有每个线程操作的耗时。
+这个测试是通过 大数据服务HBase 自带的性能测试工具 PerformanceEvaluation 来测试 大数据服务HBase 集群的随机写、顺序写、increment、append、随机读、顺序读、scan等操作的性能情况。测试过程中需要先写后读保证测试表中有数据。 测试结果中会有每个线程操作的耗时。
 
 注解
 
-若要使用 MapReduce 测试，可参考上文创建 HBase 客户端使用 MapReduce 服务部分。
+若要使用 MapReduce 测试，可参考上文创建 大数据服务HBase 客户端使用 MapReduce 服务部分。
 
 ```
 $ cd /usr/local/hbase
@@ -562,7 +562,7 @@ No rows affected (2.668 seconds)
 
 **删除节点**
 
-您可以在 HBase 详情页选中需要删除的从节点，然后点击“删除”按钮，只能一次删除一个，并且必须等到上个节点删除后且 decommission 结束才能删除下一个节点，否则数据会丢失。 山河 HBase 集群在此操作时会先迁移 region 再复制数据，确保用户业务不受影响。删除节点过程中会锁定 HBase 集群不让对其进行其它的操作，同时这个 decommission 状态可以从 HDFS Name Node 的 50070 端口提供的监控信息观察到。Decommission 是在复制即将删除节点上的数据到别的节点上，如果您的数据量比较大，这个过程会比较长。 因为山河的 HDFS 副本因子默认为 2，所以当您 HBase 的从节点数为 3 的时候就不能再删除节点。同时要预先知道其它节点的总硬盘空间足够拷贝删除节点的内容，才能进行删除。
+您可以在 大数据服务HBase 详情页选中需要删除的从节点，然后点击“删除”按钮，只能一次删除一个，并且必须等到上个节点删除后且 decommission 结束才能删除下一个节点，否则数据会丢失。 山河 大数据服务HBase 集群在此操作时会先迁移 region 再复制数据，确保用户业务不受影响。删除节点过程中会锁定 大数据服务HBase 集群不让对其进行其它的操作，同时这个 decommission 状态可以从 HDFS Name Node 的 50070 端口提供的监控信息观察到。Decommission 是在复制即将删除节点上的数据到别的节点上，如果您的数据量比较大，这个过程会比较长。 因为山河的 HDFS 副本因子默认为 2，所以当您 HBase 的从节点数为 3 的时候就不能再删除节点。同时要预先知道其它节点的总硬盘空间足够拷贝删除节点的内容，才能进行删除。
 
 ![](_images/delete_hbase_node.png)
 
@@ -571,13 +571,13 @@ No rows affected (2.668 seconds)
 
 **纵向伸缩**
 
-由于不同类节点压力并不同，所以山河 HBase 支持对 HBase Master Node 主节点、HDFS Name Node 主节点 和 HBase 从节点分别进行纵向伸缩。通常情况下两个主节点的压力不会太大， 在创建 HBase 的时候我们自动给两个主节点分配较低配置，但随着压力增大您可能需要对这些节点扩容。
+由于不同类节点压力并不同，所以山河 大数据服务HBase 支持对 HBase Master Node 主节点、HDFS Name Node 主节点 和 HBase 从节点分别进行纵向伸缩。通常情况下两个主节点的压力不会太大， 在创建 HBase 的时候我们自动给两个主节点分配较低配置，但随着压力增大您可能需要对这些节点扩容。
 
 ![](_images/resize_hbase.png)
 
 ## 监控和告警
 
-我们对 HBase 集群的每个节点提供了资源的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。 同时，HBase 和 HDFS 提供了丰富的监控信息。如果需要通过公网访问这些信息您需要先申请一个公网 IP 绑定在路由器上，在路由器上设置端口转发，同时打开防火墙相应的下行端口。 HBase Master 默认端口16010，HDFS Name Node 默认端口是50070。为方便查看HBase UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置VPN，VPN 建立后可查看下述界面。
+我们对 大数据服务HBase 集群的每个节点提供了资源的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。 同时，HBase 和 HDFS 提供了丰富的监控信息。如果需要通过公网访问这些信息您需要先申请一个公网 IP 绑定在路由器上，在路由器上设置端口转发，同时打开防火墙相应的下行端口。 HBase Master 默认端口16010，HDFS Name Node 默认端口是50070。为方便查看HBase UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置VPN，VPN 建立后可查看下述界面。
 
 *   [http:/](http:/)/:16010
 *   [http:/](http:/)/:50070
@@ -586,7 +586,7 @@ No rows affected (2.668 seconds)
 
 ![](_images/yarn_monitor1.png)
 
-为了帮助用户更好的管理和维护 HBase 集群，我们提供了部分针对 HBase 服务的监控，包括：
+为了帮助用户更好的管理和维护 大数据服务HBase 集群，我们提供了部分针对 大数据服务HBase 服务的监控，包括：
 
 *   **集群Region 迁移监控**： 集群中 Region 处于迁移状态的数量
 *   **RegionServer 读、写QPS监控**： RegionServer 每秒读、写操作数
@@ -597,16 +597,16 @@ No rows affected (2.668 seconds)
 
 ## 配置
 
-我们通过 HBase 配置组来管理 HBase 服务的配置。HBase 服务和 HBase 配置组是解耦的，您可以创建多个独立的配置组，并应用到不同的 HBase 服务。
+我们通过 大数据服务HBase 配置组来管理 大数据服务HBase 服务的配置。大数据服务HBase 服务和 大数据服务HBase 配置组是解耦的，您可以创建多个独立的配置组，并应用到不同的 大数据服务HBase 服务。
 
 
 
 >注解
- HBase 服务在运行过程中，也可以随时变更配置组。
+ 大数据服务HBase 服务在运行过程中，也可以随时变更配置组。
 
 
 
-**创建新的 HBase 配置组**
+**创建新的 大数据服务HBase 配置组**
 
 默认情况下，我们会为每个用户创建一个缺省配置组。用户也可以创建新的配置组，如图所示：
 

@@ -23,7 +23,7 @@ draft: false
 
 ## 配置参数
 
-  点击**配置参数**，可以修改**Kafka参数**，**Kafka-manager参数**。
+  点击**配置参数**，可以修改**消息队列Kafka参数**，**消息队列Kafka-manager参数**。
 
 ![](../../_images/config_parameter.png)
 
@@ -37,30 +37,30 @@ draft: false
 
 ## 跨网访问
 
-山河提供灵活的网络配置，一般建议Kafka集群和客户端（生产者、消费者）都在同一个VPC下工作，来达到最高的性能。如果Kafka在实际使用中会出现producer，consumer与broker都不在一个网段之中需要跨VPC，可以考虑以下方法：
+山河提供灵活的网络配置，一般建议消息队列Kafka集群和客户端（生产者、消费者）都在同一个VPC下工作，来达到最高的性能。如果消息队列Kafka在实际使用中会出现producer，consumer与broker都不在一个网段之中需要跨VPC，可以考虑以下方法：
 
 1. 通过[边界路由器](https://docs.shanhe.com/product/network/border)、[IP Sec 隧道](https://docs.shanhe.com/product/network/ipsec)、[GRE隧道](https://docs.shanhe.com/product/network/gre) 等方式把网络打通，这种方式适合于大规模复杂网络的情况。
 
 2. 配置[VPN](https://docs.shanhe.com/product/network/vpn)，这种方法通常用于本地开发测试。
 
-3. 通过集群参数`advertised.host.name`和`advertised.port`对外暴露出来，这种方式只适合于单节点kafka集群。需要在broker所在的路由器上配置 [端口转发](https://docs.shanhe.com/product/network/appcenter_network_config/config_portmapping) ，并且需要修改broker的`advertised.host.name`与`advertised.port`为路由器转发的源地址和源端口。这是因为Kafka各节点（broker、producer、consumer）之间是靠advertised host与advertised port通讯的。假设路由器的IP地址是207.226.141.61，端口9080转发到Kafka broker 192.168.0.10端口9092，点击**配置参数**，点击**参数**右侧的**修改属性**按钮，修改advertised.host.name为 207.226.141.61，修改advertised.port为9080。
+3. 通过集群参数`advertised.host.name`和`advertised.port`对外暴露出来，这种方式只适合于单节点消息队列Kafka集群。需要在broker所在的路由器上配置 [端口转发](https://docs.shanhe.com/product/network/appcenter_network_config/config_portmapping) ，并且需要修改broker的`advertised.host.name`与`advertised.port`为路由器转发的源地址和源端口。这是因为消息队列Kafka各节点（broker、producer、consumer）之间是靠advertised host与advertised port通讯的。假设路由器的IP地址是207.226.141.61，端口9080转发到消息队列Kafka broker 192.168.0.10端口9092，点击**配置参数**，点击**参数**右侧的**修改属性**按钮，修改advertised.host.name为 207.226.141.61，修改advertised.port为9080。
 
    ![](../../_images/modify_parameter.png)
 
 
-## Kafka-manager创建Topic
+## 消息队列Kafka-manager创建Topic
 
 点击**Topic**，点击**Create**，若不单独给Topic配置参数，会使用集群级别默认参数：
 
 ![](../../_images/create_topic.png)
 
-## Kafka-manager管理Topic
+## 消息队列Kafka-manager管理Topic
 
 点击**Topic**，可以在**List**里找到Topic进行管理，修改topic参数：
 
 ![](../../_images/manage_topic.png)
 
-## Kafka-manager平衡分区leader
+## 消息队列Kafka-manager平衡分区leader
 
 点击**Preferred Replica Election**，通过**Run**执行。
 
@@ -72,14 +72,14 @@ draft: false
 
 为了更好的获取节点使用情况，山河提供了方便快捷的文件日志获取服务。配置[VPN](https://docs.shanhe.com/product/network/vpn)或[端口转发](https://docs.shanhe.com/product/network/appcenter_network_config/config_portmapping)后，确保本地可以访问集群网络。即可在本地浏览器里查看或下载相应节点的日志和文件。
 
-在控制台`Appcenter -> 集群列表`标签下可以看到集群每个节点的信息，如节点角色，节点IP。对于Kafka-manager节点，在浏览器输入`http://节点IP`，可查看Kafka Manager的日志文件。
+在控制台`Appcenter -> 集群列表`标签下可以看到集群每个节点的信息，如节点角色，节点IP。对于消息队列Kafka-manager节点，在浏览器输入`http://节点IP`，可查看消息队列Kafka Manager的日志文件。
 
 ![](../../_images/file_viewer_1.png)
 
-对于Kafka节点，只需要获取其中一个节点IP，在本地浏览器输入`http://节点IP`，可查看全部Kafka节点的Heap Dump文件（dump目录）、数据文件（kafka-logs目录）和日志文件（logs目录）。
+对于消息队列Kafka节点，只需要获取其中一个节点IP，在本地浏览器输入`http://节点IP`，可查看全部消息队列Kafka节点的Heap Dump文件（dump目录）、数据文件（消息队列Kafka-logs目录）和日志文件（logs目录）。
 
 ![](../../_images/file_viewer_2.png)
 
 点击对应标题即可获取详细信息：
 
-![](../../_images/kafka_log.png)
+![](../../_images/消息队列Kafka_log.png)

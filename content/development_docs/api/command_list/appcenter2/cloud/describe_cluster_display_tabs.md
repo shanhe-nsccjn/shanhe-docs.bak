@@ -28,7 +28,7 @@ draft: false
 
 **Example**
 
-以应用 [Redis Cluster](https://appcenter.shanhe.com/apps/app-jwq1fzqo/Tomcat%20Cluster%20on%20shanhe) 为例，获取名称为 `roles` 的display tabs信息
+以应用 [云数据库Redis Cluster](https://appcenter.shanhe.com/apps/app-jwq1fzqo/Tomcat%20Cluster%20on%20shanhe) 为例，获取名称为 `roles` 的display tabs信息
 
 _Example Request_:
 

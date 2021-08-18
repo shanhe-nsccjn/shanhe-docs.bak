@@ -9,9 +9,9 @@ collapsible: true
 weight: 5
 ---
 
-# ClickHouse操作指南
+# 云数据库ClickHouse操作指南
 
-本文档介绍了如何在控制台中使用 ClickHouse 功能，包括 ClickHouse 的基本设置、集群信息查看等。
+本文档介绍了如何在控制台中使用 云数据库ClickHouse 功能，包括 云数据库ClickHouse 的基本设置、集群信息查看等。
 
 [创建步骤](setstep/)
 
