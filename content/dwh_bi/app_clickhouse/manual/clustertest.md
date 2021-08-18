@@ -8,4 +8,4 @@ weight: 8
 
 
 
-ClickHouse on shanhe 与原生 ClickHouse 近乎一致的性能，更多性能相关测试信息可以参考：[ClickHouse Benchmark](https://clickhouse.yandex/benchmark.html)
+云数据库ClickHouse on shanhe 与原生 云数据库ClickHouse 近乎一致的性能，更多性能相关测试信息可以参考：[ClickHouse Benchmark](https://clickhouse.yandex/benchmark.html)

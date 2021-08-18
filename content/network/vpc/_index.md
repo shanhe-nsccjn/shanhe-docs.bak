@@ -9,7 +9,7 @@ section1:
   title: VPC 专属私有网络
   vice_title: VPC 网络是 shanhe 环境内用户专属的大型网络空间。在 VPC 网络内，您可以自定义 IP 地址范围、创建子网，并在子网内创建云服务器/数据库/大数据等各种云资源。
   # todo add qingstor introduction video
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 Section2:

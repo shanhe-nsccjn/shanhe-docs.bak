@@ -6,7 +6,7 @@ draft: false
 ---
 
 
-shanhe MySQL Plus 云数据库支持对运行中的数据库服务进行在线扩容，调整CPU/内存/磁盘空间大小。
+shanhe 云数据库MySQL Plus 云数据库支持对运行中的数据库服务进行在线扩容，调整CPU/内存/磁盘空间大小。
 
 ## 创建扩容
 

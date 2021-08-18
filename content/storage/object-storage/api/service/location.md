@@ -42,7 +42,7 @@ Json 消息体
 | locations | List | 返回 location 列表，每个 location 是键为 id, name, endpoint 及其相应的值的字典。|
 | id | String | location id。 |
 | name | String | location name相应语言（取决于lang参数）的翻译。|
-| endpoint | String | location endpoint, 如 location id 为 jn1a 的 endpoint 是 jn1a.is.shanhe.com。 |
+| endpoint | String | location endpoint, 如 location id 为 jn1a 的 endpoint 是 jn1.is.shanhe.com。 |
 
 **Examples**
 
@@ -62,7 +62,7 @@ x-qs-request-id: dc05ee1cb7ea11e7b8da5254dda2bdf5
 {
     "locations": [
         {
-            "endpoint": "jn1a.is.shanhe.com",
+            "endpoint": "jn1.is.shanhe.com",
             "id": "jn1a",
             "name": "\u5317\u4eac3\u533a"
         },

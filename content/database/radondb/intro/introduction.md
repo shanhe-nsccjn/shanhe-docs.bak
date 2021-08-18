@@ -1,15 +1,15 @@
 ---
-title: "什么是RadonDB"
+title: "什么是云数据库RadonDB"
 description: Test description
 draft: false
 weight: 3
 enableToc: false
-keyword: RadonDB, shanhe, 数据库
+keyword: 云数据库RadonDB, shanhe, 数据库
 ---
 
-RadonDB 是一款基于 MySQL 研发的新一代分布式关系型数据库 (MyNewSQL)。旨在向用户提供具备金融级高可用、强一致、超大容量的数据库服务，RadonDB 高度兼容 MySQL 语法，自动水平分表，智能化扩容。
+云数据库RadonDB 是一款基于 MySQL 研发的新一代分布式关系型数据库 (MyNewSQL)。旨在向用户提供具备金融级高可用、强一致、超大容量的数据库服务，云数据库RadonDB 高度兼容 MySQL 语法，自动水平分表，智能化扩容。
 
-**RadonDB 的优势:**
+**云数据库RadonDB 的优势:**
 
 * 自动水平分表，一键即可开启智能化扩容，扩容过程业务不中断。
 * 数据多副本，率先使用 GTID 并行复制和 Raft 一致性协议确保副本间数据强一致、零丢失。

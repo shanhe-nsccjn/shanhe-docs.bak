@@ -5,7 +5,7 @@ weight: 20
 draft: false
 ---
 
-## 在RabbitMQ管理界面下载
+## 在消息队列RabbitMQ管理界面下载
 
 官网参考地址：[http://www.rabbitmq.com/management-cli.html](http://www.rabbitmq.com/management-cli.html)
 
@@ -15,9 +15,9 @@ draft: false
 
 ## 自己下载或者自定义配置rabbitmqadmin工具方法
 
-> **注意**：可以选择任RabbitMQ节点或者Haproxy节点ip或者Keepalived vip操作使用。
+> **注意**：可以选择任消息队列RabbitMQ节点或者Haproxy节点ip或者Keepalived vip操作使用。
 
-如Keepalived VIP为192.168.0.253（也可以是任意RabbitMQ节点或者Haproxy节点ip）
+如Keepalived VIP为192.168.0.253（也可以是任意消息队列RabbitMQ节点或者Haproxy节点ip）
 
 执行以下命令：
 
@@ -29,7 +29,7 @@ file rabbitmqadmin
 chmod +x rabbitmqadmin
 ```
 
-修改rabbitmqadmin文件default_options中的hostname为任意RabbitMQ节点或者Haproxy节点ip或者Keepalived vip，若修改了guest用户，还需要修改default_options中用户名和密码配置。
+修改rabbitmqadmin文件default_options中的hostname为任意消息队列RabbitMQ节点或者Haproxy节点ip或者Keepalived vip，若修改了guest用户，还需要修改default_options中用户名和密码配置。
 
 ## 定义一个queue
 

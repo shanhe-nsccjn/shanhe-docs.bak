@@ -13,7 +13,7 @@ weight: 3
 
 > 如果存储空间被设置为对匿名用户可写，则请求不需要携带认证信息。然而如果携带了认证信息，但是认证用户不拥有该存储空间的可写权限，则请求该接口会返回权限错误。
 
-设置 HTML 的表单 `action` 为 `http://.jn1a.is.shanhe.com/` 上传的到对应的 Bucket，Object key 需要在表单项中设置。表单的 `method` 必须为 `POST`，`enctype` 必须为 `multipart/form-data`.
+设置 HTML 的表单 `action` 为 `http://.jn1.is.shanhe.com/` 上传的到对应的 Bucket，Object key 需要在表单项中设置。表单的 `method` 必须为 `POST`，`enctype` 必须为 `multipart/form-data`.
 
 如果多个上传请求同时写入同一个对象名称（object key），最后一个被处理的请求会覆盖之前上传的对象内容。
 
@@ -93,7 +93,7 @@ signature = b64encode(h.digest()).strip()
 <html>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <h3>Upload</h3>
-    <form action="http://<bucket-name>.jn1a.is.shanhe.com" method="POST" enctype="multipart/form-data">
+    <form action="http://<bucket-name>.jn1.is.shanhe.com" method="POST" enctype="multipart/form-data">
         <input type=hidden name="policy" value="eyJrZXkiOiAidXNlci90b20vJHtmaWxlbmFtZX0iLCAicmVkaXJlY3QiOiAiaHR0cDovL215ZG9tYWluLmNvbS9jYWxsYmFjayJ9" />
         <input type=hidden name="access_key_id" value="YYY" />
         <input type=hidden name="signature" value="XXX" />
@@ -124,7 +124,7 @@ eyJrZXkiOiAidXNlci90b20vJHtmaWxlbmFtZX0iLCAicmVkaXJlY3QiOiAiaHR0cDovLzxteWRvbWFp
 
 ```http
 POST / HTTP/1.1
-Host: .jn1a.is.shanhe.com
+Host: .jn1.is.shanhe.com
 User-Agent: curl/7.30
 Content-Type: multipart/form-data; boundary=1234567890
 Content-Length: length

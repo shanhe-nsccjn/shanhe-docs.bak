@@ -29,7 +29,7 @@ draft: false
 
 **Example**
 
-以应用[Redis Cluster](https://appcenter.shanhe.com/apps/app-jwq1fzqo/Tomcat%20Cluster%20on%20shanhe)为例，修改 `max-maxmemory` 和 `hash-max-ziplist-entries`
+以应用[云数据库Redis Cluster](https://appcenter.shanhe.com/apps/app-jwq1fzqo/Tomcat%20Cluster%20on%20shanhe)为例，修改 `max-maxmemory` 和 `hash-max-ziplist-entries`
 
 _Example Request_:
 

@@ -77,9 +77,9 @@ draft: false
 
 **第一步：进入AppCenter控制台的应用中心后，选择应用，点击立即部署，进入部署页面**
 
-以云应用 ZooKeeper 购买为例。
+以云应用 大数据服务ZooKeeper 购买为例。
 
-![应用中心](/appcenter/market/business-process/_image/appcenter_zookeeper.png)
+![应用中心](/appcenter/market/business-process/_image/appcenter_大数据服务ZooKeeper.png)
 
 **第二步：进入部署页面后，相关参数选择和填写，点击提交**
 
@@ -89,7 +89,7 @@ draft: false
 
 **2.填写相关参数时，费用根据参数变化，右侧可预览费用，确认填写完毕后，阅读协议且选择后，点击提交**
 
-![zookeeper部署页面](/appcenter/market/business-process/_image/appcenter_zookeeper_deployment.png)
+![大数据服务ZooKeeper部署页面](/appcenter/market/business-process/_image/appcenter_zookeeper_deployment.png)
 
 ## 应用实例
 

@@ -9,7 +9,7 @@ section1:
   title: 企业云网
   vice_title: 企业云网服务，为企业提供高效的广域网接入、多地组网及智能调度与管理服务。
   # todo add qingstor introduction video
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 Section2:

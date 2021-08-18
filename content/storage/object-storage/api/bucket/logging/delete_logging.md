@@ -20,7 +20,7 @@ weight: 3
 
 ```http
 DELETE /?logging HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -55,7 +55,7 @@ Authorization: <authorization-string>
 
 ```http
 DELETE /?logging HTTP/1.1
-Host: <source-bucket-name>.jn1a.is.shanhe.com
+Host: <source-bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Content-Length: 0
 Authorization: authorization string

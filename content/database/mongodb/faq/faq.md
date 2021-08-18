@@ -6,7 +6,7 @@ draft: false
 
 用 [Yahoo! Cloud Serving Benchmark](https://github.com/brianfrankcooper/YCSB/tree/master/mongodb) 工具套件进行基准测试，下面分别是各配置的测试结果。
 
-> YCSB 不支持用户名密码登录，下面的结果是在关闭认证后测试得到的，仅供参考。由于安全原因，我们禁止您关闭 MongoDB 的认证，建议在实际性能评估时以模拟正式场景为准。
+> YCSB 不支持用户名密码登录，下面的结果是在关闭认证后测试得到的，仅供参考。由于安全原因，我们禁止您关闭 云数据库MongoDB 的认证，建议在实际性能评估时以模拟正式场景为准。
 
 - 1核2G 100G 超高性能型硬盘
 
@@ -41,7 +41,7 @@ draft: false
 [OVERALL], Throughput(ops/sec), 21089.92745064957
 ```
 
-> 下面同时运行了两个 YCSB 实例来对 8核16G 和 16核32G 进行基准测试， 需要注意的是两个 YCSB 实例实际上也并不能压满 MongoDB 的性能，所以 OPS 仅供参考之用。
+> 下面同时运行了两个 YCSB 实例来对 8核16G 和 16核32G 进行基准测试， 需要注意的是两个 YCSB 实例实际上也并不能压满 云数据库MongoDB 的性能，所以 OPS 仅供参考之用。
 
 - 8核16G 100G 超高性能型硬盘
 

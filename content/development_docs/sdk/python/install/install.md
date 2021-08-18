@@ -27,7 +27,7 @@ $ pip install --upgrade shanhe-sdk
 通过源码安装:
 
 ```
-$ git clone https://github.com/yunify/shanhe-sdk-python.git
+$ git clone https://github.com/shanhe-nsccjn/shanhe-sdk-python.git
 $ cd shanhe-sdk-python
 $ python setup.py install
 ```

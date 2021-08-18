@@ -50,7 +50,7 @@ draft: false
 | transition_status | string | Mongo 过渡状态，有效值包括：<br/>creating: 创建中，由 pending 状态变成 active 状态<br/>stopping: 关闭中，由 active 状态变成 stopped 状态<br/>starting: 启动中，由 stopped 状态变成 active 状态<br/>deleting: 删除中，由 active/stopped 状态变成 deleted 状态<br/>resizing: 扩容中<br/>suspending: 暂停中<br/>vxnet-changing: 正在切换 Mongo 所属私有网络<br/>snapshot-creating: 备份创建中<br/>instances-adding: 正在创建 replica set 节点<br/>instances-removing: 正在删除 replica set 节点<br/>pg-applying: 正在应用 Mongo 配置 |
 | storage_size | Integer | Mongo 当前最大存储空间 |
 | mongo_type | Integer | Mongo 配置型号 |
-| auto_minor_ver_upgrade | Integer | 是否允许自动升 MongoDB 的小版本号 |
+| auto_minor_ver_upgrade | Integer | 是否允许自动升 云数据库MongoDB 的小版本号 |
 | lastest_snapshot_time | TimeStamp | Mongo 最后一次备份时间，为 UTC 时间 |
 | mongo_version | String | MongoDB 版本号 |
 

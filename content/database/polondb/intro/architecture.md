@@ -1,10 +1,10 @@
 ---
-title: "PolonDB 架构"
+title: "云数据库PolonDB 架构"
 description: Test description
 draft: false
 weight: 5
 enableToc: false
-keyword: PolonDB, shanhe, 数据库
+keyword: 云数据库PolonDB, shanhe, 数据库
 ---
 
 
@@ -12,7 +12,7 @@ keyword: PolonDB, shanhe, 数据库
 ![image-GaoKeYongJiaGou](../../_images/image-GaoKeYongJiaGou.png)
 
 
-- 协调器和 Worker 节点均通过 PostgreSQL 流复制做了高可用
+- 协调器和 Worker 节点均通过 云数据库PostgreSQL 流复制做了高可用
 
 - 高可用管理节点负责高可用的管理和故障转移等功能
 

@@ -25,7 +25,7 @@ draft: false
 ## 测试环境
 
 - 区域：济南1区
-- RabbitMQ磁盘节点 (*3)：1CPU， 1G内存，性能型
+- 消息队列RabbitMQ磁盘节点 (*3)：1CPU， 1G内存，性能型
 - 测试节点：jn1d区，8CPU， 8G内存，基础型，Ubuntu Server 18.04.1 LTS 64bit
 
 ## 测试方法
@@ -38,6 +38,6 @@ draft: false
 bin/runjava com.rabbitmq.perf.PerfTest -u perf.test.ha -f persistent -X 1 -Y 1 -z 30 -H amqp://192.168.3.3
 ```
 
-至此，`RabbitMQ on shanhe AppCenter`的介绍到这里就告一个段落了。
+至此，`消息队列RabbitMQ on shanhe AppCenter`的介绍到这里就告一个段落了。
 
 在使用过程中如果遇到问题可以通过`提交工单`来获取帮助，我们将竭诚为您服务。

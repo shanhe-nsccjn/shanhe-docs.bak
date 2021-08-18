@@ -1,26 +1,26 @@
 ---
-title: "ClickHouse"
-linkTitle: "ClickHouse"
+title: "云数据库ClickHouse"
+linkTitle: "云数据库ClickHouse"
 weight: 1
 collapsible: true
 type: "product"
 
 section1:
-  title: ClickHouse
-  vice_title: shanhe ClickHouse 是一款深度定制的ClickHouse集群应用。
+  title: 云数据库ClickHouse
+  vice_title: shanhe 云数据库ClickHouse 是一款深度定制的云数据库ClickHouse集群应用。
   # todo add qingstor introduction video
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 section2:
   title: 用户指南
   children:
-    - title: ClickHouse
+    - title: 云数据库ClickHouse
       content: 产品简介
       url: "intro/intro"
 
     - title: 操作指南
-      content: 学习上手如何创建、查看及应用ClickHouse等。
+      content: 学习上手如何创建、查看及应用云数据库ClickHouse等。
       url: "manual/setstep"
 
 section3:

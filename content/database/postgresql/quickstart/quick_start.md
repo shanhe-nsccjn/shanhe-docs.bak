@@ -24,14 +24,14 @@ draft: false
 ### 参数设置
 
 ![服务环境参数设置](../../_images/pg_param_config.png)
-界面提供的参数大部分和 PostgreSQL 性能相关，如果需要调整相关参数，可以按照自己的实际需求配置和调整相关参数，修改部分参数会导致 PostgreSQL 服务重启，具体可以参考参数说明。
+界面提供的参数大部分和 云数据库PostgreSQL 性能相关，如果需要调整相关参数，可以按照自己的实际需求配置和调整相关参数，修改部分参数会导致 云数据库PostgreSQL 服务重启，具体可以参考参数说明。
 
 在配置高可用版本参数时，会比单节点版本的设置多出如下一个参数。
 该参数用于设置主从复制模式是同步流复制还是异步流复制，默认是同步流复制。
 ![服务环境参数设置](../../_images/pg_param2more_config.png)
 
  >注意：
- >`PostgreSQL on shanhe AppCenter` 在初始化的时候，会根据服务器参数中用户输入的数据库名称，数据库用户，和数据库密码创建数据库账户。同时，为了方便用户维护，会自动创建数据库超级用户 (superuser) root，密码和用户在服务器参数中设置的数据库密码相同。
+ >`云数据库PostgreSQL on shanhe AppCenter` 在初始化的时候，会根据服务器参数中用户输入的数据库名称，数据库用户，和数据库密码创建数据库账户。同时，为了方便用户维护，会自动创建数据库超级用户 (superuser) root，密码和用户在服务器参数中设置的数据库密码相同。
 
 ### 用户协议确认  
 
@@ -39,18 +39,18 @@ draft: false
 
 ![用户协议确认](../../_images/pg_userprotocol_config.png)
 
-## 登录 PostgreSQL
+## 登录 云数据库PostgreSQL
 
-通过 psql 命令行客户端 ，用新建集群步骤中定义的数据库用户名和密码，连接到新创建的自定义的 PostgreSQL database 。
+通过 psql 命令行客户端 ，用新建集群步骤中定义的数据库用户名和密码，连接到新创建的自定义的 云数据库PostgreSQL database 。
 输入命令：`psql -U shanhe -h 192.168.100.246 -d shanhe`
 
 >-U 参数值是上图的服务器参数：数据库用户名，  
->-h 参数值是postgresql节点的IP或者是双节点集群的VIP，  
+>-h 参数值是云数据库PostgreSQL节点的IP或者是双节点集群的VIP，  
 >-d 参数值可以是上图服务器参数:数据库名称。    
 >然后输入的密码是上图服务器参数：数据库密码。  
 
-输入命令：`\l`， 可以查看当前 PostgreSQL server 上的数据库信息。  
+输入命令：`\l`， 可以查看当前 云数据库PostgreSQL server 上的数据库信息。  
   ![登录PG database](../../_images/pglogin.png)  
 
-除了用 psql 命令行客户端连接数据库之外，还可以使用自己熟悉的其他图形化的数据库客户端连接到 PostgreSQL DB 上，方便做数据库操作以及数据库开发等工作。  
+除了用 psql 命令行客户端连接数据库之外，还可以使用自己熟悉的其他图形化的数据库客户端连接到 云数据库PostgreSQL DB 上，方便做数据库操作以及数据库开发等工作。  
 例如：pgAdmin 、DbVisualizer 、DBeaver 等。

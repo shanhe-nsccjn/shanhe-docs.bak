@@ -8,7 +8,7 @@ weight: 4
 
 ## 基本信息
 
-山河 AppCenter 的 metadata service 是在 etcd 基础之上进行了二次开发，主要增加了 self 属性，即每个节点只能从该服务获取到自身相关的信息，如本机 IP、server ID 等，
+山河 AppCenter 的 metadata service 是在存储服务存储服务存储服务etcd 基础之上进行了二次开发，主要增加了 self 属性，即每个节点只能从该服务获取到自身相关的信息，如本机 IP、server ID 等，
 此项目已在 [github](https://github.com/yunify/metad) 上开源。
 
 ## 元数据结构
@@ -274,7 +274,7 @@ upgrade-audit|升级操作时，临时保存升级版本信息，from_app_versio
 ### env
 
   env 保存用户可修改的应用参数，key 为参数名，value 为具体参数值。<br>
-  例：Redis 节点可通过 /env/maxclients 获取用户配置的 maxclients 数值来更新 redis.conf<br>
+  例：云数据库Redis Cluster 节点可通过 /env/maxclients 获取用户配置的 maxclients 数值来更新 云数据库Redis Cluster.conf<br>
   
   对于参数类型是 accesskey 的参数，在其原来目录下，山河调度系统会添加 /access_key_id 和 /secret_access_key 两个子目录，分别存储 API 密钥ID 和私钥。
 ### adding-hosts
@@ -287,7 +287,7 @@ upgrade-audit|升级操作时，临时保存升级版本信息，from_app_versio
 
 ### links
 
-  外部服务依赖定义，有些应用依赖于另外一个服务才能正常工作，如 Kafka 依赖于 ZooKeeper，因此此处需指定被依赖集群的 ID，service name 可在[云应用开发模板规范 - 完整版](/appcenter/dev-platform/cluster-developer-guide/specifications/specifications) 中任意定义。
+  外部服务依赖定义，有些应用依赖于另外一个服务才能正常工作，如消息队列消息队列Kafka 依赖于 大数据服务Storm，因此此处需指定被依赖集群的 ID，service name 可在[云应用开发模板规范 - 完整版](/appcenter/dev-platform/cluster-developer-guide/specifications/specifications) 中任意定义。
 
 ### cmd
 

@@ -4,7 +4,7 @@ description: Test description
 weight: 5
 ---
 
-「shanhe MySQL Plus」的MySQL版本为8.0.19 & 5.7.29 & 5.6.42，且开启了 GTID 复制模式，因此从其他MySQL迁移数据时，需要通过导数据或者 shanhe MySQL Plus 支持的数据导入服务的方式来进行。
+「shanhe 云数据库MySQL Plus」的MySQL版本为8.0.19 & 5.7.29 & 5.6.42，且开启了 GTID 复制模式，因此从其他MySQL迁移数据时，需要通过导数据或者 shanhe 云数据库MySQL Plus 支持的数据导入服务的方式来进行。
 
 
 ### 数据导出
@@ -20,8 +20,8 @@ mysqldump --all-databases --single-transaction --triggers --routines --events  -
 
 ### 数据导入
 
-将上一步导出的 dump.sql 文件复制到一台能连接「shanhe MySQL Plus」的云服务器后执行该 .sql 文件。
-需要使用「shanhe MySQL Plus」的高可用写IP来进行链接。假设高可用的写IP地址为 192.168.0.250，导入语句为：
+将上一步导出的 dump.sql 文件复制到一台能连接「shanhe 云数据库MySQL Plus」的云服务器后执行该 .sql 文件。
+需要使用「shanhe 云数据库MySQL Plus」的高可用写IP来进行链接。假设高可用的写IP地址为 192.168.0.250，导入语句为：
 
 ```bash
 mysql -umysql_dev -p -h192.168.0.250 < dump.sql

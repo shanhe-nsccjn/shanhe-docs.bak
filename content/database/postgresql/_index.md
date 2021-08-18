@@ -1,13 +1,13 @@
 ---
-title: "关系型数据库 PostgreSQL"
-linkTitle: "PostgreSQL"
+title: "云数据库PostgreSQL"
+linkTitle: "云数据库PostgreSQL"
 weight: 02
 collapsible: true
 type: "product"
 
 section1:
-  title: PostgreSQL
-  vice_title: PostgreSQL 是业界最先进的开源数据库系统。
+  title: 云数据库PostgreSQL
+  vice_title: 云数据库PostgreSQL 是业界最先进的开源数据库系统。
 
 Section2:
   title: 用户指南
@@ -25,11 +25,11 @@ Section2:
       url: "quickstart/quick_start/"
 
     - title: 操作指南
-      content: 学习上手如何管理 PostgreSQL 集群。
+      content: 学习上手如何管理 云数据库PostgreSQL 集群。
       url: "manual/cluster_info/"
 
     - title: 最佳实践
-      content: PostgreSQL 的最佳实践
+      content: 云数据库PostgreSQL 的最佳实践
       url: "best-practices/data_import_and_export/"
 
 section3:
@@ -50,20 +50,20 @@ section3:
 section4:
   children:
     - title: 了解
-      content: 什么是 PostgreSQL
+      content: 什么是 云数据库PostgreSQL
       vice_title: 了解的第一步
       children:
         - title: 产品简介
           url: "intro/introduction/"
 
     - title: 进阶
-      content: 学习如何创建、管理、使用 PostgreSQL 集群
+      content: 学习如何创建、管理、使用 云数据库PostgreSQL 集群
       vice_title: 上手的第一步
       children: 
-        - title: 创建 PostgreSQL
+        - title: 创建 云数据库PostgreSQL
           url: "quickstart/quick_start/"
 
-        - title: PostgreSQL 集群信息
+        - title: 云数据库PostgreSQL 集群信息
           url: "manual/cluster_info/"
 
 ---

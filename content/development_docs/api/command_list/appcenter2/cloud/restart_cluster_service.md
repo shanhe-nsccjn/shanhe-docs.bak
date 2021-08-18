@@ -28,7 +28,7 @@ draft: false
 
 **Example**
 
-以应用[shanhe MySQL Plus](https://appcenter.shanhe.com/apps/app-00r26u27/shanhe%20MySQL%20Plus)为例
+以应用[shanhe 云数据库MySQL Plus](https://appcenter.shanhe.com/apps/app-00r26u27/shanhe%20MySQL%20Plus)为例
 
 _Example Request_:
 

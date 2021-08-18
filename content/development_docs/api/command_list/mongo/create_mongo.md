@@ -13,7 +13,7 @@ draft: false
 | Parameter name | Type | Description | Required |
 | --- | --- | --- | --- |
 | vxnet | String | 私有网络 ID | Yes |
-| mongo_version | String | MongoDB 版本，目前仅支持 3.0 | No |
+| mongo_version | String | 云数据库MongoDB 版本，目前仅支持 3.0 | No |
 | mongo_type | Integer | Mongo 配置型号，1 – 1核2G，2 – 2核4G，3 – 4核8G，4 – 8核16G，5 – 8核32G | Yes |
 | storage_size | Integer | Mongo 存储容量(GB)，用于存放数据和日志，最小10G，最大1000G | Yes |
 | mongo_name | String | Mongo 名称 | No |

@@ -29,7 +29,7 @@ weight: 1
 
 ```http
 GET /<object-name>?image&action=<action> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -44,7 +44,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=resize:w_300,h_400|rotate:a_90 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -69,7 +69,7 @@ Authorization: authorization string
 
 ```http
 GET /<object-name>?image&action=info HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -118,7 +118,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=info HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 22 Jul 2018 08:48:30 GMT
 Authorization: authorization string
 ```
@@ -163,7 +163,7 @@ x-qs-request-id: 256f44de00000af1
 指定裁剪的重心以及宽度和高度
 ```http
 GET /<object-name>?image&action=crop:w_<width>,h_<height>,g_<gravity> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -171,7 +171,7 @@ Authorization: <authorization-string>
 指定裁剪的起始坐标以及宽度和高度
 ```http
 GET /<object-name>?image&action=crop:w_<width>,h_<height>,l<left>,t_<top> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -211,14 +211,14 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=crop:w_300,h_400,g_0 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
 
 ```http
 GET /myphoto.jpg?image&action=crop:w_300,h_400,l_0,t_0 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -245,7 +245,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=rotate:a_<angle> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -278,7 +278,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=rotate:a_90 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -305,7 +305,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=resize:w_<width>,h_<height>,m_<mode> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -340,7 +340,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=resize:w_300,h_400,m_0 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -369,7 +369,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=watermark:d_<dpi>,p_<opacity>,t_<text>,c_<color> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -405,7 +405,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=watermark:t_5rC05Y2w5paH5a2X,p_0.5 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -432,7 +432,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=watermark_image:l_<left>,t_<top>,p_<opacity>,u_<url> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -468,7 +468,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=watermark_image:u_aHR0cHM6Ly9wZWszYS5xaW5nc3Rvci5jb20vaW1nLWRvYy1lZy9xaW5jbG91ZC5wbmc,l_10,t_10,p_2 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -495,7 +495,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=format:t_<type> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -528,7 +528,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=format:t_webp HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```
@@ -558,7 +558,7 @@ x-qs-request-id: aa08cf7a43f611
 
 ```http
 GET /<object-name>?image&action=save:b_<bucket>,k_<key> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```
@@ -592,7 +592,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /myphoto.jpg?image&action=save:b_testbucket,k_testkey HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```

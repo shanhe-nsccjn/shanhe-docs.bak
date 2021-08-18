@@ -1,13 +1,13 @@
 ---
-title: "分布式数据库 PolonDB"
-linkTitle: "PolonDB"
+title: "云数据库PolonDB"
+linkTitle: "云数据库PolonDB"
 weight: 04
 collapsible: true
 type: "product"
 
 section1:
-  title: PolonDB
-  vice_title: PolonDB 是基于 PostgreSQL 和 Citus 构建的一款 HTAP 分布式关系型数据库。
+  title: 云数据库PolonDB
+  vice_title: 云数据库PolonDB 是基于 PostgreSQL 和 Citus 构建的一款 HTAP 分布式关系型数据库。
 
 Section2:
   title: 用户指南
@@ -25,11 +25,11 @@ Section2:
       url: "quickstart/quick_start/"
 
     - title: 操作指南
-      content: 学习上手如何管理 PolonDB 集群，以及如何使用 PolonDB 提供的相关服务等。
+      content: 学习上手如何管理 云数据库PolonDB 集群，以及如何使用 云数据库PolonDB 提供的相关服务等。
       url: "manual/mofiy_parameter/"
 
     - title: 最佳实践
-      content: PolonDB 的最佳实践
+      content: 云数据库PolonDB 的最佳实践
       url: "best-practices/data_recover/"
 
 section3:
@@ -50,17 +50,17 @@ section3:
 section4:
   children:
     - title: 了解
-      content: 什么是 PolonDB
+      content: 什么是 云数据库PolonDB
       vice_title: 了解的第一步
       children:
         - title: 产品简介
           url: "intro/introduction/"
 
     - title: 进阶
-      content: 学习如何管理、使用 PolonDB 集群
+      content: 学习如何管理、使用 云数据库PolonDB 集群
       vice_title: 上手的第一步
       children: 
-        - title: 管理 PolonDB
+        - title: 管理 云数据库PolonDB
           url: "manual/general_operation/"
 
 

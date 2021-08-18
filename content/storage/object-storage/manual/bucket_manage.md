@@ -162,7 +162,7 @@ weight: 1
 
 要绑定的域名必须已完成备案，并且该域名到存储空间域名的 CNAME 记录必须已于域名服务商处注册且生效。
 
-以 download.hashdata.cn 绑定到 hashdata-download.jn1a.is.shanhe.com 为例, 首先添加域名 CNAME记录，
+以 download.hashdata.cn 绑定到 hashdata-download.jn1.is.shanhe.com 为例, 首先添加域名 CNAME记录，
 这个步骤用于检查用户是否拥有真实的域名。配置成功后，Linux 平台的 dig 命令效果如下图:
 
 ![](bucket_cname_check.png)

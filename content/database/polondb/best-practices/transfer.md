@@ -4,7 +4,7 @@ description: Test description
 weight: 7
 ---
 
-## 小型 PostgreSQL 数据库迁移
+## 小型 云数据库PostgreSQL 数据库迁移
 
 对于可以容忍一点停机时间的小型环境，请使用简单的 pg_dump / pg_restore。
 
@@ -24,7 +24,7 @@ pg_dump \
    postgres：// user：pass @ host ：5432 / db
 ```
 
-- 使用 psql 连接到 PolonDB 集群并创建结构：
+- 使用 psql 连接到 云数据库PolonDB 集群并创建结构：
 
 ```
 \ i  schema.sql
@@ -43,7 +43,7 @@ pg_dump \
    postgres：// user：pass @ host ：5432 / db
 ```
 
-- 使用 pg_restore 导入 PolonDB：
+- 使用 pg_restore 导入 云数据库PolonDB：
 
 ```shell
 pg_restore   \ 
@@ -57,11 +57,11 @@ pg_restore   \
 
 - 迁移完成，启动应用
 
-## 大型 PostgreSQL 数据库迁移
+## 大型 云数据库PostgreSQL 数据库迁移
 
-大型数据库迁移，**可以不间断原旧数据库的中应用**，平滑的迁移到 PolonDB 集群中。
+大型数据库迁移，**可以不间断原旧数据库的中应用**，平滑的迁移到 云数据库PolonDB 集群中。
 
-- 参考 `小型 PostgreSQL 数据库迁移` 的 `create_distributed_table` 内容部分创建数据库对象。
+- 参考 `小型 云数据库PostgreSQL 数据库迁移` 的 `create_distributed_table` 内容部分创建数据库对象。
 
   - 在迁移过程中旧数据库不可以进行 DDL 操作，只可以进行 DML 和 TRUNCATE 操作。
 
@@ -71,21 +71,21 @@ pg_restore   \
 
   - 无主键的表在旧数据中执行 `alter table xx replica identity full ` 语句。
 
-- 连通旧数据库与 PolonDB 集群之间的网络，确保 PolonDB 集群可以连接到旧数据库。
+- 连通旧数据库与 云数据库PolonDB 集群之间的网络，确保 云数据库PolonDB 集群可以连接到旧数据库。
 
-- 通过工单或销售人员与我们联系获取 shanhe_decoding.so 的动态库并存储到 PostgreSQL 的 lib 目录中，我们会适配您当前的环境，提供一个相应版本的动态库，同时也会生成您的唯一标记，该库仅供您使用不可提供给他人。
+- 通过工单或销售人员与我们联系获取 shanhe_decoding.so 的动态库并存储到 云数据库PostgreSQL 的 lib 目录中，我们会适配您当前的环境，提供一个相应版本的动态库，同时也会生成您的唯一标记，该库仅供您使用不可提供给他人。
 
 - 设置旧数据库参数并重启数据库
 
    ```sql
-   -- postgresql.conf
+   -- 云数据库PostgreSQL.conf
    wal_level=logical
    -- pg_hba.conf
    host	all		all		0.0.0.0/0		md5
    host	replication	all		0.0.0.0/0		md5
    ```
 
-- 启动 PostgreSQL 迁移
+- 启动 云数据库PostgreSQL 迁移
 
    ![image-StartPGMigrate](../../_images/image-StartPGMigrate.png)
 
@@ -113,7 +113,7 @@ pg_restore   \
 
    - 此集群数据库名
 
-     迁移到 PolonDB 的该库中。
+     迁移到 云数据库PolonDB 的该库中。
   
 - 检验数据正确性
 
@@ -123,14 +123,14 @@ pg_restore   \
 
 - 迁移完成，迁移应用，启动应用
 
-- 停止 PostgreSQL 迁移
+- 停止 云数据库PostgreSQL 迁移
 
   ![image-FinishPGMigrate](../../_images/image-FinishPGMigrate.png)
 
-> 大型数据库迁移仅针对旧数据库是 PostgreSQL 10 及以上版本，或是 PostgreSQL 9.4 以上版本并安装 logical_decode 插件。
+> 大型数据库迁移仅针对旧数据库是 云数据库PostgreSQL 10 及以上版本，或是 云数据库PostgreSQL 9.4 以上版本并安装 logical_decode 插件。
 >
 
-## PostgreSQL 大对象迁移
+## 云数据库PostgreSQL 大对象迁移
 
-含有大对象表的迁移，参考 `小型 PostgreSQL 数据库迁移` 方法进行。
+含有大对象表的迁移，参考 `小型 云数据库PostgreSQL 数据库迁移` 方法进行。
 

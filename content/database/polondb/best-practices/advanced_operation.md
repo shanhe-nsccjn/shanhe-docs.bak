@@ -4,9 +4,9 @@ description: Test description
 weight: 5
 ---
 
-PolonDB 基于 Citus 构建，因此参阅 Citus 相关文档可以更快速的了解 PolonDB 的使用
+云数据库PolonDB 基于 Citus 构建，因此参阅 Citus 相关文档可以更快速的了解 云数据库PolonDB 的使用
 
-## PolonDB 登录节点选择
+## 云数据库PolonDB 登录节点选择
 
 - 协调器节点
 
@@ -31,7 +31,7 @@ PolonDB 基于 Citus 构建，因此参阅 Citus 相关文档可以更快速的�
 
 - 高性能只读节点
 
-   可以充分发挥 PolonDB 硬件资源的利用率，可以做查询分析使用
+   可以充分发挥 云数据库PolonDB 硬件资源的利用率，可以做查询分析使用
 
 
 

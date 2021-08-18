@@ -1,17 +1,17 @@
 ---
-title: "什么是 Redis Cluster"
+title: "什么是 云数据库Redis Cluster"
 description: Test description
 draft: false
 weight: 3
 enableToc: false
-keyword: Redis Cluster, shanhe, 数据库
+keyword: 云数据库Redis Cluster, shanhe, 数据库
 ---
 
 
 
 Redis 是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。
 
-Redis Cluster on shanhe AppCenter 基于原生的 Redis 提供了 Redis Cluster 的 App，能够在 AppCenter 进行一键部署，有如下特性：
+云数据库Redis Cluster on shanhe AppCenter 基于原生的 Redis 提供了 云数据库Redis Cluster 的 App，能够在 AppCenter 进行一键部署，有如下特性：
 
 - 支持一主多从以及多主多从，每个主所在分片 (shard) 平均分摊 16384 个 slots， 增加或删除主节点系统会自动平衡 slots 
 - 集群支持 HA，即当某个主节点异常，它的从节点会自动切换成主节点

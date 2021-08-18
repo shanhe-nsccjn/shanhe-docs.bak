@@ -1,14 +1,14 @@
 ---
-title: "MongoDB Paas 文档"
+title: "云数据库MongoDB Paas 文档"
 description: Test description
 weight: 9
 ---
 
-shanhe Mongo 服务即 MongoDB replica set 集群， 默认情况下包括两个 replica set 节点(replica 和 priority0)，在此基础上， 你也可以添加多个 replica set 节点以满足更个性化的使用场景和业务需求。 同时，我们还提供了在线扩容、自动备份、灵活配置和监控告警等功能来帮助你更好地管理集群。 shanhe Mongo 服务亦运行于你专属的私有网络下，最大限度地保证了你的数据安全。
+shanhe Mongo 服务即 云数据库MongoDB replica set 集群， 默认情况下包括两个 replica set 节点(replica 和 priority0)，在此基础上， 你也可以添加多个 replica set 节点以满足更个性化的使用场景和业务需求。 同时，我们还提供了在线扩容、自动备份、灵活配置和监控告警等功能来帮助你更好地管理集群。 shanhe Mongo 服务亦运行于你专属的私有网络下，最大限度地保证了你的数据安全。
 
 ## 新建
 
-在控制台导航中点击 MongoDB 进入列表页面，然后点击『创建』按钮开始创建。
+在控制台导航中点击 云数据库MongoDB 进入列表页面，然后点击『创建』按钮开始创建。
 
 **私有网络**
 
@@ -18,7 +18,7 @@ shanhe Mongo 服务即 MongoDB replica set 集群， 默认情况下包括两个
 
 **资源设置**
 
-在资源设置页中可以选择 Mongo 的配置、存储磁盘大小以自动备份时间； Mongo 的配置决定了默认的最大连接数； 存储磁盘大小则决定了 MongoDB 的最大容量，您的数据和日志共享这块磁盘； 最后，请谨慎选择是否关闭自动备份功能。
+在资源设置页中可以选择 Mongo 的配置、存储磁盘大小以自动备份时间； Mongo 的配置决定了默认的最大连接数； 存储磁盘大小则决定了 云数据库MongoDB 的最大容量，您的数据和日志共享这块磁盘； 最后，请谨慎选择是否关闭自动备份功能。
 
 ![](../../_images/create-mongo-step0.png)
 
@@ -51,7 +51,7 @@ shanhe Mongo 服务即 MongoDB replica set 集群， 默认情况下包括两个
 ![](../../_images/resize-mongo-step0.png)
 
 >警告
-需要注意的是，如果你的集群只有默认的两个节点，那么在扩容期间，Mongo 服务会有一段时间处于只读状态；如果多于两个节点，扩容期间 MongoDB 集群会自动选主，因此 Primary 节点的 IP 地址可能会发生变化。
+需要注意的是，如果你的集群只有默认的两个节点，那么在扩容期间，Mongo 服务会有一段时间处于只读状态；如果多于两个节点，扩容期间 云数据库MongoDB 集群会自动选主，因此 Primary 节点的 IP 地址可能会发生变化。
 
 ## 备份
 
@@ -76,16 +76,16 @@ shanhe Mongo 服务即 MongoDB replica set 集群， 默认情况下包括两个
 *   CPU 使用率
 *   内存使用率
 *   硬盘使用率
-*   MongoDB 各项操作数量
-*   MongoDB 复制操作数量
-*   MongoDB 连接数
+*   云数据库MongoDB 各项操作数量
+*   云数据库MongoDB 复制操作数量
+*   云数据库MongoDB 连接数
 
 ## 操作
 
 **连接 Mongo 服务**
 
 > 注解
-连接 MongoDB 的客户端版本需要在 3.0 以上。
+连接 云数据库MongoDB 的客户端版本需要在 3.0 以上。
 
 Mongo 服务创建成功之后，就可以通过提供的 IP 地址来访问。
 
@@ -98,7 +98,7 @@ Mongo 服务创建成功之后，就可以通过提供的 IP 地址来访问。
 
 ![](../../_images/mongo-list-1.png)
 
-如果使用代码进行连接, 那么 MongoDB 连接字符串为 mongodb://USER:PASSWORD@IP/DB?replicaSet=foba&authSource=admin
+如果使用代码进行连接, 那么 云数据库MongoDB 连接字符串为 mongodb://USER:PASSWORD@IP/DB?replicaSet=foba&authSource=admin
 
 其中:
 
@@ -114,13 +114,13 @@ Mongo 服务创建成功之后，就可以通过提供的 IP 地址来访问。
 
 **创建新账号**
 
-可以使用 root 账号连接到 MongoDB 后，执行 db.createUser 命令创建新账号。
+可以使用 root 账号连接到 云数据库MongoDB 后，执行 db.createUser 命令创建新账号。
 
 ![](../../_images/create-mongo-user-0.png)
 
 **导入数据**
 
-可以使用 mongoimport 工具向 MongoDB 导入已有数据，关于 mongoimport 的使用可以参考官方文档 [http://docs.mongodb.org/manual/reference/program/mongoimport/](http://docs.mongodb.org/manual/reference/program/mongoimport/)
+可以使用 mongoimport 工具向 云数据库MongoDB 导入已有数据，关于 mongoimport 的使用可以参考官方文档 [http://docs.mongodb.org/manual/reference/program/mongoimport/](http://docs.mongodb.org/manual/reference/program/mongoimport/)
 
 ## 基准测试
 
@@ -144,7 +144,7 @@ Throughput(ops/sec): 1968 [数据准备](../../_images/ycsb_mongo_c4m8_1.load) [
 
 ![](../../_images/ycsb_mongo_c4m8.png)
 
-下面同时运行了两个 YCSB 实例来对8核16G和8核32G配置的 Mongo 进行基准测试， 需要注意的是两个 YCSB 实例实际上也并不能压满 MongoDB 的性能，所以 OPS 仅供参考之用。
+下面同时运行了两个 YCSB 实例来对8核16G和8核32G配置的 Mongo 进行基准测试， 需要注意的是两个 YCSB 实例实际上也并不能压满 云数据库MongoDB 的性能，所以 OPS 仅供参考之用。
 
 **8核16G** Throughput(ops/sec): 2087/1890 [数据准备](../../_images/ycsb_mongo_c8m16_1.load) [测试结果 A](../../_images/ycsb_mongo_c8m16_1.run) [测试结果 B](../../_images/ycsb_mongo_c8m16_2.run)
 

@@ -14,7 +14,7 @@ draft: false
 | --- | --- | --- | --- |
 | alarm_policies.n | String | 告警策略ID | No |
 | alarm_policy_name | String | 告警策略名称 | No |
-| alarm_policy_type | String | 支持告警策略类型，目前支持： ‘instance’, ‘eip’, ‘router’ ‘loadbalancer_listener_tcp’, ‘loadbalancer_listener_https’, ‘loadbalancer_listener_http’, ‘loadbalancer_backend_http’, ‘loadbalancer_backend_tcp’, ‘rdb_mysql’, ‘rdb_psql’, ‘elasticsearch_node’, ‘cache_node_memcached’, ‘cache_node_redis’, ‘queue_node_kafka’, ‘spark_node’, ‘hadoop_node’, ‘zookeeper_node’, ‘hbase_node’, ‘mongo_instance’, ‘storm_node’, | No |
+| alarm_policy_type | String | 支持告警策略类型，目前支持： ‘instance’, ‘eip’, ‘router’ ‘loadbalancer_listener_tcp’, ‘loadbalancer_listener_https’, ‘loadbalancer_listener_http’, ‘loadbalancer_backend_http’, ‘loadbalancer_backend_tcp’, ‘rdb_mysql’, ‘rdb_psql’, ‘elasticsearch_node’, ‘cache_node_memcached’, ‘cache_node_redis’, ‘queue_node_Kafka’, ‘spark_node’, ‘hadoop_node’, ‘zookeeper_node’, ‘hbase_node’, ‘mongo_instance’, ‘storm_node’, | No |
 | status.n | String | 告警策略状态，有效值为 active, deleted, ceased | No |
 | search_word | String | 搜索关键词，支持告警策略名称 | No |
 | verbose | Integer | 是否返回冗长的信息，若为1，则返回绑定了该告警策略的资源的信息，默认为0. | No |

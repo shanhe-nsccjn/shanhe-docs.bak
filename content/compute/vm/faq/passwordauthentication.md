@@ -1,6 +1,6 @@
 ---
 title: "Linux云服务器密钥登陆下如何开启密码登陆"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 weight: 50
 draft: false

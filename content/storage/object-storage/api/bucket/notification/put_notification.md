@@ -23,7 +23,7 @@ Bucket Notificaiton 提供了一种机制，使得当某些指定的事件在 �
 
 ```http
 PUT /?notification HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 {
@@ -97,7 +97,7 @@ Json 消息体
 
 ```http
 PUT /?notification HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 Content-Length: 125

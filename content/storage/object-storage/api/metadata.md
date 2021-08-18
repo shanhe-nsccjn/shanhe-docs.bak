@@ -90,7 +90,7 @@ weight: 2
 
 ```http
 PUT /copy_to_self HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Cache-Control: no-cache
 x-qs-meta-id: 0
@@ -110,7 +110,7 @@ x-qs-request-id: <x-qs-request-id>
 
 ```http
 PUT /copy_to_self HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Cache-Control: max-age=31536000
 x-qs-metadata-directive: replace
@@ -132,7 +132,7 @@ HEAD Object 验证对象的元数据修改成功, 请求服务端：
 
 ```http
 HEAD /copy_to_self HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Authorization: <authorization string>
 ```
@@ -154,7 +154,7 @@ x-qs-request-id: <x-qs-request-id>
 
 ```http
 PUT /source_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Cache-Control: no-cache
 x-qs-meta-id: 0
@@ -174,7 +174,7 @@ x-qs-request-id: <x-qs-request-id>
 
 ```http
 PUT /dest_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 x-qs-copy-source: /mybucket/source_object
 Authorization: <authorization string>
@@ -193,7 +193,7 @@ HEAD 目标对象 dest_object, 验证其元数据和 source_object 元数据相�
 
 ```http
 HEAD /dest_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Authorization: <authorization string>
 ```
@@ -215,7 +215,7 @@ x-qs-request-id: <x-qs-request-id>
 
 ```http
 PUT /source_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Cache-Control: no-cache
 x-qs-meta-id: 0
@@ -235,7 +235,7 @@ x-qs-request-id: <x-qs-request-id>
 
 ```http
 PUT /dest_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Cache-Control: max-age=31536000
 x-qs-copy-source: /mybucket/source_object
@@ -256,7 +256,7 @@ HEAD 目标对象 dest_object, 验证其元数据和 PUT COPY API 中请求头�
 
 ```http
 HEAD /dest_object HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Thu, 05 Jul 2018 11:01:40 GMT
 Authorization: <authorization string>
 ```

@@ -17,7 +17,7 @@ weight: 3
 
 ```http
 POST /<object-name>?upload_id=<upload-id> HTTP/1.1
-Host: <bucket-name>.jn1a.is.shanhe.com
+Host: <bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 ```

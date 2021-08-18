@@ -16,7 +16,7 @@ draft: false
 | --- | --- | --- | --- |
 | caches.n | String | 缓存服务ID | No |
 | status.n | String | 缓存服务状态: pending, active, deleted, suspended, ceased | No |
-| cache_type.n | String | 缓存服务类型: 目前只支持redis2.8.17, memcached1.4.13 | No |
+| cache_type.n | String | 缓存服务类型: 目前只支持redis2.8.17, 存储服务存储服务Memcached1.4.13 | No |
 | search_word | String | 搜索关键词，支持缓存服务ID，缓存服务名称 | No |
 | tags.n | String | 按照标签ID过滤, 只返回已绑定某标签的资源 | No |
 | verbose | Integer | 是否返回冗长的信息，若为1，则返回缓存服务相关其他资源的详细数据。 | No |
@@ -40,7 +40,7 @@ draft: false
 | --- | --- | --- |
 | cache_id | String | 缓存服务ID |
 | cache_name | String | 缓存服务名称 |
-| cache_type | String | 缓存服务类型, 目前支持 “Redis2.8.17” 和 “Memcached1.4.13” |
+| cache_type | String | 缓存服务类型, 目前支持 “Redis2.8.17” 和 “存储服务Memcached1.4.13” |
 | cache_port | Integer | 缓存服务端口 |
 | cache_size | Integer | 缓存服务节点内存大小，单位GB |
 | node_count | Integer | 缓存服务节点个数 |

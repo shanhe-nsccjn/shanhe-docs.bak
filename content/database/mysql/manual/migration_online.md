@@ -6,7 +6,7 @@ draft: false
 ---
 
 
-迁移服务可以将远端 MySQL 数据库的数据平滑迁移到 shanhe MySQL Plus 集群中。目前支持迁移的 MySQL 版本为 5.6 & 5.7 & 8.0。
+迁移服务可以将远端 MySQL 数据库的数据平滑迁移到 shanhe 云数据库MySQL Plus 集群中。目前支持迁移的 MySQL 版本为 5.6 & 5.7 & 8.0。
 
 支持 `xtrabackup` 方式和 `mysqldump` 两种迁移方式，数据量大时，xtrabackup 迁移速率会快很多。
 

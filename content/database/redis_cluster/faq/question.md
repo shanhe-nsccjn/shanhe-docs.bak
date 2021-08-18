@@ -1,5 +1,5 @@
 ---
-title: "Redis Cluster Paas文档"
+title: "云数据库Redis Cluster Paas文档"
 description: Test description
 draft: false
 weight: 4
@@ -48,7 +48,7 @@ weight: 4
 
 1）检查集群状态
 
-在同一私网中创建一台 Linux 云服务器，您可能需要先装一些依赖包 (如Ubuntu下apt-get install tcl ruby　和　gem install redis)， 然后请 [下载 Redis 3.x](http://download.redis.io/releases/redis-3.0.5.tar.gz), 解压后进入 Redis src目录，执行以下命令　（假设 Redis cluster 其中一个节点的 IP 为 192.168.100.13, 端口为 6379)。
+在同一私网中创建一台 Linux 云服务器，您可能需要先装一些依赖包 (如Ubuntu下apt-get install tcl ruby　和　gem install redis)， 然后请 [下载 Redis 3.x](http://download.redis.io/releases/redis-3.0.5.tar.gz), 解压后进入 Redis src目录，执行以下命令　（假设 云数据库Redis Cluster 其中一个节点的 IP 为 192.168.100.13, 端口为 6379)。
 
 ```
 ./redis-trib.rb check 192.168.100.13:6379
@@ -204,22 +204,22 @@ Redis 集群服务每个主节点可以支持多个从节点。当读的能力�
 
 ### 迁移
 
-迁移数据既包括 Redis standalone 之间也包括从 Redis Standalone 到 Redis Cluster。
+迁移数据既包括 云数据库Redis Standalone 之间也包括从 云数据库Redis Standalone 到 云数据库Redis Cluster。
 
-１）从 Redis standalone 迁移数据到 Redis cluster
+１）从 云数据库Redis Standalone 迁移数据到 云数据库Redis Cluster
 
-Redis 3.x　提供了一个从 Redis standalone (包括旧版本 2.8.17) 迁移数据到 Redis cluster　的工具 redis-trib.rb, 请 [下载 Redis 3.x](http://download.redis.io/releases/redis-3.0.5.tar.gz), 解压后进入 Redis src目录， 执行以下命令　（假设 Redis standalone 的主节点 IP 为 192.168.100.11，端口为 6379, Redis cluster 其中一个 节点的 IP 为 192.168.100.20, 端口为 6379。
+Redis 3.x　提供了一个从 云数据库Redis Standalone (包括旧版本 2.8.17) 迁移数据到 云数据库Redis Cluster　的工具 redis-trib.rb, 请 [下载 Redis 3.x](http://download.redis.io/releases/redis-3.0.5.tar.gz), 解压后进入 Redis src目录， 执行以下命令　（假设 云数据库Redis Standalone 的主节点 IP 为 192.168.100.11，端口为 6379, 云数据库Redis Cluster 其中一个 节点的 IP 为 192.168.100.20, 端口为 6379。
 
 ```
 ./redis-trib.rb import --from 192.168.100.11:6379　192.168.100.20:6379
 ```
 
 >注解
->在做迁移之前建议对原 Redis standalone 做备份，因为上述操作是对数据进行迁移而不是拷贝。
+>在做迁移之前建议对原 云数据库Redis Standalone 做备份，因为上述操作是对数据进行迁移而不是拷贝。
 
 ２）从 Redis 2.8.17 迁移数据到 Redis 3.0.5
 
-山河shanhe  Redis 服务也支持从旧版本 Redis standalone 迁移数据到新版本 Redis standalone,　具体操作参见 [_迁移_](#guide-redis-cluster-migration)， 您也可以用slaveof-host的方式同步数据，详情请见 [_slaveof-host 迁移_](#guide-redis-migration)。
+山河shanhe  Redis 服务也支持从旧版本 云数据库Redis Standalone 迁移数据到新版本 云数据库Redis Standalone,　具体操作参见 [_迁移_](#guide-redis-cluster-migration)， 您也可以用slaveof-host的方式同步数据，详情请见 [_slaveof-host 迁移_](#guide-redis-migration)。
 
 ### 升级
 
@@ -231,7 +231,7 @@ Redis 集群由于是多节点分片且支持 HA，因此目前不支持备份�
 
 ### 监控
 
-Redis 集群的监控提供 Redis standalone 完全一样的监控信息，详情请见 [_监控_](#guide-redis-monitoring)。
+Redis 集群的监控提供 云数据库Redis Standalone 完全一样的监控信息，详情请见 [_监控_](#guide-redis-monitoring)。
 
 ### 图形化操作
 

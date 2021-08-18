@@ -8,14 +8,14 @@ weight: 3
 ---
 
 
-QingStor Go SDK 已在 GitHub 开源，下文为简要使用文档。更多详细信息请参见 [GitHub 项目页面](https://github.com/qingstor/qingstor-sdk-go) ，和[Godoc](https://godoc.org/github.com/qingstor/qingstor-sdk-go)。
+OIS Go SDK 已在 GitHub 开源，下文为简要使用文档。更多详细信息请参见 [GitHub 项目页面](https://github.com/shanhe-nsccjn/ois-sdk-go) ，和[Godoc](https://godoc.org/github.com/qingstor/qingstor-sdk-go)。
 
 ## 安装
 
 可以直接使用 `go get` 安装:
 
 ```bash
-> go get -u github.com/qingstor/qingstor-sdk-go
+> go get -u github.com/shanhe-nsccjn/ois-sdk-go
 ```
 
 安装之后，可以查看命令行的文档
@@ -24,7 +24,7 @@ QingStor Go SDK 已在 GitHub 开源，下文为简要使用文档。更多详�
 > godoc github.com/qingstor/qingstor-sdk-go
 ```
 
-也可以访问 GitHub 的 [release 页面](https://github.com/qingstor/qingstor-sdk-go/releases) 下载压缩包
+也可以访问 GitHub 的 [release 页面](https://github.com/shanhe-nsccjn/ois-sdk-go/releases) 下载压缩包
 
 > **要求使用 Go 1.5 或以上的 Go 版本，如果版本是 1.5 还需要设置 GO15VENDOREXPERIMENT=1**
 
@@ -42,9 +42,9 @@ QingStor Go SDK 已在 GitHub 开源，下文为简要使用文档。更多详�
 
 ```go
 import (
-    "github.com/qingstor/qingstor-sdk-go/config"
-    qs "github.com/qingstor/qingstor-sdk-go/service"
-    qsErrors "github.com/qingstor/qingstor-sdk-go/request/errors"
+    "github.com/shanhe-nsccjn/ois-sdk-go/config"
+    qs "github.com/shanhe-nsccjn/ois-sdk-go/service"
+    qsErrors "github.com/shanhe-nsccjn/ois-sdk-go/request/errors"
 )
 
 configuration, _ := config.New("ACCESS_KEY_ID", "SECRET_ACCESS_KEY")

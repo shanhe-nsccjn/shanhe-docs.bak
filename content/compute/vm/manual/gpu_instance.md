@@ -16,13 +16,13 @@ draft: false
 
 为满足高性能计算的需求，系统提供NVIDIA Quadro RTX 6000型号的GPU和AMD FirePro s7150*2型号的GPU，单台云服务器可配置2张GPU卡，单机单浮点峰值计算能力分别最多可达16.3Tflops和7.54Tflops，且无虚拟化性能损耗。
 
-## Deep Learning App
+##深度学习基础服务App
 
-如果您的需求是深度学习，请优先选择 [AppCenter](https://appcenter.shanhe.com/) 中的 [Deep Learning On shanhe](https://appcenter.shanhe.com/apps/app-ptor186d/Deep%20Learning%20On%20shanhe) 应用。
+如果您的需求是深度学习，请优先选择 [AppCenter](https://appcenter.shanhe.com/) 中的 [深度学习基础服务 On shanhe](https://appcenter.shanhe.com/apps/app-ptor186d/Deep%20Learning%20On%20shanhe) 应用。
 
-[Deep Learning On shanhe](https://appcenter.shanhe.com/apps/app-ptor186d/Deep%20Learning%20On%20shanhe) 是一款预配置的深度学习开发环境，其上搭载了多款主流的深度学习框架，可以配合GPU资源加速计算，用于AI开发和模型训练，功能丰富，使用灵活。部署后即可使用，可以省去安装驱动、框架等步骤，提高工作效率。
+[深度学习基础服务 On shanhe](https://appcenter.shanhe.com/apps/app-ptor186d/Deep%20Learning%20On%20shanhe) 是一款预配置的深度学习开发环境，其上搭载了多款主流的深度学习框架，可以配合GPU资源加速计算，用于AI开发和模型训练，功能丰富，使用灵活。部署后即可使用，可以省去安装驱动、框架等步骤，提高工作效率。
 
-创建Deep Learning App时可选择云服务器规格以及GPU数量，具体使用文档请参考：
+创建深度学习基础服务App时可选择云服务器规格以及GPU数量，具体使用文档请参考：
 [https://docs.shanhe.com/product/ai/deeplearning/](https://docs.shanhe.com/product/ai/deeplearning/)
 
 ## GPU云服务器使用步骤

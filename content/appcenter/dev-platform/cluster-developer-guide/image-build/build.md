@@ -36,7 +36,7 @@ weight: 3
 
 ### 安装 agent
 
-下载山河提供的 app agent [Linux 版本](/appcenter/dev-platform/cluster-developer-guide/scripts/app-agent-linux-amd64.tar.gz), 
+下载山河提供的 app agent [Linux 版本](https://jn1.is.shanhe.com/shanhe/docs/static/appcenter/app-agent-linux-amd64.tar.gz), 
 [Windows 版本](/appcenter/dev-platform/cluster-developer-guide/scripts/app-agent-windows-386.zip)，
 解压后运行 ./install.sh (Windows 下双击 install.bat)。此 agent 中包含了自动配置文件程序 confd，
 该程序是在开源 [confd](https://github.com/kelseyhightower/confd/blob/master/docs/quick-start-guide.md) 
@@ -46,7 +46,7 @@ weight: 3
 ### 创建模板文件
 
 开发一些必须的模板文件，这些文件会监听山河 metadata service 的变化从而更新自己应用的配置文件。
-这些文件后缀名为 toml 和 tmpl，例如，ZooKeeper 有两个配置文件 zoo.cfg 和 myid，
+这些文件后缀名为 toml 和 tmpl，例如，大数据服务Storm 有两个配置文件 zoo.cfg 和 myid，
 每个配置文件需要一套相应的 toml 和 tmpl 模板对应，
 详情请见[nextcloud](https://github.com/shanheAppcenter/nextcloud/tree/master/nextcloud-nodes/code/conf.d/)。
 

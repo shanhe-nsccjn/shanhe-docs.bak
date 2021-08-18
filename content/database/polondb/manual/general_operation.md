@@ -7,7 +7,7 @@ draft: false
 
 
 
-## PolonDB 日常操作
+## 云数据库云数据库PolonDB 日常操作
 
 ### 启动
 
@@ -47,7 +47,7 @@ draft: false
   -  `standby` ：备节点
   -  `unknown` ：获取节点状态失败
 
-> 带有 `副本` 标识的节点并不代表 PolonDB 集群的备节点，仅代表节点是一个组
+> 带有 `副本` 标识的节点并不代表 云数据库PolonDB 集群的备节点，仅代表节点是一个组
 
 ![image-NodeRoleNode](../../_images/image-NodeRoleNode.png)
 
@@ -67,7 +67,7 @@ draft: false
 
 > 当集群节点变化，或是增量备份链达到 30 个后，会自动进行全量备份（创建新备份链），增量备份可以节省很多磁盘
 >
-> PolonDB 在备份的时候，可能会对业务的写入产生短暂的阻塞影响，建议在业务低峰期进行
+> 云数据库PolonDB 在备份的时候，可能会对业务的写入产生短暂的阻塞影响，建议在业务低峰期进行
 
 ![image-manualBackup](../../_images/image-manualBackup.png)
 
@@ -108,7 +108,7 @@ draft: false
 
 ## 查看数据库日志
 
-PolonDB 提供最近 7 天的数据库日志
+云数据库PolonDB 提供最近 7 天的数据库日志
 
 * 连接所要查看节点的 `postgres` 库，通过查询表的方式即可。
 

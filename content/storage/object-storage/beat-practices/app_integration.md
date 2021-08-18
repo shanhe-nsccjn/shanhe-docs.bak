@@ -354,7 +354,7 @@ QS PLLZOBTTZXGBNOWUFHZZ:vIWg/qAxvXlcFRb9uzYmdIM9tiF6EuM6SC3i13yLzH8=
 ```http
 GET /mybucket/music.mp3 HTTP/1.1
 Authorization: QS PLLZOBTTZXGBNOWUFHZZ:vIWg/qAxvXlcFRb9uzYmdIM9tiF6EuM6SC3i13yLzH8=
-Host: jn1a.is.shanhe.com
+Host: jn1.is.shanhe.com
 Date: Mon, 14 Nov 2016 14:05:00 GMT
 ```
 
@@ -374,7 +374,7 @@ SDK 参考例子:
 ```html
 
     Upload
-    .jn1a.is.shanhe.com" method="POST" enctype="multipart/form-data">
+    .jn1.is.shanhe.com" method="POST" enctype="multipart/form-data">
 
 ```
 
@@ -388,7 +388,7 @@ SDK 参考例子:
 
 ```http
 GET /music.mp3?access_key_id=PLLZOBTTZXGBNOWUFHZZ&expires=1479107162&signature=tuXu/KcggHWPAfEmraUHDwEUdiIPSXVRsO%2BT2rxomBQ%3D HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Mon, 14 Nov 2016 14:05:00 GMT
 ```
 

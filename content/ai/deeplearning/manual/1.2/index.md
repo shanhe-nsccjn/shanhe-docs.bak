@@ -1,7 +1,7 @@
 ---
 ---
 
-# Deep Learning on shanhe AppCenter 用户指南
+#深度学习基础服务on shanhe AppCenter 用户指南
 
 
 ## 深度学习简介
@@ -26,12 +26,12 @@ Keras 是一个高层神经网络 API，由 Python 编写，通过调用其他�
 
 > <span style="color:red">目前仅 pek3a , pek3b , sh1a 支持 GPU，如需在其他区创建请选择 CPU 版。TensorFlow，Caffe ， PyTorch 和 Keras 均支持用 CPU 进行深度学习应用的训练和测试。</span>
 
-本说明文档仅对应山河深度学习平台 1.2 版本，1.1 版本说明文档请参考[山河深度学习平台1.1](./1.1)。
+本说明文档仅对应山河深度学习基础服务 1.2 版本，1.1 版本说明文档请参考[山河深度学习基础服务1.1](./1.1)。
 
-## 山河深度学习平台(非容器版)
+## 山河深度学习基础服务(非容器版)
 
-基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习平台提供了 CUDA9.1 + cuDNN7.1.3 ， CUDA8.0 + cuDNN7.1.3 和 CPU 等3套配置，并安装了流行的深度学习框架，如 TensorFlow(1.8.0/1.6.0)，Caffe(BVLC/Intel)，PyTorch(0.4.0/0.3.1)，Keras(2.2.0)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
-山河深度学习平台组件版本对照表
+基于山河提供的 NVIDIA Tesla P100 GPU，山河深度学习基础服务提供了 CUDA9.1 + cuDNN7.1.3 ， CUDA8.0 + cuDNN7.1.3 和 CPU 等3套配置，并安装了流行的深度学习框架，如 TensorFlow(1.8.0/1.6.0)，Caffe(BVLC/Intel)，PyTorch(0.4.0/0.3.1)，Keras(2.2.0)，省去了用户搭建环境的麻烦，提高开发效率。用户无需修改代码，即可把本地的代码运行在云上，还能动态扩展所需资源。
+山河深度学习基础服务组件版本对照表
 
 App版本 | TensorFlow | Caffe | PyTorch | Keras
 -------- | ----- | ----- | ----- | -----
@@ -39,7 +39,7 @@ CUDA 9.1 | 1.8.0 | BVLC  | 0.4.0 | 2.2.0
 CUDA 8.0 | 1.6.0 | BVLC  | 0.3.1 | 2.2.0
 CPU      | 1.8.0 | Intel | 0.3.1 | 2.2.0
 
-为了满足用户对 TensorFlow 不同版本的需求，山河深度学习平台提供了 TensorFlow 其他版本编译好的 wheel 包，可从对象存储下载，下载地址请参考[TensorFlow 安装包下载](#tf_download)。
+为了满足用户对 TensorFlow 不同版本的需求，山河深度学习基础服务提供了 TensorFlow 其他版本编译好的 wheel 包，可从对象存储下载，下载地址请参考[TensorFlow 安装包下载](#tf_download)。
 
 更换 TensorFlow 版本的方法如下
 ```shell
@@ -55,9 +55,9 @@ pip install tensorflow-1.9.0-cp27-cp27mu-linux_x86_64.whl
 pip list
 ```
 
-## 山河深度学习平台(容器版)
-深度学习平台（容器版）基于 Docker 容器技术，将主流的深度学习框架做成 docker 镜像的形式，用户无需为环境进行繁琐的配置，直接运行容器化的深度学习应用，即可迅速开展训练和预测任务，提高了用户的开发和部署效率。
-山河深度学习平台（容器版）提供 GPU 和 CPU 两个容器版本，其中 GPU 版本分为 GPU 高级版和 GPU 基础版，均搭载 NVIDIA Tesla P100 GPU，GPU 高级版和 GPU 基础版的区别在于 CPU 核数、内存的可配置范围以及是否支持包年包月。GPU 容器版在 docker 宿主机中安装 NVIDIA Driver(387.26)，nvidia-docker2，Docker(18.03.1-ce)，CPU 容器版在 docker 宿主机上安装 Docker(18.03.1-ce)，容器版在宿主机上预置了一个或多个 docker 镜像，镜像中均安装 Caffe(1.0), TensorFlow(1.8.0), Keras(2.2.0), PyTorch(0.4.1) 框架。
+## 山河深度学习基础服务(容器版)
+深度学习基础服务（容器版）基于 Docker 容器技术，将主流的深度学习框架做成 docker 镜像的形式，用户无需为环境进行繁琐的配置，直接运行容器化的深度学习应用，即可迅速开展训练和预测任务，提高了用户的开发和部署效率。
+山河深度学习基础服务（容器版）提供 GPU 和 CPU 两个容器版本，其中 GPU 版本分为 GPU 高级版和 GPU 基础版，均搭载 NVIDIA Tesla P100 GPU，GPU 高级版和 GPU 基础版的区别在于 CPU 核数、内存的可配置范围以及是否支持包年包月。GPU 容器版在 docker 宿主机中安装 NVIDIA Driver(387.26)，nvidia-docker2，Docker(18.03.1-ce)，CPU 容器版在 docker 宿主机上安装 Docker(18.03.1-ce)，容器版在宿主机上预置了一个或多个 docker 镜像，镜像中均安装 Caffe(1.0), TensorFlow(1.8.0), Keras(2.2.0), PyTorch(0.4.1) 框架。
 
 - 容器版的内置镜像
 
@@ -71,7 +71,7 @@ pip list
 
 > <span style="color:red"> CPU 优化容器版内置 3 个镜像，其中有两个为 Intel CPU 优化镜像(1.0-py27-cpu-avx 和 1.0-py27-cpu-avx2-mkldnn)，只有 CPU 架构为 SandyBridge, IvyBridge, Haswell, Broadwell 才可以使用优化版镜像，CPU 容器版镜像与 CPU 微架构的适配情况见[CPU 容器版镜像与 CPU 微架构适配表](#cpu_support_table)</span>
 
-为满足用户对不同 Deep Learning 框架版本、Python 版本和 CUDA 版本的需求，山河深度学习平台（容器版）提供了匹配不同版本的多个[docker image](https://hub.docker.com/u/qingcloud/)，用户可依据需要拉取，多个版本的 docker image 以及获取命令见[image 获取命令](#docker_images_pulls)
+为满足用户对不同深度学习基础服务框架版本、Python 版本和 CUDA 版本的需求，山河深度学习基础服务（容器版）提供了匹配不同版本的多个[docker image](https://hub.docker.com/u/qingcloud/)，用户可依据需要拉取，多个版本的 docker image 以及获取命令见[image 获取命令](#docker_images_pulls)
 
 - 各深度学习框架的 Repository 地址
 
@@ -83,13 +83,13 @@ pip list
 |Caffe|https://hub.docker.com/r/qingcloud/caffe/|
 |TensorFlow+Keras+Pytorch+Caffe|https://hub.docker.com/r/qingcloud/deeplearning/|
 
-## 部署 Deep Learning 服务
+## 部署深度学习基础服务服务
 
-### 第1步：进入 AppCenter，选择 Deep Learning on shanhe 服务
+### 第1步：进入 AppCenter，选择深度学习基础服务on shanhe 服务
 
 ![Alt text](./deploy_0_0.png)
 
-### 第2步：部署 Deep Learning 应用
+### 第2步：部署深度学习基础服务应用
 
 ![Alt text](./deploy_0_1.png)
 
@@ -115,7 +115,7 @@ pip list
 
 ![第5步：CPU节点设置](cpu_type.png)
 
-> <span style="color:red"> 建议用户选择最新的 CPU 微架构，深度学习平台提供的 CPU 微架构按从旧到新排序为：平台默认 -> Westmere -> SandyBridge -> IvyBridge -> Haswell -> Broadwell， 只有 CPU 微架构在 SandyBridge 及以上才可以使用优化版镜像，CPU 容器版镜像（含优化版镜像）与 CPU 微架构的适配情况见[ CPU 容器版镜像与 CPU 微架构适配表](#cpu_support_table)</span>
+> <span style="color:red"> 建议用户选择最新的 CPU 微架构，深度学习基础服务提供的 CPU 微架构按从旧到新排序为：平台默认 -> Westmere -> SandyBridge -> IvyBridge -> Haswell -> Broadwell， 只有 CPU 微架构在 SandyBridge 及以上才可以使用优化版镜像，CPU 容器版镜像（含优化版镜像）与 CPU 微架构的适配情况见[ CPU 容器版镜像与 CPU 微架构适配表](#cpu_support_table)</span>
 
 ### 第6步：网络设置
 
@@ -127,7 +127,7 @@ pip list
 
 ![第7步：环境设置](env_config.png)
 
-- Deep Learning app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
+-深度学习基础服务app 与 对象存储服务OIS 命令行工具集成，[配置 对象存储服务OIS](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html) 相关参数，可以方便的从 对象存储服务OIS 拉取数据。如果 对象存储服务OIS 选用 false，access_key 和 secret_key 则无需填写。
 
 ### 第8步：查看 GPU 监控信息
 
@@ -146,27 +146,27 @@ pip list
 
 - 登录账号：**ubuntu**，登录初始密码：**p12cHANgepwD**
 - 配置 VPN，并通过私网 IP 地址访问。参考[VPN 隧道指南](https://docs.shanhe.com/product/network/vpn#vpn) 配置 VPN，建议使用 VPN 方式，安全性较高；
-- 若 Deep Learning 主机所在的 VPC 私有网络的路由器没有绑定公网 IP，则可以在[山河控制台](https://console.shanhe.com)提供的 web 终端登录；
-- 若 Deep Learning 主机所在的 VPC 私有网络的路由器绑定了公网 IP，则可以在 VPC 网络的路由器上[配置端口转发策略](https://docs.shanhe.com/product/network/appcenter_network_config/config_portmapping.html)，间接通过 ssh 客户端登录。
+- 若深度学习基础服务主机所在的 VPC 私有网络的路由器没有绑定公网 IP，则可以在[山河控制台](https://console.shanhe.com)提供的 web 终端登录；
+- 若深度学习基础服务主机所在的 VPC 私有网络的路由器绑定了公网 IP，则可以在 VPC 网络的路由器上[配置端口转发策略](https://docs.shanhe.com/product/network/appcenter_network_config/config_portmapping.html)，间接通过 ssh 客户端登录。
 
 > 为保障主机安全，建议登陆之后更换成ssh秘钥登录方式，修改 ssh 服务禁止密码登录。修改方法：`vi /etc/ssh/sshd_config`，将 `PasswordAuthentication` 设置为 `no`，重启 ssh 服务：`sudo service ssd restart`，
 > 由于端口转发带来的安全隐患，不建议采用端口转发方式登录主机
 
-## 升级 Deep Learning App
-如果您正在使用 Deep Learning 1.1 版本，界面中将会出现提示升级的按钮
+## 升级深度学习基础服务App
+如果您正在使用深度学习基础服务1.1 版本，界面中将会出现提示升级的按钮
 ![升级提示](upgrade_tip.png)
 关闭集群后，点击菜单中的“升级”按钮即可升级，升级过程中，仅 /data 目录下的文件能够保留，如果您在其他目录下存放了数据文件，请务必复制到 /data 目录、或者保存到对象存储等其他存储位置，再进行升级操作。
 ![升级菜单](upgrade_menu.png)
 
 > <span style="color:red"> 升级注意： 升级过程中，仅 /data 目录下的文件能够保留，如果您在其他目录下存放了数据文件，请务必复制到 /data 目录、或者保存到对象存储等其他存储位置，再进行升级操作。 </span>
 
-## 深度学习平台使用指南
+## 深度学习基础服务使用指南
 
 ### 启动环境
 
 #### 非容器版：激活VirtualEnv
 
-非容器版深度学习平台使用 VirtualEnv 来管理 Python 环境，Python 的版本为 2.7 和 3.6 ，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
+非容器版深度学习基础服务使用 VirtualEnv 来管理 Python 环境，Python 的版本为 2.7 和 3.6 ，并装有 numpy，scipy，pandas，matplotlib，nltk，scikit-learn，jupyter notebook 等常用工具包。下面将以 MNIST 数据集为例，分别测试 Caffe，TensorFlow，PyTorch 和 Keras。
 
 平台已经为用户安装好了 Python 2.7 和 Python 3.6 的 VirtualEnv 环境，并在其中预装了深度学习框架和常用工具包，放在 ubuntu 用户根目录的 workspaces 文件夹，py2 和 py3 分别对应 Python 2.7 和 3.6 版本。用户登录后，使用如下命令激活和退出
 ```shell
@@ -183,10 +183,10 @@ VirtualEnv 的激活和退出
 
 > <span style="color:red">在一个环境激活后，直接输入 Python 命令即可运行对应版本的 Python，不需要显式指定 Python2 或 Python3，输入命令前注意命令提示行开头小括号中的信息，py2 和 py3 分别对应 2.7 和 3.6 版本的 Python。</span>
 
-深度学习平台为用户准备了环境完整性测试样例，放在 ubuntu 用户根目录的 test 文件夹，使用 MNIST 数据集对 Caffe, TensorFlow, PyTorch 和 Keras 进行测试。
+深度学习基础服务为用户准备了环境完整性测试样例，放在 ubuntu 用户根目录的 test 文件夹，使用 MNIST 数据集对 Caffe, TensorFlow, PyTorch 和 Keras 进行测试。
 > [MNIST](http://yann.lecun.com/exdb/mnist/) 是著名的手写数字数据集，包含 0~9 十个各种风格的手写数字，经常用于深度学习入门及测试。其内容分为训练集和测试集，训练数据集包含 60,000 个样本，测试数据集包含 10,000 样本，数据集中的每张图片由 28x28 个像素点构成。
 
-Deep Learning 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地，非容器版存到 /data 目录的数据，可以在启容器时通过 -v 映射进容器使用。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html))，从 对象存储服务OIS 获取数据：
+深度学习基础服务 训练往往需要大量的数据，数据存储经常占用很大的空间。山河 对象存储服务OIS 可以存储海量数据，用户可以方便的把数据放在 对象存储服务OIS，再使用 对象存储服务OIS 命令行工具快速的下载到本地，非容器版存到 /data 目录的数据，可以在启容器时通过 -v 映射进容器使用。如果在环境设置中配置好了 对象存储服务OIS (如果没有也可在本地[配置](https://docs.shanhe.com/qingstor/developer_tools/qsctl.html))，从 对象存储服务OIS 获取数据：
 
 ```shell
 cd /home/ubuntu/tensorflow
@@ -223,7 +223,7 @@ sudo docker inspect your_contain_id | grep -i IPAddress
 ```
 
 - 单机训练启动：
-使用内置镜像 qingcloud/deeplearning:1.0-py27-cu91-cudnn7.1 启动容器，并且通过 -v 参数挂载测试用例，测试用例在宿主机 /home/ubuntu/test 目录，若用户在容器启动时未挂载测试用例，则可以从[这里下载](https://github.com/QingCloudAppcenter/DeepLearning/tree/master/test)
+使用内置镜像 qingcloud/deeplearning:1.0-py27-cu91-cudnn7.1 启动容器，并且通过 -v 参数挂载测试用例，测试用例在宿主机 /home/ubuntu/test 目录，若用户在容器启动时未挂载测试用例，则可以从[这里下载](https://github.com/ShanheHeAppcenter/DeepLearning/tree/master/test)
 ```shell
 sudo nvidia-docker run -it --rm --name test -p 8888:8888 -p 6006:6006 -v /home/ubuntu/test:/root/test qingcloud/deeplearning:1.0-py27-cu91-cudnn7.1 /bin/bash
 ```
@@ -238,7 +238,7 @@ sudo nvidia-docker run -it --rm --name test01 -v /home/ubuntu/test:/root/test --
 
 ### Caffe 使用指南
 
-Caffe 支持 Python 接口，深度学习平台已经提供，目前不支持多机分布式训练，详情请见 [Caffe 文档](http://caffe.berkeleyvision.org)。(** GPU 和 CPU 版本App分别内置了不同版本的 Caffe ，请依据硬件情况选择需要部署的版本。**)
+Caffe 支持 Python 接口，深度学习基础服务已经提供，目前不支持多机分布式训练，详情请见 [Caffe 文档](http://caffe.berkeleyvision.org)。(** GPU 和 CPU 版本App分别内置了不同版本的 Caffe ，请依据硬件情况选择需要部署的版本。**)
 
 #### 单机
 
@@ -362,7 +362,7 @@ TensorFlow 增加节点
 
 TensorFlow 分布式训练需要指定 parameter server 和 worker 的 IP 地址和端口号（根据自己的 IP 进行修改）
 
-跨区分布式：山河深度学习平台支持跨区分布式TensorFlow训练，首先使用IPSec或GRE方式，连通两个集群的路由器。参考[IPSec隧道](https://docs.shanhe.com/product/network/ipsec)。如果是异地路由器，则要求两个路由器都有公网IP地址，并为公网IP分配足够的带宽，依据实际训练数据交互的带宽需求，调整带宽到合适的值。两个路由器连通之后，集群中的深度学习节点将会在不同的网段，例如 192.168.1.2 和 192.168.2.2 但是相互之间的连通性和在一个局域网没有差别，在进行 TensorFlow 分布式训练时，只需按照实际地址，指定分布式训练节点 IP 地址即可。
+跨区分布式：山河深度学习基础服务支持跨区分布式TensorFlow训练，首先使用IPSec或GRE方式，连通两个集群的路由器。参考[IPSec隧道](https://docs.shanhe.com/product/network/ipsec)。如果是异地路由器，则要求两个路由器都有公网IP地址，并为公网IP分配足够的带宽，依据实际训练数据交互的带宽需求，调整带宽到合适的值。两个路由器连通之后，集群中的深度学习节点将会在不同的网段，例如 192.168.1.2 和 192.168.2.2 但是相互之间的连通性和在一个局域网没有差别，在进行 TensorFlow 分布式训练时，只需按照实际地址，指定分布式训练节点 IP 地址即可。
 
 下面是一个 parameter server 和两个 worker 进行分布式训练的示例，非容器版和容器版仅在指定 IP 地址时有不同：
 
@@ -466,7 +466,7 @@ PyTorch 分布式训练过程
 PyTorch 分布式训练结果
 ![PyTorch 分布式训练结果](pytorchdist_result.png)
 
-跨区分布式：山河深度学习平台支持跨区分布式 PyTorch 训练，首先使用 IPSec 或 GRE 方式，连通两个集群的路由器。参考[IPSec隧道](https://docs.shanhe.com/product/network/ipsec)。如果是异地路由器，则要求两个路由器都有公网 IP 地址，并为公网 IP 分配足够的带宽，依据实际训练数据交互的带宽需求，调整带宽到合适的值。两个路由器连通之后，集群中的深度学习节点将会在不同的网段，例如 192.168.1.2 和 192.168.2.2，但是相互之间的连通性和在一个局域网没有差别。
+跨区分布式：山河深度学习基础服务支持跨区分布式 PyTorch 训练，首先使用 IPSec 或 GRE 方式，连通两个集群的路由器。参考[IPSec隧道](https://docs.shanhe.com/product/network/ipsec)。如果是异地路由器，则要求两个路由器都有公网 IP 地址，并为公网 IP 分配足够的带宽，依据实际训练数据交互的带宽需求，调整带宽到合适的值。两个路由器连通之后，集群中的深度学习节点将会在不同的网段，例如 192.168.1.2 和 192.168.2.2，但是相互之间的连通性和在一个局域网没有差别。
 
 进行 Pytorch 分布式训练时，需要在分布式参数中指定 init_method 为 env 方式，参考代码[pytorch_mnist_dist.py](https://github.com/QingCloudAppcenter/DeepLearning/raw/master/examples/pytorch_multi_gpu_test.py)下载。以一台主机和一台从机为例，在两区节点都下载好分布式训练文件之后，启动命令如下：
 
@@ -555,10 +555,10 @@ cd /root/test/keras && pip install pytest && python keras_multi_gpu_test.py
 ![Alt text](./multip-gpu-keras.png)
 
 ## 平台性能测试
-为了让用户快速了解深度学习平台的性能指标以便于选择，我们使用 TensorFlow [性能测试代码](https://github.com/tensorflow/benchmarks)中的 CNN Benchmark ，对常用硬件配置组合进行了测试。
+为了让用户快速了解深度学习基础服务的性能指标以便于选择，我们使用 TensorFlow [性能测试代码](https://github.com/tensorflow/benchmarks)中的 CNN Benchmark ，对常用硬件配置组合进行了测试。
 我们选择 ResNet-50 模型，调用 Python 3.6 + TensorFlow 1.7.0 环境，使用合成数据进行测试。
 
-山河深度学习平台性能测试表
+山河深度学习基础服务性能测试表
 
 运行环境 | CPU | Memory | GPU | BatchSize | 项目 | Images/Sec (step time)
 -------- | ----- | ----- | ----- | ----- | ----- | -----
@@ -942,10 +942,10 @@ sudo nvidia-docker run -it --rm -p host_port:8888 image_id /bin/bash
 
 ### 4.容器启动后，目录 /root 下可能存在 test/ caffe/ opencv/ nccl/ 等文件夹，可以删除吗？
 
-- test/ 存放当前镜像中的 Deep Learning 框架的测试文件，若不需测试可删除
+- test/ 存放当前镜像中的深度学习基础服务框架的测试文件，若不需测试可删除
 - caffe/ opencv/ nccl/ 为镜像制作过程中的中间文件，镜像中已经编译安装 caffe, opencv, nccl，不建议删除
 
-### 5.如何查看深度学习平台的 GPU 使用率？
+### 5.如何查看深度学习基础服务的 GPU 使用率？
 
 - 在容器或主机中运行 nvidia-smi 查看 GPU 设备是否正常，也可以使用 `watch -n 0.5 nvidia-smi` 动态的查看 GPU 的使用情况。
 

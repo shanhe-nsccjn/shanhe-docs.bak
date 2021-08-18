@@ -1,13 +1,13 @@
 ---
-title: "分布式数据库 RadonDB"
-linkTitle: "RadonDB"
+title: "云数据库RadonDB"
+linkTitle: "云数据库RadonDB"
 weight: 03
 collapsible: true
 type: "product"
 
 section1:
-  title: RadonDB
-  vice_title: RadonDB 是一款基于 MySQL 研发的新一代分布式关系型数据库 (MyNewSQL)。
+  title: 云数据库RadonDB
+  vice_title: 云数据库RadonDB 是一款基于 MySQL 研发的新一代分布式关系型数据库 (MyNewSQL)。
 
 Section2:
   title: 用户指南
@@ -25,11 +25,11 @@ Section2:
       url: "quickstart/quick_start/"
 
     - title: 操作指南
-      content: 学习上手如何管理 RadonDB 集群，以及如何使用 RadonDB 提供的相关服务等。
+      content: 学习上手如何管理 云数据库RadonDB 集群，以及如何使用 云数据库RadonDB 提供的相关服务等。
       url: "manual/cluster_info/"
 
     - title: 最佳实践
-      content: RadonDB 的最佳实践
+      content: 云数据库RadonDB 的最佳实践
       url: "best-practices/data_import_and_export/"
 
 section3:
@@ -50,23 +50,23 @@ section3:
 section4:
   children:
     - title: 了解
-      content: 什么是 RadonDB
+      content: 什么是 云数据库RadonDB
       vice_title: 了解的第一步
       children:
         - title: 产品简介
           url: "intro/introduction/"
 
     - title: 进阶
-      content: 学习如何创建、管理、使用 RadonDB 集群
+      content: 学习如何创建、管理、使用 云数据库RadonDB 集群
       vice_title: 上手的第一步
       children: 
-        - title: 创建 RadonDB
+        - title: 创建 云数据库RadonDB
           url: "quickstart/quick_start/"
 
-        - title: RadonDB 集群信息
+        - title: 云数据库RadonDB 集群信息
           url: "manual/cluster_info/"
 
-        - title: RadonDB 服务功能
+        - title: 云数据库RadonDB 服务功能
           url: "manual/service/"
 ---
 

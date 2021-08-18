@@ -8,7 +8,7 @@ weight: 3
 
 ## 步骤一：启动 MySQL 日志服务
 
-MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 `18801` 。
+云数据库MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 `18801` 。
 
 日志服务支持下载 MySQL错误日志 `mysql-error` 和 MySQL慢日志 `mysql-slow`（二者都保留六个日志文件），同时支持下载 MySQL审计日志 `mysql-audit` ， MySQL binlog文件 `mysql-bin` 和 SSL 证书文件 `mysql-cert` 。
 
@@ -16,7 +16,7 @@ MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 
 
 1. 登录 shanhe 管理控制台。
 2. 在 AppCenter 控制台，选择**集群管理**。
-3. 选择 MySQL Plus 目标集群，点击资源 id，进入到集群详情界面。
+3. 选择 云数据库MySQL Plus 目标集群，点击资源 id，进入到集群详情界面。
    ![集群列表](/database/mysql/_images/download_mysql_log_1.png)
 4. 在**基本属性**区域，展开操作列框。
 5. 点击**启动日志服务端**。
@@ -34,7 +34,7 @@ MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 
 
    ![download_mysql_log_4](/database/mysql/_images/download_mysql_log_4.png)
 
-- 通过拨入 MySQL Plus 集群所在 VPC 的 VPN 服务，来内网访问 MySQL Plus 集群日志服务.建议使用 OpenVPN，可以参考 **VPC 隧道服务**说明。
+- 通过拨入 云数据库MySQL Plus 集群所在 VPC 的 VPN 服务，来内网访问 云数据库MySQL Plus 集群日志服务.建议使用 OpenVPN，可以参考 **VPC 隧道服务**说明。
 
    ![download_mysql_log_5](/database/mysql/_images/download_mysql_log_5.png)
 
@@ -46,7 +46,7 @@ MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 
 
 ### 下载集群日志
 
-可以通过 wget 指令在 MySQL Plus 同 VPC 下的私有网络云服务器里下载集群日志.
+可以通过 wget 指令在 云数据库MySQL Plus 同 VPC 下的私有网络云服务器里下载集群日志.
 
 - 下载所有目录
 

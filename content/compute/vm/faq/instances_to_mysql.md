@@ -9,7 +9,7 @@ enableToc: false
 
 ## 实现数据库与云服务器网络互通
 
-一、通过 Appcenter  ->  集群管理，找到购买的Mysql Plus数据库
+一、通过 Appcenter  ->  集群管理，找到购买的云数据库MySQL Plus数据库
 
 ![instances_to_mysql01](../_images/instances_to_mysql01.png)
 
@@ -25,6 +25,6 @@ enableToc: false
 
 ![instances_to_mysql04](../_images/instances_to_mysql04.png)
 
-五、当云服务器与Mysql Plus处于同一私有网络下后，通过计算基础服务  ->  网络  ->  vpc网络  ->  rtr-xxxxxxx  ->    Mysql_Plus,查看配置成功，此时云服务器与Mysql Plus数据库网络互通，可以在云服务器上通过私有网络直接登录数据库
+五、当云服务器与云数据库MySQL Plus处于同一私有网络下后，通过计算基础服务  ->  网络  ->  vpc网络  ->  rtr-xxxxxxx  ->    Mysql_Plus,查看配置成功，此时云服务器与云数据库MySQL Plus数据库网络互通，可以在云服务器上通过私有网络直接登录数据库
 
 ![instances_to_mysql05](../_images/instances_to_mysql05.png)

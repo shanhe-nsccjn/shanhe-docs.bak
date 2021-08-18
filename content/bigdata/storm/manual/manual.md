@@ -8,26 +8,26 @@ draft: false
 ---
 ---
 
-# Apache Storm on shanhe AppCenter 用户手册
+# Apache 大数据服务Storm on shanhe AppCenter 用户手册
 
 
 ## 简介
 
-Storm 是一个开源的分布式实时计算系统，通常被比作＂实时的 Hadoop＂。Storm 为实时计算提供了一些简单优美的原语，支持多种编程语言，并内建流式窗口 API 及分布式缓存 API，极大简化了流式数据处理过程。Storm 不仅高可靠、易扩展，而且处理速度极快，每个计算节点每秒能处理上百万条元组信息（Tuple），因此常被用于实时分析、在线机器学习、连续计算、分布式 RPC、ETL 等。 关于 Storm 更多的详细信息，请参阅 [Storm 官方网站](http://storm.apache.org/)，[Storm 官方中文文档](http://storm.apachecn.org/releases/cn/1.1.0/)。
+大数据服务Storm 是一个开源的分布式实时计算系统，通常被比作＂实时的 Hadoop＂。大数据服务Storm 为实时计算提供了一些简单优美的原语，支持多种编程语言，并内建流式窗口 API 及分布式缓存 API，极大简化了流式数据处理过程。大数据服务Storm 不仅高可靠、易扩展，而且处理速度极快，每个计算节点每秒能处理上百万条元组信息（Tuple），因此常被用于实时分析、在线机器学习、连续计算、分布式 RPC、ETL 等。 关于 大数据服务Storm 更多的详细信息，请参阅 [Storm 官方网站](http://storm.apache.org/)，[Storm 官方中文文档](http://storm.apachecn.org/releases/cn/1.1.0/)。
 
 Storm 具有如下特点：
 
-- 编程简单：开发人员只需要关注应用逻辑，而且跟 Hadoop 类似，Storm 提供的编程原语也很简单。
+- 编程简单：开发人员只需要关注应用逻辑，而且跟 Hadoop 类似，大数据服务Storm 提供的编程原语也很简单。
 - 高性能，低延迟：实时性在流式计算框架中最强。
 - 可扩展：随着业务发展，数据量和计算量越来越大，系统可水平扩展。
 - 容错：单个节点挂了不影响应用。
 - 消息不丢失：保证消息处理。
 
-除此之外 `Storm on shanhe AppCenter` 将 Storm 通过云应用的形式在 shanhe AppCenter 部署，具有如下特性:
+除此之外 `大数据服务Storm on shanhe AppCenter` 将 大数据服务Storm 通过云应用的形式在 shanhe AppCenter 部署，具有如下特性:
 
-- 版本升级到 1.1.1，相比较之前的版本，Storm 开始对 Streaming SQL 有了支持，加强了与 Kafka、HDFS、OpenTSDB、Druid 等大数据组件的集成，详情请参阅 [官方说明](http://storm.apache.org/2017/03/29/storm110-released.html)。
+- 版本升级到 1.1.1，相比较之前的版本，大数据服务Storm 开始对 Streaming SQL 有了支持，加强了与 消息队列Kafka、HDFS、OpenTSDB、Druid 等大数据组件的集成，详情请参阅 [官方说明](http://storm.apache.org/2017/03/29/storm110-released.html)。
 - 支持横向与纵向在线伸缩。
-- 提供 Storm UI 高可用 vip, 更加方便的监控和管理 Storm。
+- 提供 大数据服务Storm UI 高可用 vip, 更加方便的监控和管理 大数据服务Storm。
 - 系统自动运维，降低企业使用成本。
 - 一键部署，开箱即用。
 - 已经配置好基础环境的客户端节点，用于方便提交 Topology。
@@ -36,30 +36,30 @@ Storm 具有如下特点：
 
 - 求 TopN：相信大家对 TopN 类的业务需求也比较熟悉，在规定时间窗口内，统计数据出现的 TopN，该类处理在购物及电商业务需求中，比较常见。
 - 实时推荐系统：例如电商业务中基于用户的历史行为、查询、点击、地理信息等信息获得，其中有很多实时数据，可以使用 Storm 进行处理，在此基础上进行精准的商品推荐和放置广告。
-- 实时风控系统：使用 Storm 实时统计分析为规则引擎提供实时数据，可在毫秒延迟内检测、拦截潜在的风险行为。
-- 分布式 RPC：Storm 有对 RPC 进行专门的设计，分布式 RPC 用于对 Storm 上大量的函数进行并行计算，最后将结果返回给客户端。
-- 热度统计：热度统计实现依赖于 Storm 提供的 TimeCacheMap 数据结构，也推荐使用 RotatingMap，该结构能够在内存中保存近期活跃的对象。我们可以使用它来实现例如论坛中热帖排行计算等。
-- 日志分析与处理：监控系统中的事件日志，使用 Storm 检查每条日志信息，把符合匹配规则的消息保存到数据库。一般从类 Kafka 的 MQ 或者基于 HBase 的 timetunnel 中读取实时日志消息，经过一系列处理，最终将处理结果写入到一个分布式存储中，提供给应用程序访问。
+- 实时风控系统：使用 大数据服务Storm 实时统计分析为规则引擎提供实时数据，可在毫秒延迟内检测、拦截潜在的风险行为。
+- 分布式 RPC：大数据服务Storm 有对 RPC 进行专门的设计，分布式 RPC 用于对 大数据服务Storm 上大量的函数进行并行计算，最后将结果返回给客户端。
+- 热度统计：热度统计实现依赖于 大数据服务Storm 提供的 TimeCacheMap 数据结构，也推荐使用 RotatingMap，该结构能够在内存中保存近期活跃的对象。我们可以使用它来实现例如论坛中热帖排行计算等。
+- 日志分析与处理：监控系统中的事件日志，使用 大数据服务Storm 检查每条日志信息，把符合匹配规则的消息保存到数据库。一般从类 消息队列Kafka 的 MQ 或者基于 大数据服务HBase 的 timetunnel 中读取实时日志消息，经过一系列处理，最终将处理结果写入到一个分布式存储中，提供给应用程序访问。
 
- 除此之外，官方也列举出了很多公司使用 Storm 的场景，[官方场景参考](http://storm.apache.org/releases/current/Powered-By.html)。
+ 除此之外，官方也列举出了很多公司使用 大数据服务Storm 的场景，[官方场景参考](http://storm.apache.org/releases/current/Powered-By.html)。
 
-## Storm on shanhe 部署架构
+## 大数据服务Storm on shanhe 部署架构
 
-Storm 集群采用的是 master/slave 架构，如下图所示，山河的 Storm 集群包括如下五种节点类：
+大数据服务Storm 集群采用的是 master/slave 架构，如下图所示，山河的 大数据服务Storm 集群包括如下五种节点类：
 
 - 主节点：运行了 Nimbus、DRPC、UI 和 Logviewer 服务，负责接收客户端提交的计算拓扑，并协调分派计算任务。
 - 从节点：运行了 Supervisor 和 Logviewer 服务。其中，Supervisor 服务主要用于接收计算任务并弹性启动或停止工作进程（Worker），而 Logviewer 服务方便用户查看运行日志。
 - RPC 节点：运行了 DRPC 和 Logviewer 服务，用于接收 RPC 请求，并将计算拓扑的处理结果返回给客户端。
-- 客户端节点：配置好了　Storm 提交任务的环境，可以用于该集群提交计算拓扑。
-- [ZooKeeper on shanhe AppCenter](https://appcenter.shanhe.com/apps/app-tg3lbp0a) 集群：用于协调 Storm 集群。
+- 客户端节点：配置好了　大数据服务Storm 提交任务的环境，可以用于该集群提交计算拓扑。
+- [ZooKeeper on shanhe AppCenter](https://appcenter.shanhe.com/apps/app-tg3lbp0a) 集群：用于协调 大数据服务Storm 集群。
 
-![Storm 部署架构图](../storm_architecture.png)
+![大数据服务Storm 部署架构图](../storm_architecture.png)
 
-## 创建 Storm
+## 创建 大数据服务Storm
 
-创建 Storm 集群前，您需要先创建一个 VPC 网络，并在 shanhe AppCenter 中创建一个 Zookeeper 集群,其他地方创建的 Zookeeper 集群识别不出来， 建议 Storm 与 Zookeeper 在一个私有网络中。
+创建 大数据服务Storm 集群前，您需要先创建一个 VPC 网络，并在 shanhe AppCenter 中创建一个 大数据服务ZooKeeper 集群,其他地方创建的 大数据服务ZooKeeper 集群识别不出来， 建议 大数据服务Storm 与 大数据服务ZooKeeper 在一个私有网络中。
 
-> 为了保障数据安全, Storm 集群需要运行在受管私有网络中。所以在创建一个 Storm 集群之前，需要创建一个 VPC 和一个受管私有网络，受管私有网络需要加入 VPC，并开启 DHCP 服务（默认开启）。
+> 为了保障数据安全, 大数据服务Storm 集群需要运行在受管私有网络中。所以在创建一个 大数据服务Storm 集群之前，需要创建一个 VPC 和一个受管私有网络，受管私有网络需要加入 VPC，并开启 DHCP 服务（默认开启）。
 
 
 
@@ -106,7 +106,7 @@ CPU，内存，节点数量，主机类型和磁盘大小根据自己实际需�
 
 ![第７步: 依赖服务设置](../storm_zookeeper.png)
 
-选择您所依赖的 Zookeeper 集群。
+选择您所依赖的 大数据服务ZooKeeper 集群。
 
 ### 第八步：参数设置
 
@@ -121,21 +121,21 @@ CPU，内存，节点数量，主机类型和磁盘大小根据自己实际需�
 
 ### 创建成功
 
-当 Storm 创建完成之后，您可以查看每个节点的节点状态和服务状态。 如图所示，当节点状态显示为“活跃”状态，表示该节点启动正常。 当每个节点都启动正常后 Storm 集群显示为“活跃”状态，服务状态会由“获取中”变为“活跃”状态， 表示您已经可以正常使用 Storm 服务了。
+当 大数据服务Storm 创建完成之后，您可以查看每个节点的节点状态和服务状态。 如图所示，当节点状态显示为“活跃”状态，表示该节点启动正常。 当每个节点都启动正常后 Storm 集群显示为“活跃”状态，服务状态会由“获取中”变为“活跃”状态， 表示您已经可以正常使用 Storm 服务了。
 
 ![集群列表 ](../cluster_info.png)
 
-## Storm 集群测试
+## 大数据服务Storm 集群测试
 
-Storm 创建完成之后可以测试其可用性，由于 Storm 客户端节点已自动完成相关配置，可通过 Web 终端 登录直接使用，用户名：root，密码：storm
+大数据服务Storm 创建完成之后可以测试其可用性，由于 大数据服务Storm 客户端节点已自动完成相关配置，可通过 Web 终端 登录直接使用，用户名：root，密码：storm
 
->测试需创建 Storm 客户端 节点，如创建集群时未创建该类型节点，可通过 新增节点 增加该节点
+>测试需创建 大数据服务Storm 客户端 节点，如创建集群时未创建该类型节点，可通过 新增节点 增加该节点
 
-Storm 集群主节点上启动了 Storm UI 服务。Storm UI 服务是一个基于 Web 的监控服务，它不仅可以查看集群、配置、Topology 以及各组件（Spout 和 Bolt）等的信息和日志，还可以暂停、激活、删除 Topology，更是 Topology 运行时的重要调优工具。
+大数据服务Storm 集群主节点上启动了 大数据服务Storm UI 服务。大数据服务Storm UI 服务是一个基于 Web 的监控服务，它不仅可以查看集群、配置、Topology 以及各组件（Spout 和 Bolt）等的信息和日志，还可以暂停、激活、删除 Topology，更是 Topology 运行时的重要调优工具。
 
-为了方便测试,使用并熟悉 Storm UI，请查看客户端节点 /etc/hosts 目录下 host 文件配置，建议添加 Storm 节点 host 至本地开发环境的 host 文件中，这样可以更加方便的通过 Storm UI 在本地浏览器上查看日志，建议使用高可用 storm_ui_vip：8080 访问与使用 Storm UI,其中 storm_ui_vip 在您创建好集群后可以在集群左侧栏看到。
+为了方便测试,使用并熟悉 大数据服务Storm UI，请查看客户端节点 /etc/hosts 目录下 host 文件配置，建议添加 大数据服务Storm 节点 host 至本地开发环境的 host 文件中，这样可以更加方便的通过 Storm UI 在本地浏览器上查看日志，建议使用高可用 storm_ui_vip：8080 访问与使用 大数据服务Storm UI,其中 storm_ui_vip 在您创建好集群后可以在集群左侧栏看到。
 
->本指南中所有的测试都是基于 Storm 官方自带的示例 storm-starter 进行的。
+>本指南中所有的测试都是基于 大数据服务Storm 官方自带的示例 storm-starter 进行的。
 
 ### 测试一：ExclamationTopology
 
@@ -255,7 +255,7 @@ Storm 提供了流式窗口 API，支持 Sliding Window 和 Tumbling Window。Sl
 
 ![SlidingWindowTopology](../tumblingavg.png)
 
-除了自带的几个基本使用的例子之外,Storm 也可以很方便的与其他大数据组件整合:例如 HBase、Kafka、Elasticsearch、Druid、Redis等。详情可以参考[Storm 官网](http://storm.apache.org/releases/1.1.2/index.html)中的 Integration With External Systems, and Other Libraries。
+除了自带的几个基本使用的例子之外,Storm 也可以很方便的与其他大数据组件整合:例如 大数据服务HBase、消息队列Kafka、Elasticsearch、Druid、Redis等。详情可以参考[Storm 官网](http://storm.apache.org/releases/1.1.2/index.html)中的 Integration With External Systems, and Other Libraries。
 
 ## 在线伸缩
 
@@ -333,9 +333,9 @@ Storm 提供了流式窗口 API，支持 Sliding Window 和 Tumbling Window。Sl
 
   >注意：Storm 支持 Storm Core 和 Storm Trident 两种编程模式
 
-  |          | Flink    |  Spark Streaming  |  Storm  |  Kafka Stream  |
+  |          | Flink    |  Spark Streaming  |  Storm  |  消息队列Kafka Stream  |
     | :----:   | :----:   | :----: | :----: |:----: |
-    | 架构模式        | 主从      |   主从，依赖 Spark,每个 batch 处理都依赖主    |   主从，依赖 Zookeeper,处理过程中对主的依赖不大    |  安装 Kafka,Kafka 依赖 Zookeeper    |
+    | 架构模式        | 主从      |   主从，依赖 Spark,每个 batch 处理都依赖主    |   主从，依赖 Zookeeper,处理过程中对主的依赖不大    |  安装 消息队列Kafka,消息队列Kafka 依赖 大数据服务ZooKeeper    |
     | 容错        |基于 distributed snapshots checkpoint 机制      |   基于 HDFS 做 checkpoint    |   Records Ack    |   高可用分区，状态存储和对乱序数据的处理能力    |
     | 处理模型与延迟        | 单条事件处理，毫秒级延迟      |   一个事件窗口的所有事件，秒级延迟    |   Storm Core 单条事件处理，毫秒级延迟，Storm Trident 为批处理，秒级延迟    | 单条事件处理，毫秒级延迟      |
     | 吞吐       | 高      |   高    |   Storm Core 低吞吐，Storm Trident 高吞吐    | 高      |
@@ -344,7 +344,7 @@ Storm 提供了流式窗口 API，支持 Sliding Window 和 Tumbling Window。Sl
     | 成熟性        | 处于发展阶段，比较成熟      |   发展了很长时间，非常成熟    |   发展了很长时间，非常成熟    | 处于发展阶段，比较成熟      |
     |  分布式 RPC     | 不支持      |   不支持    |   支持    | 不支持      |
 
-Flink 和 Kafka Stream 目前在生产环境中比较少见，主要针对 Storm 和 Spark Streaming 选型建议如下：
+Flink 和 消息队列Kafka Stream 目前在生产环境中比较少见，主要针对 Storm 和 Spark Streaming 选型建议如下：
 
 建议使用 Storm 场景：
 
@@ -354,9 +354,9 @@ Flink 和 Kafka Stream 目前在生产环境中比较少见，主要针对 Storm
 - 如果一个大数据应用系统，它就是纯粹的实时计算，不需要在中间执行 SQL 交互式查询、复杂的　transformation 算子等，那么用 Storm 是比较好的选择
 - 分布式 RPC 服务场景
 
-建议使用 Kafka Stream 场景
+建议使用 消息队列Kafka Stream 场景
 
-- 输入源为 Kafka,轻量级 ETL 场景
+- 输入源为 消息队列Kafka,轻量级 ETL 场景
 
 建议使用 Spark Streaming 场景
 

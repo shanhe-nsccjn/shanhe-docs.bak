@@ -12,7 +12,7 @@ draft: false
 
 | Parameter name | Type | Description | Required |
 | --- | --- | --- | --- |
-| cache_type | String | 缓存服务类型，目前支持 Redis 2.8.17 和 Memcached 1.4.13. | Yes |
+| cache_type | String | 缓存服务类型，目前支持 Redis 2.8.17 和 存储服务Memcached 1.4.13. | Yes |
 | cache_parameter_group_name | String | 缓存服务配置组名称 | No |
 | zone | String | 区域 ID，注意要小写 | Yes |
 

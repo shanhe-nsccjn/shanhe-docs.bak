@@ -22,12 +22,12 @@ weight: 2
 
 * 具体步骤可以参考视频教程
 
-<video src="https://appcenter-docs.jn1a.is.shanhe.com/developer-guide/docs/videos/AppCenter2.0_Training_Fix.mp4" controls="controls">
+<video src="https://appcenter-docs.jn1.is.shanhe.com/developer-guide/docs/videos/AppCenter2.0_Training_Fix.mp4" controls="controls">
 您的浏览器不支持 video 标签。
 </video>
 
 
-<video src="https://appcenter-docs.jn1a.is.shanhe.com/developer-guide/docs/videos/tomcatdemo_720p.mp4" controls="controls">
+<video src="https://appcenter-docs.jn1.is.shanhe.com/developer-guide/docs/videos/tomcatdemo_720p.mp4" controls="controls">
 您的浏览器不支持 video 标签。
 </video>
 

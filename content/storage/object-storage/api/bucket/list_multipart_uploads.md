@@ -68,7 +68,7 @@ Authorization: <authorization-string>
 
 ```http
 GET /?uploads&prefix=Movies/&delimiter=/&limit=6 HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 25 Dec 2016 19:02:00 GMT
 Authorization: authorization string
 ```

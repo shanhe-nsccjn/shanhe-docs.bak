@@ -1,5 +1,5 @@
 ---
-title: "RadonDB 支持 SQL 集"
+title: "云数据库RadonDB 支持 SQL 集"
 description: Test description
 weight: 7
 ---
@@ -7,9 +7,9 @@ weight: 7
 
 ## 背景
 
-在 SQL 语法上， RadonDB 与 MySQL 完全兼容。
+在 SQL 语法上， 云数据库RadonDB 与 MySQL 完全兼容。
 
-在满足大部分需求场景下， RadonDB 的 SQL 实现只是 MySQL 一个子集，从而更好的使用和规范。
+在满足大部分需求场景下， 云数据库RadonDB 的 SQL 实现只是 MySQL 一个子集，从而更好的使用和规范。
 
 ## Data Definition Statements
 
@@ -36,7 +36,7 @@ table_option: {
 
 `说明:`
 
-* RadonDB 根据路由信息发送 sql 到相应的后端执行引擎进行更改。
+* 云数据库RadonDB 根据路由信息发送 sql 到相应的后端执行引擎进行更改。
 * *跨分区非原子操作*。
 
 #### 1.1. 增加列
@@ -99,7 +99,7 @@ Create Table: CREATE TABLE `t1` (
 
 `说明:`
 
-* RadonDB 的表字符集默认为 utf8。
+* 云数据库RadonDB 的表字符集默认为 utf8。
 
 `示例:`
 
@@ -201,7 +201,7 @@ create_option: {
 
 `说明:`
 
-* RadonDB 会把此语句直接发到所有后端执行并返回。
+* 云数据库RadonDB 会把此语句直接发到所有后端执行并返回。
 * *跨分区非原子操作*。
 
 `示例:`
@@ -242,7 +242,7 @@ lock_option:
 
 `说明:`
 
-* RadonDB 根据路由信息，发到相应的后端执行索引添加。
+* 云数据库RadonDB 根据路由信息，发到相应的后端执行索引添加。
 * *跨分区非原子操作*。
 
 `示例:`
@@ -391,7 +391,7 @@ Query OK, 0 rows affected (1.80 sec)
 
 `说明:`
 
-* RadonDB 会把此语句直接发到所有后端并返回。
+* 云数据库RadonDB 会把此语句直接发到所有后端并返回。
 * *跨分区非原子操作*。
 
 `示例:`
@@ -411,7 +411,7 @@ Query OK, 0 rows affected (0.02 sec)
 
 `说明:`
 
-* RadonDB 根据路由信息，发到相应的后端执行索引删除。
+* 云数据库RadonDB 根据路由信息，发到相应的后端执行索引删除。
 * *跨分区非原子操作*。
 
 `示例:`
@@ -970,7 +970,7 @@ SHOW PROCESSLIST
 
 `说明:`
 
-* 显示的为 client 到 RadonDB 的连接情况，并非后端分区 MySQL。
+* 显示的为 client 到 云数据库RadonDB 的连接情况，并非后端分区 MySQL。
 
 `示例:`
 
@@ -1032,7 +1032,7 @@ ROLLBACK
 `说明:`
 
  * 支持多语句事务。
- * 必须开启 RadonDB 参数 `twopc-enable`。
+ * 必须开启 云数据库RadonDB 参数 `twopc-enable`。
  * 支持单条事务 autocommit (twopc-enable ON)。
 
 `示例:`
@@ -1093,7 +1093,7 @@ RADON ATTACH($address,$user,$password)
 
 `说明:`
 
-* 附加一个 MySQL 到 RadonDB 的 backend。
+* 附加一个 MySQL 到 云数据库RadonDB 的 backend。
 * 在 backend 中类型为 `attach`.
 
 `示例: `
@@ -1131,7 +1131,7 @@ RADON DETACH($address)
 
 `说明:`
 
-* 将一个类型为 attach 的 backend 从 RadonDB 中剥离。
+* 将一个类型为 attach 的 backend 从 云数据库RadonDB 中剥离。
 
 `示例: `
 
@@ -1309,7 +1309,7 @@ mysql> SELECT * FROM animals;
 `说明:`
 
 * 支持 Full-Text Search，提供支持中文，日文和韩文 (CJK) 的 n-gram full-text parser。
-* RadonDB 的 Full-Text 分片表查询时并行执行(而 MySQL 的分区表并不支持 Full-Text Indexes 或 Searches)。
+* 云数据库RadonDB 的 Full-Text 分片表查询时并行执行(而 MySQL 的分区表并不支持 Full-Text Indexes 或 Searches)。
 
 `示例: `
 

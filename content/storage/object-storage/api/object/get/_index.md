@@ -76,7 +76,7 @@ Range: bytes=<byte-range>
 
 ```http
 GET /myphoto.jpg HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 16 Aug 2015 09:05:00 GMT
 Authorization: authorization string
 ```

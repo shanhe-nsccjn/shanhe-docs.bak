@@ -22,7 +22,7 @@ weight: 3
 
 ```http
 PUT /?logging HTTP/1.1
-Host: <source-bucket-name>.jn1a.is.shanhe.com
+Host: <source-bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Authorization: <authorization-string>
 {
@@ -68,7 +68,7 @@ Json 消息体
 
 ```http
 PUT /?logging HTTP/1.1
-Host: <source-bucket-name>.jn1a.is.shanhe.com
+Host: <source-bucket-name>.jn1.is.shanhe.com
 Date: <date>
 Content-Length: 66
 Authorization: authorization string

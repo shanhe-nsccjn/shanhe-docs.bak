@@ -1,16 +1,16 @@
 ---
 title: "产品系列"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 draft: false
 weight: 10
 enableToc: false
-keyword: MySQL Plus, shanhe, 数据库
+keyword: 云数据库MySQL Plus, shanhe, 数据库
 ---
 
 
 
-山河MySQL Plus 提供三个系列：基础版、高可用版、金融版。
+山河云数据库MySQL Plus 提供三个系列：基础版、高可用版、金融版。
 
 |系列    |说明    |适用场景 |
 |:----|:----|:----|

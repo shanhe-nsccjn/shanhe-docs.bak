@@ -186,7 +186,7 @@ Authorization: QS PLLZOBTTZXGBNOWUFHZZ:tuXu/KcggHWPAfEmraUHDwEUdiIPSXVRsO+T2rxom
 
 ```
 GET /
-HOST: js-sdk-test.jn1a.is.shanhe.com
+HOST: js-sdk-test.jn1.is.shanhe.com
 x-qs-date:  Fri, 04 May 2018 16:37:00 GMT
 ```
 
@@ -210,7 +210,7 @@ x-qs-date:Fri, 04 May 2018 16:37:00 GMT\n
 
 ```
 GET /music.mp3?access_key_id=PLLZOBTTZXGBNOWUFHZZ&expires=1479107162&signature=tuXu/KcggHWPAfEmraUHDwEUdiIPSXVRsO%2BT2rxomBQ%3D
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Mon, 14 Nov 2016 14:05:00 GMT
 ```
 

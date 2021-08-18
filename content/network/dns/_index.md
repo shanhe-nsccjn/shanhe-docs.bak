@@ -9,7 +9,7 @@ section1:
   title: 云解析 DNS
   vice_title: 云解析 DNS 提供权威域名解析和全局流量负载均衡两大功能服务，以助用户便捷访问互联网。
   # todo add qingstor introduction video
-  # video: "https://jn1a.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
+  # video: "https://jn1.is.shanhe.com/workshop/webhosting%20feb.16%20v3.mp4"
   # video_img: "/images/video.png"
 
 Section2:

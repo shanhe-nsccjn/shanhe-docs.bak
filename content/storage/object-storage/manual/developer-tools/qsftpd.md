@@ -21,9 +21,9 @@ qsftpd 支持 Linux、macOS 和 Windows 操作系统，可访问 GitHub 项目�
 
 最新版本下载链接如下：
 
-- [qsftpd-latest-darwin_amd64.tar.gz](https://jn1a.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-darwin_amd64.tar.gz)
-- [qsftpd-latest-linux_amd64.tar.gz](https://jn1a.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-linux_amd64.tar.gz)
-- [qsftpd-latest-windows_amd64.tar.gz](https://jn1a.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz)
+- [qsftpd-latest-darwin_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-darwin_amd64.tar.gz)
+- [qsftpd-latest-linux_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-linux_amd64.tar.gz)
+- [qsftpd-latest-windows_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz)
 
 ## 选项列表
 

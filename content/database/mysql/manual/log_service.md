@@ -5,7 +5,7 @@ weight: 9
 draft: false
 ---
 
-MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 `18801` 。
+云数据库MySQL Plus 支持通过 HTTP 服务预览和下载日志，HTTP 服务端口为 `18801` 。
 
 日志服务支持下载 mysql 错误日志 `mysql-error` 和 mysql 慢日志 `mysql-slow`（二者都保留六个日志文件），同时支持下载 mysql 审计日志 `mysql-audit` ， mysql binlog 文件 `mysql-bin` 和 SSL 证书文件 `mysql-cert` 。
 

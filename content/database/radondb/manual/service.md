@@ -53,7 +53,7 @@ draft: false
 
 集群中有监控节点时，通过浏览器输入访问地址（可在[监控节点信息](./#监控节点信息)中查看），输入监控账户和密码即可登录图形界面，查看实时监控数据。
 
-> 注意：需要在同一 VPC 下云服务器上的浏览器来访问，或通过[山河 VPN 服务](https://docs.shanhe.com/product/network/vpn.html#vpn)（位于 VPC 网络中的管理配置标签页下）来访问。不要通过端口转发的方式将服务暴露到公网，避免对数据库服务造成重大影响！
+> 注意：需要在同一 VPC 下云服务器上的浏览器来访问，或通过[山河 VPN 服务](https://docsv3.shanhe.com/network/vpc/manual/vpn/)（位于 VPC 网络中的管理配置标签页下）来访问。不要通过端口转发的方式将服务暴露到公网，避免对数据库服务造成重大影响！
 
 ![监控访问](../../_images/search_dashbords.png)
 
@@ -93,7 +93,7 @@ wget ftp:// SQL 节点 IP 地址/audit --ftp-user=ftpuser --ftp-password=ftppass
 
 ## 自动伸缩
 
-RadonDB 支持自动扩容应用存储空间，详细请参考[自动伸缩](https://docs.shanhe.com/product/operation/autoscaling)。
+云数据库RadonDB 支持自动扩容应用存储空间，详细请参考[自动伸缩](https://docs.shanhe.com/product/operation/autoscaling)。
 
 ![自动伸缩](../../_images/autoscaling_1.png)
 

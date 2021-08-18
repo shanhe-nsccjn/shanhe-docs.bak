@@ -4,9 +4,9 @@ description: test
 draft: false
 ---
 
-## 部署 **Redis standalone** 服务
+## 部署 **云数据库Redis Standalone** 服务
 
-> 为了数据安全，Redis standalone on shanhe 需要部署在私有网络内。请在部署服务之前，先创建一个私有网络。
+> 为了数据安全，云数据库Redis Standalone on shanhe 需要部署在私有网络内。请在部署服务之前，先创建一个私有网络。
 
 
 
@@ -36,7 +36,7 @@ draft: false
 
 ### 四. 配置 Redis 环境参数
 
-Redis Standalone on shanhe 提供了 **Redis** 大部分配置参数，您可以根据需要修改相应的参数。
+云数据库Redis Standalone on shanhe 提供了 **Redis** 大部分配置参数，您可以根据需要修改相应的参数。
 
 ![配置环境变量](../../_images/base_step_4.png) 
 

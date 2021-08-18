@@ -4,7 +4,7 @@ description: Test description
 draft: false
 weight: 7
 enableToc: false
-keyword: PolonDB, shanhe, 数据库
+keyword: 云数据库PolonDB, shanhe, 数据库
 ---
 
 * 节点数量
@@ -33,7 +33,7 @@ keyword: PolonDB, shanhe, 数据库
 
      max_connections × 节点数量 / 2 = 最大支持连接数（估算值）
 
-     > 连接数的可用性与业务特征有关，例如较为复杂的查询业务，会消耗更多的连接给 PolonDB 内部使用
+     > 连接数的可用性与业务特征有关，例如较为复杂的查询业务，会消耗更多的连接给 云数据库PolonDB 内部使用
      >
      > 纵向扩容增加内存可以自动提升连接数
 

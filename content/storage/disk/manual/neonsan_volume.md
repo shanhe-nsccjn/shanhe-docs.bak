@@ -1,6 +1,6 @@
 ---
 title: "企业级分布式 SAN (NeonSAN)"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 draft: false
 enableToc: false
@@ -9,7 +9,7 @@ keyword: 山河
 
 # 简介
 
-企业级分布式 SAN (NeonSAN) 是基于全闪存架构提供的分布式 SAN 服务，单块硬盘容量最高 20TB， I/O 吞吐性能最高可达 350 MB/s， IOPS 最高 50000，适用于对 IOPS、吞吐、容量和稳定性要求很高的业务，例如：企业核心数据库 Oracle RAC 及 SQL Server 故障转移集群、企业级分布式数据库 RadonDB、弹性裸金属服务器高可用架构、大数据分析与计算、以及高可用容器集群等。
+企业级分布式 SAN (NeonSAN) 是基于全闪存架构提供的分布式 SAN 服务，单块硬盘容量最高 20TB， I/O 吞吐性能最高可达 350 MB/s， IOPS 最高 50000，适用于对 IOPS、吞吐、容量和稳定性要求很高的业务，例如：企业核心数据库 Oracle RAC 及 SQL Server 故障转移集群、企业级云数据库云数据库RadonDB、弹性裸金属服务器高可用架构、大数据分析与计算、以及高可用容器集群等。
 
 
 ## 创建

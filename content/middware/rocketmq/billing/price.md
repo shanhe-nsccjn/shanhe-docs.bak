@@ -6,9 +6,9 @@ draft: false
 
 ## 费用说明
 
-RocketMQ创建页面上的**费用预览**计费仅包括集群基础资源（CPU、RAM、磁盘）费用，集群创建完成之后绑定的公网IP资源、VPC网络资源等费用将会另外计算。使用RocketMQ时用户扩容后的资源费用也将另外计算。RocketMQ基础资源费用的计算周期以RocketMQ集群创建时间为起点，以RocketMQ集群销毁时间为终点。
+消息队列RocketMQ创建页面上的**费用预览**计费仅包括集群基础资源（CPU、RAM、磁盘）费用，集群创建完成之后绑定的公网IP资源、VPC网络资源等费用将会另外计算。使用消息队列RocketMQ时用户扩容后的资源费用也将另外计算。消息队列RocketMQ基础资源费用的计算周期以消息队列RocketMQ集群创建时间为起点，以消息队列RocketMQ集群销毁时间为终点。
 
-除了支持弹性计费，RocketMQ也支持包年、包月等[合约方式](https://docsv3.shanhe.com/billing/intro/billing_zhinan/)。
+除了支持弹性计费，消息队列RocketMQ也支持包年、包月等[合约方式](https://docsv3.shanhe.com/billing/intro/billing_zhinan/)。
 
 ## 价格影响因素
 

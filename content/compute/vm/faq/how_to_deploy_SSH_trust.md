@@ -1,6 +1,6 @@
 ---
 title: "Linux云服务器之间配置SSH互信（SSH免密码登录）"
-date: 2020-01-30T00:38:25+09:00
+date: 2021-07-07T00:38:25+09:00
 description: Test description
 weight: 40
 draft: false

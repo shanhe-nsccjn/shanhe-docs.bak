@@ -70,7 +70,7 @@ Authorization: <authorization-string>
 
 ```http
 PUT /?replication HTTP/1.1
-Host: my-bucket.jn1a.is.shanhe.com
+Host: my-bucket.jn1.is.shanhe.com
 Date: Mon, 1 Oct 2018 15:04:01 GMT
 Content-Length: 193
 Authorization: authorization string

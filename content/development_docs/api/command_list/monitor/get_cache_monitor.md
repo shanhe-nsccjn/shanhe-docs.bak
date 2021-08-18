@@ -50,7 +50,7 @@ draft: false
     > 
     > 
 
-    2.Memcached 缓存服务的监控数据为：
+    2.存储服务Memcached 缓存服务的监控数据为：
 
     > 
     > 

@@ -64,7 +64,7 @@ Authorization: <authorization-string>
 
 ```http
 PUT /myphoto.jpg HTTP/1.1
-Host: mybucket.jn1a.is.shanhe.com
+Host: mybucket.jn1.is.shanhe.com
 Date: Sun, 14 Aug 2016 09:05:00 GMT
 x-qs-fetch-source: http://image.example.com/photo.jpg
 Authorization: authorization string
