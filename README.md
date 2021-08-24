@@ -1,5 +1,5 @@
 # shanhe 新版文档项目说明
-
+#
 shanhe 官方文档使用了 [Hugo](https://gohugo.io/getting-started/installing/) 来构建网站，Hugo 是一个静态博客网站生成器，可将 Markdown 格式的文本构建为可发布的静态网站。因此需要在本地安装 Hugo。
 
 ## 第一步：安装前置工具 
