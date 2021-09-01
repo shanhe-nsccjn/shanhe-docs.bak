@@ -13,5 +13,5 @@ Section2:
   children:
     - title: 操作指南
       content: 操作指南
-      url: "/bigdata/qingmr/manual/manual"
+      url: "/bigdata/smr/manual/manual"
 ---
