@@ -5,14 +5,11 @@ weight: 16
 draft: false
 ---
 
----
----
-
-# 大数据服务NIFI 用户指南
+# 大数据服务ELK 用户指南
 
 ## 简介
 
-_大数据服务NIFI_ 是 _Elasticsearch_ 、 _Kibana_ 和 _Logstash_ 这三个软件集合的简称， _Elasticsearch_ 是一个实时分布式搜索和分析引擎， _Kibana_ 则为 _Elasticsearch_ 提供了强大的可视化界面， _Logstash_ 为用户提供数据采集、转换、优化和输出的能力。 _ELK_ 目前被广泛应用于实时日志处理、全文搜索和数据分析等领域。
+_大数据服务ELK_ 是 _Elasticsearch_ 、 _Kibana_ 和 _Logstash_ 这三个软件集合的简称， _Elasticsearch_ 是一个实时分布式搜索和分析引擎， _Kibana_ 则为 _Elasticsearch_ 提供了强大的可视化界面， _Logstash_ 为用户提供数据采集、转换、优化和输出的能力。 _ELK_ 目前被广泛应用于实时日志处理、全文搜索和数据分析等领域。
 
 ELK 服务对 Elasticsearch、Kibana 与 Logstash（后两者为可选）三者进行了很好的集成后以 AppCenter 云应用的形式交付给用户使用。
 
@@ -26,10 +23,10 @@ ELK 服务对 Elasticsearch、Kibana 与 Logstash（后两者为可选）三者�
 | ELK 5.6.16 - shanhe 1.5.0 | 5.6.16 | 5.6.16 | 5.6.16 |
 | ELK 5.5.1 - shanhe 1.2.8 及之前版本 | 5.5.1 | 5.4.3 | 5.5.1 |
 
-### 大数据服务NIFI 功能概览
+### 大数据服务ELK 功能概览
 
 * 为 Elasticsearch 提供了更强大的分词功能支持，集成了 [IK Analysis](https://github.com/medcl/elasticsearch-analysis-ik) 中文分词插件，并为该插件提供了 [结巴分词](https://github.com/fxsjy/jieba/blob/master/jieba/dict.txt) 的词库和 IK 自带的搜狗词库，同时还支持用户上传自定义词典
-* Elasticsearch 与 [山河对象存储 对象存储服务OIS](https://www.shanhe.com/products/qingstor/) 集成。Elasticsearch 集成了官方 [S3 Repository 插件](https://www.elastic.co/guide/en/elasticsearch/plugins/6.7/repository-s3.html)，可通过标准 S3 接口与山河对象存储 对象存储服务OIS 集成，以便生成 snapshot 并将其存储到到 对象存储服务OIS 中，并可以在必要时从中恢复
+* Elasticsearch 与 [山河对象存储OIS](https://console.shanhe.com/jn1/qingstor/) 集成。Elasticsearch 集成了官方 [S3 Repository 插件](https://www.elastic.co/guide/en/elasticsearch/plugins/6.7/repository-s3.html)，可通过标准 S3 接口与山河对象存储OIS 集成，以便生成 snapshot 并将其存储到到 对象存储服务OIS 中，并可以在必要时从中恢复
 * Logstash 与 山河对象存储 对象存储服务OIS 集成，用户可以很方便地从 对象存储服务OIS通过内置的 [官方插件 logstash-input-s3](https://www.elastic.co/guide/en/logstash/6.7/plugins-inputs-s3.html) 输入数据到 Elasticsearch 或者通过 [logstash-output-s3](https://www.elastic.co/guide/en/logstash/6.7/plugins-outputs-s3.html) 插件将输入到 Logstash 的数据导出到山河对象存储
 * Logstash 提供自定义插件能力
 * Kibana 节点集成 ES 反向代理和负载均衡，并提供 Elasticsearch 节点失效时的故障转移能力
@@ -44,9 +41,9 @@ ELK 服务对 Elasticsearch、Kibana 与 Logstash（后两者为可选）三者�
 * 支持热温冷（Hot-Warm-Cold）架构 *（ ELK 5.6.16 - shanhe 1.5.0 开始）*
 * 支持 ES 节点滚动升级和重启，最小化对业务的影响 *（ ELK 5.6.16 - shanhe 1.5.0 开始）*
 
-### 大数据服务NIFI 集群组件说明
+### 大数据服务ELK 集群组件说明
 
-_大数据服务NIFI_ 为用户提供了以下组件，用以服务集群其他组件或直接为用户提供服务。
+_大数据服务ELK_ 为用户提供了以下组件，用以服务集群其他组件或直接为用户提供服务。
 
 * [ES Head](http://mobz.github.io/elasticsearch-head/) 提供一个 Elasticsearch cluster 的 web 控制台，用户可以在这个控制台里很方便的查看集群拓扑架构、监控集群状态，进行节点和索引级别的各种操作，以及进行数据的浏览、查询、分析等。在浏览器输入网址 `http://<Kibana节点IP>:9100/` 即可使用该插件提供的集群控制台。进入后请输入 `http://<任意Elasticsearch节点IP>:9200/` 后，点击连接即可查看 Elasticsearch 集群状态。
 * [elasticsearch-sql](https://github.com/NLPchina/elasticsearch-sql) 使用户可以使用SQL来进行 Elasticsearch 查询，并且可以在 SQL 中使用 Elasticsearch 的函数。在浏览器输入网址 `http://<Kibana节点IP>:8080/` 即可使用该插件提供的查询页面。此插件在 1.2.1 版本加入。
@@ -54,13 +51,13 @@ _大数据服务NIFI_ 为用户提供了以下组件，用以服务集群其他�
 * [ElasticHD](https://github.com/360EntSecGroup-Skylar/ElasticHD) 是一个 Elasticsearch 可视化管理工具, 支持 ES 监控、实时搜索，Index template 快捷替换修改，索引列表信息查看，SQL converts to DSL 等功能。在浏览器输入网址 `http://<Kibana节点IP>:9800/` 即可使用该插件提供的集群控制台。
 * [Elasticsearch-HQ](https://github.com/ElasticHQ/elasticsearch-HQ) 是一个 ES 可视化监控和管理工具，可在浏览器打开 `http://<Kibana 节点 IP>:5000` 使用。
 * [Caddy](https://caddyserver.com/) 是一个支持 HTTP/2 的跨平台 Web 服务器，除了日志查看功能，还为 Logstash 节点提供上传分词和停止词词典功能，为 Elasticsearch 节点提供上传同义词词典功能。Caddy运行在集群节点的80端口，用户可通过 http://[节点IP]/logs/ 查看日志。
-* [HAProxy](http://www.haproxy.org/) 是一个高性能的负载均衡软件，部署在 Kibana 节点上，为我们提供 Elasticsearch 的负载均衡和故障转移功能。建议用户通过集群的 VIP （绑定在 Kibana 节点上）访问 Elasticsearch 服务（http://[VIP]:9200/)。
+* [HAProxy](http://www.haproxy.com/) 是一个高性能的负载均衡软件，部署在 Kibana 节点上，为我们提供 Elasticsearch 的负载均衡和故障转移功能。建议用户通过集群的 VIP （绑定在 Kibana 节点上）访问 Elasticsearch 服务（http://[VIP]:9200/)。
 
   > `ELK 5.5.1 - shanhe 1.2.8` 及之前版本使用 Nginx 。
 
 * [Keepalived](https://www.keepalived.org) 为 HAProxy 提供故障转移能力，防止 HAProxy 单点失败，确保 http://[VIP]:9200/ 的高可用。
 
-  > 注意：如需此功能，需要配置两个 Kibana 节点。此组件从版本 `大数据服务NIFI 5.6.16 - shanhe 1.5.0` 起开始支持。
+  > 注意：如需此功能，需要配置两个 Kibana 节点。此组件从版本 `大数据服务ELK 5.6.16 - shanhe 1.5.0` 起开始支持。
 
 ## <a name="deploy-elk"></a>部署 ELK
 
@@ -75,8 +72,6 @@ _大数据服务NIFI_ 为用户提供了以下组件，用以服务集群其他�
 ![Elasticsearch节点设置](../images/es_node_config.png)
 
 填写 Elasticsearch 节点CPU、内存、节点数量、主机类型及数据盘大小等配置信息。
-
-> 注意：企业级分布式 SAN（NeonSAN）目前仅支持 北京3区-B、上海1区-A，广东2区-A 这三个区域。
 
 ### Elasticsearch 专有主节点设置
 
@@ -112,7 +107,7 @@ _大数据服务NIFI_ 为用户提供了以下组件，用以服务集群其他�
 
 阅读并同意山河 AppCenter 用户协议之后即可开始部署应用。
 
-## 大数据服务NIFI 使用简介
+## 大数据服务ELK 使用简介
 
 ### 查看服务详情
 
@@ -143,7 +138,7 @@ Elasticsearch 节点可提供远程扩展字典及热更新，Logstash 节点提
 >>
 > curl 语法：
 >> ```bash
->> curl -XGET "http://192.168.2.2:9200/_search" -d'
+>> curl -H "Content-Type: application/json" -XGET "http://192.168.2.2:9200/_search" -d'
 >> {
 >>   "query": {
 >>     "match_all": {}
@@ -227,9 +222,9 @@ index pattern 创建成功后可点击左侧栏的 `Discover` 菜单查看导入
 
 本场景为用户呈现了中文日志从 Logstash 导入到 Elasticsearch，再通过 Kibana 进行搜索的完整的过程。
 
-> 注意：从版本 `ELK 5.6.16 - shanhe 1.5.0` 起已内置用于指定 ik 分词器的模板文件，用户可以直接使用（在 Logstash 节点的 /data/elasticsearch/dicts 目录下）；如果是以前的版本，需要事先把 [模板文件](logstash.json) 下载到 Logstash 节点的 `/data/elasticserach/dicts/` 目录下再进行后面的操作，否则 Logstash 会因找不到模板文件而无法启动（可以直接登录到节点下载，也可以通过如下命令上传，注意 URL 最后的 `/` 不能省略：
+> 注意：从版本 `ELK 5.6.16 - shanhe 1.5.0` 起已内置用于指定 ik 分词器的模板文件，用户可以直接使用（在 Logstash 节点的 /data/elasticsearch/dicts 目录下）；如果是以前的版本，需要事先把 [模板文件](https://jn1.is.shanhe.com/shanhe/docs/static/json/logstash.json) 下载到 Logstash 节点的 `/data/elasticserach/dicts/` 目录下再进行后面的操作，否则 Logstash 会因找不到模板文件而无法启动（可以直接登录到节点下载，也可以通过如下命令上传，注意 URL 最后的 `/` 不能省略：
 > ```bash
-> curl -sL https://docs.shanhe.com/product/big_data/elk/logstash.json |
+> curl -sL https://jn1.is.shanhe.com/shanhe/docs/static/json/logstash.json |
 >   curl -F "file=@-;filename=logstash.json" $LS_IP/dicts/
 > ```
 
@@ -946,11 +941,11 @@ ELK 允许分别对各种角色的节点进行纵向的扩容及缩容。
 
 ## 配置参数
 
-可以通过 `配置参数` 来定制个性化的 大数据服务NIFI 服务并进行调优。
+可以通过 `配置参数` 来定制个性化的 大数据服务ELK 服务并进行调优。
 
 ### 修改配置参数
 
-在 大数据服务NIFI 详情页，点击 `配置参数` Tab 页，切换到 `Elasticsearch节点`、`Kibana节点` 或 `Logstash 节点`，点击 `修改属性`，修改完后，需要进行 "保存"。如图所示：
+在 大数据服务ELK 详情页，点击 `配置参数` Tab 页，切换到 `Elasticsearch节点`、`Kibana节点` 或 `Logstash 节点`，点击 `修改属性`，修改完后，需要进行 "保存"。如图所示：
 
 ![配置参数](../images/env_modify.png)
 
@@ -966,9 +961,9 @@ Elasticsearch 本身的 API 没有提供安全机制，同时 Elasticsearch 的 
 
 #### 方法1: 通过 对象存储服务OIS迁移
 
-可借助山河 对象存储服务OIS完成数据迁移（比如原山河大数据平台的 Elasticsearch 用户可通过此方法把数据迁移到新版 大数据服务NIFI 应用后继续使用），具体操作步骤如下：
+可借助山河 对象存储服务OIS完成数据迁移（比如原山河大数据平台的 Elasticsearch 用户可通过此方法把数据迁移到新版 大数据服务ELK 应用后继续使用），具体操作步骤如下：
 
-第一步，根据 [部署 大数据服务NIFI 服务](#deploy-elk) 创建 大数据服务NIFI 集群。
+第一步，根据 [部署 大数据服务ELK 服务](#deploy-elk) 创建 大数据服务ELK 集群。
 
 第二步，根据 [山河对象存储文档](https://docs.shanhe.com/qingstor/index.html) 创建对象存储的 Bucket。
 
@@ -1008,7 +1003,7 @@ curl -XPUT 'http://<原山河大数据平台的 Elasticsearch 集群的某一节
 curl -XPUT 'http://<原山河大数据平台的 Elasticsearch 集群的某一节点的IP地址>:9200/_snapshot/repo-qingstor/migration-2019.05.13?wait_for_completion=true'
 ```
 
-第六步，在 大数据服务NIFI 集群上创建和第四步中相同配置的 repository。命令如下：
+第六步，在 大数据服务ELK 集群上创建和第四步中相同配置的 repository。命令如下：
 
 ```bash
 curl -H 'Content-Type: application/json' -XPUT 'http://<ELK集群的某一节点的IP地址>:9200/_snapshot/repo-qingstor/' -d'
@@ -1024,9 +1019,9 @@ curl -H 'Content-Type: application/json' -XPUT 'http://<ELK集群的某一节点
 '
 ```
 
-> 注意！这里只有 IP 地址需变更为 大数据服务NIFI 集群的某一节点的 IP 地址，其他配置应与第四步中的配置完全相同。
+> 注意！这里只有 IP 地址需变更为 大数据服务ELK 集群的某一节点的 IP 地址，其他配置应与第四步中的配置完全相同。
 
-第七步，通过如下命令恢复存储在 对象存储服务OIS 的快照到 大数据服务NIFI 集群，完成数据迁移。
+第七步，通过如下命令恢复存储在 对象存储服务OIS 的快照到 大数据服务ELK 集群，完成数据迁移。
 
 ```bash
 curl -H 'Content-Type: application/json' -XPOST 'http://<ELK集群的某一节点的IP地址>:9200/_snapshot/repo-qingstor/migration-2019.05.13/_restore'
@@ -1323,7 +1318,7 @@ ELK 5.5.1 - shanhe 1.2.1
 
 ELK 5.5.1 - shanhe 1.2
 
-* 修复大数据服务NIFI5.5.1-shanhe1.1版本无法在地址范围为172.17.0.0/16的VPC网络中创建的问题
+* 修复大数据服务ELK5.5.1-shanhe1.1版本无法在地址范围为172.17.0.0/16的VPC网络中创建的问题
 
 ELK 5.5.1 - shanhe 1.1
 
@@ -1339,7 +1334,7 @@ ELK 5.5.1 - shanhe 1.1
 
 ### ELK升级操作方式
 
-大数据服务NIFI进行版本升级时，用户集群的应用版本的右侧会出现升级标志，用户可通过关闭集群，然后右键升级的方式来完成集群升级操作。
+大数据服务ELK进行版本升级时，用户集群的应用版本的右侧会出现升级标志，用户可通过关闭集群，然后右键升级的方式来完成集群升级操作。
 
 ##  旧版 Elasticsearch 服务文档
 

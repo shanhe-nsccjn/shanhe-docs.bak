@@ -13,7 +13,7 @@ draft: false
 
 与 Hadoop 一样，大数据服务HBase 集群采用的是 master/slave 架构，山河提供的 大数据服务HBase 集群服务还包括在线伸缩、监控告警、配置修改等功能，帮助您更好地管理集群。 如下图所示，山河的 大数据服务HBase 集群分三种节点类型：主节点 (HBase Master 和 HDFS NameNode)，从节点 (HBase RegionServer 和 HDFS DataNode) 和客户端节点 (HBase Client)。 用户在HBase 客户端可通过HBase Shell、Java API（本地或MapReduce）、Rest API 或其他工具来访问HBase。 若需要使用除java外的其他语言时，可在客户端节点 (HBase Client)自行启动 Thrift Server 以供支持。
 
-![](_images/hbase_architecture.png)
+![](../../_images/hbase_architecture.png)
 
 ## 创建 大数据服务HBase 集群
 
@@ -26,7 +26,7 @@ draft: false
 
 在创建的对话框中，您需要选择 HBase 版本号、CPU及内存配置，从节点存储大小，填写名称（可选）和从节点数量等。
 
-![](_images/create_hbase_1.png)
+![](../../_images/create_hbase_1.png)
 
 >注解
 主机配置1核2G 仅供测试使用; 至少创建3个从节点。
@@ -35,88 +35,28 @@ draft: false
 
 在配置网络的过程中，首先需要选择 大数据服务HBase 所需要的 大数据服务ZooKeeper 集群，大数据服务HBase 集群将加入该 大数据服务ZooKeeper 所在的私有网络中，然后可以为 大数据服务HBase 中的每个节点指定 IP， 也可以选择“自动分配”，让系统自动指定 IP。
 
-![](_images/create_hbase_2.png)
+![](../../_images/create_hbase_2.png)
 
 **第三步：创建成功**
 
 当 大数据服务HBase 创建完成之后，您可以查看每个节点的运行状态。 如图所示，当节点显示为“活跃”状态，表示该节点启动正常。 当每个节点都启动正常后 HBase 集群显示为“活跃”状态，表示您已经可以正常使用 大数据服务HBase 服务了。
 
-![](_images/create_hbase_3.png)
+![](../../_images/create_hbase_3.png)
 
-## 测试 大数据服务HBase 集群
+## 使用指南
 
-大数据服务HBase 创建完成之后可以测试其可用性。
+HBase 客户端 节点已自动完成相关配置，可通过 Web 终端 或 连接 vpn 登录直接使用，**用户名：ubuntu，密码：hbase**，
 
-**创建 大数据服务HBase Client 主机**
+通过 sudo su 可以切换到 root 用户。 若集群所在私有网络的 VPC 绑定了公网 IP，则可以在 VPC 网络的路由器上配置端口
 
-在山河上创建 HBase Client 节点, 首先打开映像市场，在工具分类中找到 HBase Client，然后点击使用，选择主机类型、CPU、内存，并将该主机加入 HBase 集群同一路由器下的私有网络中。(假设主机名为 i-ahdf2uof )， 该主机已经安装了 HBase、Hadoop、JDK、Phoenix 等软件并且做了一些预定的配置。您可以直接用这个主机进行下面的测试。 大数据服务HBase 集群的主机名是按照不同角色定义的:
+转发策略，通过 ssh 登录 HBase 客户端。
 
-*   HBase Master Node: -hbase-master
-*   HDFS Master Node: -hbase-hdfs-master
-*   HBase Slave Node: -hbase-slave
+## HBase Shell 使用指南
 
->注解
-由于 Ubuntu 主机名对应 IP 127.0.0.1存在 [已知问题](https://wiki.apache.org/hadoop/ConnectionRefused)。所以先要在 /etc/hosts 文件里把127.0.0.1修改成主机的私网 IP (假设为172.17.102.8)，同时还需要加上 HBase master node，HDFS master 和 各个 HBase slave node 的主机名与私网 IP 的信息，改完后的 /etc/hosts 类似于：
+该场景通过 HBase Shell 命令来完成一个 HBase 表的创建、数据插入、数据查找、删除操作。
 
 ```
-172.17.102.10    localhost
-172.17.102.10    i-ahdf2uof
-172.17.102.8     hbsn-rpkag3va-hbase-slave
-172.17.102.6     hbsn-9ps0gfds-hbase-hdfs-master
-172.17.102.5     hbsn-8vh9nij6-hbase-slave
-172.17.102.7     hbsn-zoyrcqc7-hbase-master
-172.17.102.9     hbsn-ugmpsszk-hbase-slave
-```
-
-其次，您需要根据创建的集群配置来修改 core-site.xml, hbase-site.xml 中的相应参数，为方便表述，假设大数据服务ZooKeeper集群的ip分别是：172.17.102.2,172.17.102.3,172.17.102.4，该信息可通过大数据平台下 大数据服务ZooKeeper 详情页查询得到。假设创建的 HBase 集群 ID 为 hbs-v7z6ux63，该信息可通过大数据平台下 HBase 详情页查询得到。依次按下列方式修改：
-
-```
-$ cd /usr/local/hadoop
-
-$ vim etc/hadoop/core-site.xml
-
-#将以下内容写入 core-site.xml 文件来配置 HDFS 的地址
-	<property>
-		<name>fs.defaultFS</name>
-		<value>hdfs://hbsn-9ps0gfds-hbase-hdfs-master:9000</value>
-	</property>
-
-```
-
-```
-$ cd /usr/local/hbase
-
-$ vim conf/hbase-site.xml
-
-#将以下内容写入 hbase-site.xml 文件来配置 HBase 保存元数据的 大数据服务ZooKeeper 地址
-	<property>
-		<name>hbase.zookeeper.quorum</name>
-		<value>172.17.102.2,172.17.102.3,172.17.102.4</value>
-	</property>
-	
-	<property>
-		<name>zookeeper.znode.parent</name>
-		<value>/hbase/hbs-v7z6ux63</value>
-	</property>
-	
-	<property>
-		<name>hbase.rootdir</name>
-		<value>hdfs://hbsn-9ps0gfds-hbase-hdfs-master:9000/hbase</value>
-	</property>
-
-```
-
->注解
-如需使用本地 MapReduce 服务，无需操作。如需使用集群式 MapReduce 服务，在同一路由器下的私有网络（可选择新的私有网络，亦可使用当前 HBase 集群所在私有网路）下创建 Hadoop 集群，
-
-Hadoop 集群节点 /etc/hosts 中增加 HBase 集群的 hosts（Hadoop 节点更改可提工单要求帮助），并在该客户端 /etc/hosts 中增加 Hadoop 集群的 hosts。 并修改 /usr/local/hadoop 下 etc/hadoop/yarn-site.xml 和 etc/hadoop/mapred-site.xml 配置文件，流程可参考`Hadoop 指南 `。
-
-**测试一**
-
-这个测试是通过HBase Shell 命令来完成一个 HBase 表的创建、插入、查找、删除操作。
-
-```
-$ cd /usr/local/hbase
+$ cd /opt/hbase
 
 $ bin/hbase shell
 
@@ -159,16 +99,12 @@ hbase(main):009:0> drop 'test'
 0 row(s) in 0.1370 seconds
 ```
 
-**测试二**
+## HBase PE 使用指南
 
-这个测试是通过 大数据服务HBase 自带的性能测试工具 PerformanceEvaluation 来测试 大数据服务HBase 集群的随机写、顺序写、increment、append、随机读、顺序读、scan等操作的性能情况。测试过程中需要先写后读保证测试表中有数据。 测试结果中会有每个线程操作的耗时。
-
-注解
-
-若要使用 MapReduce 测试，可参考上文创建 大数据服务HBase 客户端使用 MapReduce 服务部分。
+该场景通过 HBase 自带的性能测试工具 PerformanceEvaluation 来测试 HBase 集群的随机写、顺序写、increment、append、随机读、顺序读、scan等操作的性能情况。测试过程中需要先写后读保证测试表中有数据。 测试结果中会有每个线程操作的耗时。
 
 ```
-$ cd /usr/local/hbase
+$ cd /opt/hbase
 
 # 测试随机写，预分区10个 region，使用多线程代替 MapReduce 的方式来并发随机写操作，10个线程，每个线程写10000行。
 $ bin/hbase pe --nomapred --rows=10000 --presplit=10 randomWrite 10
@@ -192,13 +128,53 @@ $ bin/hbase pe --nomapred --rows=10000 sequentialRead 10
 $ bin/hbase pe --rows=10000 --nomapred scanRange100 10
 ```
 
-**测试三**
+## HBase 压缩和数据块编码指南
 
-这个测试是通过 MapReduce 服务来批量导入 HDFS 中数据到 HBase
+ColumnFamily 上启用压缩
 
-注解
+```
+  cd /opt/hbase
 
-已创建 Hadoop 集群并完成上文创建 HBase 客户端中使用 MapReduce 服务配置。
+  bin/hbase shell
+  
+  hbase(main):001:0> create 'test', { NAME => 'cf', COMPRESSION => 'SNAPPY' }
+  Created table test
+  Took 1.0499 seconds
+  => Hbase::Table - test
+  hbase(main):002:0> describe 'test'
+  Table test is ENABLED
+  test
+  COLUMN FAMILIES DESCRIPTION
+  {NAME => 'cf', VERSIONS => '1', EVICT_BLOCKS_ON_CLOSE => 'false', NEW_VERSION_BEHAVIOR => 'false', KEEP_DELETED_CELLS => 'FALSE', CACHE_DATA_ON_WRITE => 'false', DATA_BLOCK_ENC
+  ODING => 'NONE', TTL => 'FOREVER', MIN_VERSIONS => '0', REPLICATION_SCOPE => '0', BLOOMFILTER => 'ROW', CACHE_INDEX_ON_WRITE => 'false', IN_MEMORY => 'false', CACHE_BLOOMS_ON_W
+  RITE => 'false', PREFETCH_BLOCKS_ON_OPEN => 'false', COMPRESSION => 'SNAPPY', BLOCKCACHE => 'true', BLOCKSIZE => '65536'}
+  1 row(s)
+  Took 0.1047 seconds
+```
+
+## HBase 2.0 修复工具 hbck2 使用指南
+
+> HBase 2.x 版本使用 hbck2，1.x 版本仍然使用 hbck
+
+```
+  cd /opt/hbase
+
+  bin/hbase org.apache.hbase.HBCK2
+```
+
+或
+
+```
+  cd /opt/hbase
+
+  bin/hbase hbck -j lib/hbase-hbck2-1.0.0.jar
+```
+
+更为详细的使用和功能介绍可参阅 [HBCK2 官方文档](https://github.com/apache/hbase-operator-tools/tree/master/hbase-hbck2)
+
+## MapReduce 导入数据到 HBase 使用指南
+
+> 已创建 大数据基础服务SMR 集群并在 HBase 客户端 中在 /opt/hadoop 目录下完成 MapReduce 服务配置。
 
 可通过 DistCp 命令来拷贝不同 HDFS 中的数据，关于 DistCp 更多的详细信息，可参阅 [DistCp](http://hadoop.apache.org/docs/r2.7.2/hadoop-distcp/DistCp.html)
 
@@ -219,7 +195,7 @@ $ bin/hbase pe --rows=10000 --nomapred scanRange100 10
 以下方案中均使用 HBase 表 test_import，包含一个column family：content，可通过 HBase Shell 预先建好表
 
 ```
-$ cd /usr/local/hbase
+$ cd /opt/hbase
 
 $ bin/hbase shell
 
@@ -233,11 +209,17 @@ hbase(main):001:0> create 'test_import', 'content'
 
 ```
 
-  1.2.2
+  <properties>
+    <hbase.version>1.2.6</hbase.version>
+  </properties>
 
-    org.apache.hbase
-    hbase-server
-    ${hbase.version}
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.hbase</groupId>
+      <artifactId>hbase-server</artifactId>
+      <version>${hbase.version}</version>
+    </dependency>
+  </dependencies>
 
 ```
 
@@ -312,7 +294,7 @@ public class ImportByMR {
 
     public static void main(String[] argv) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = HBaseConfiguration.create();
-        File file = new File("/usr/local/hbase/conf/hbase-site.xml");
+        File file = new File("/opt/hbase/conf/hbase-site.xml");
         FileInputStream in = new FileInputStream(file);
         conf.addResource(in);
         createTable(conf);
@@ -337,7 +319,7 @@ public class ImportByMR {
 hbase-tools-1.0.0.jar 是将上述代码打成的jar包，APP_HOME 是 jar 包所放置的目录，/user/inputPath 下是需要导入到HBase中的数据。 数据格式为 rowkey value，两列空格分隔。需自行准备后通过 bin/hdfs dfs -put 到 HDFS 的 /user/inputPath 目录。 依次执行下述命令：
 
 ```
-$ cd /usr/local/hadoop
+$ cd /opt/hadoop
 
 $ bin/hadoop jar $APP_HOME/hbase-tools-1.0.0.jar com.qingcloud.hbase.ImportByMR /user/inputPath
 ```
@@ -381,15 +363,15 @@ hbase-tools-1.0.0.jar 是将上述代码打成的 jar 包，APP_HOME 是 jar 包
 
 ```
 ```
-$ cd /usr/local/hadoop
+$ cd /opt/hadoop
 
 $ bin/hdfs dfs -rmr /user/outputPath
 
-$ export HADOOP_CLASSPATH=`/usr/local/hbase/bin/hbase classpath`
+$ export HADOOP_CLASSPATH=`/opt/hbase/bin/hbase classpath`
 
 $ bin/hadoop jar $APP_HOME/hbase-tools-1.0.0.jar com.qingcloud.hbase.ImportByBulkLoad /user/inputPath /user/outputPath
 
-$ bin/hadoop jar /usr/local/hbase/lib/hbase-server-.jar completebulkload /user/outputPath test_import
+$ bin/hadoop jar /opt/hbase/lib/hbase-server-.jar completebulkload /user/outputPath test_import
 ```
 ```
 执行成功后可简单通过测试一中的 HBase Shell 来验证数据。
@@ -398,63 +380,84 @@ $ bin/hadoop jar /usr/local/hbase/lib/hbase-server-.jar completebulkload /user/o
 
 ```
 ```
-$ cd /usr/local/hadoop
+$ cd /opt/hadoop
 
 $ bin/hdfs dfs -rmr /user/outputPath
 
-$ export HADOOP_CLASSPATH=`/usr/local/hbase/bin/hbase classpath`
+$ export HADOOP_CLASSPATH=`/opt/hbase/bin/hbase classpath`
 
-$ bin/hadoop jar /usr/local/hbase/lib/hbase-server-.jar importtsv -Dimporttsv.columns=HBASE_ROW_KEY,content:a -Dimporttsv.bulk.output=/user/outputPath test_import /user/inputPath
+$ bin/hadoop jar /opt/hbase/lib/hbase-server-.jar importtsv -Dimporttsv.columns=HBASE_ROW_KEY,content:a -Dimporttsv.bulk.output=/user/outputPath test_import /user/inputPath
 ```
 
 或
 
 ```
-$ cd /usr/local/hadoop
+$ cd /opt/hadoop
 
 $ bin/hdfs dfs -rmr /user/outputPath
 
-$ cd /usr/local/hbase
+$ cd /opt/hbase
 
 $ bin/hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns=HBASE_ROW_KEY,content:a -Dimporttsv.bulk.output=/user/outputPath test_import /user/inputPath
 ```
 
 执行成功后可简单通过测试一中的 HBase Shell 来验证数据。
 
-**测试四**
+## Phoenix 使用指南
 
-测试 Phoenix 查询引擎的支持，包括：sql语句、ACID事务。
+该场景通过 Phoenix 查询引擎实现 sql 查询和 ACID 事务。
 
 >注解
 HBase 集群默认不支持 Phoenix 查询引擎，如要使用，请通过修改配置的方式开启，修改：qingcloud.phoenix.on.hbase.enable 为 true。
 
-如要开启 Phoenix 事务支持，修改：phoenix.transactions.enabled 为 true，应用修改。同时在client端修改配置：
-
-```
-$ cd /usr/local/hbase
-
-$ vim conf/hbase-site.xml
-
-#将以下内容写入 hbase-site.xml 文件来配置 Phoenix 及 ACID 事务支持
-
-  phoenix.transactions.enabled
-  true
-
-  data.tx.snapshot.dir
-  /tephra/snapshots
-
-  hbase.regionserver.wal.codec
-  org.apache.hadoop.hbase.regionserver.wal.IndexedWALEditCodec
-
-```
+如要开启 Phoenix 事务支持，修改：phoenix.transactions.enabled 为 true，应用修改。
 
 测试简单的 sql
 
 ```
-$ cd /usr/local/phoenix
+ cd /opt/phoenix
 
-# 测试时需手动填写 Zookeeper 连接，该地址可通过 HBase 详情页左侧基本属性列表中获得，去掉端口
-$ bin/psql.py 192.168.100.4,192.168.100.3,192.168.100.2:/hbase/hbs-r2t3jzjo examples/WEB_STAT.sql examples/WEB_STAT.csv examples/WEB_STAT_QUERIES.sql
+  # 测试时需手动填写 Zookeeper 连接，该地址可通过 HBase 详情页左侧基本属性列表中获得，去掉端口
+  bin/psql.py 192.168.0.4,192.168.0.3,192.168.0.2:/hbase/cl-r2t3jzjo examples/WEB_STAT.sql examples/WEB_STAT.csv examples/WEB_STAT_QUERIES.sql
+  no rows upserted
+  Time: 0.031 sec(s)
+  
+  csv columns from database.
+  CSV Upsert complete. 39 rows upserted
+  Time: 0.2 sec(s)
+  
+  DOMAIN                                                          AVERAGE_CPU_USAGE                         AVERAGE_DB_USAGE
+  ---------------------------------------- ---------------------------------------- ----------------------------------------
+  Salesforce.com                                                            260.727                                  257.636
+  Google.com                                                                212.875                                   213.75
+  Apple.com                                                                 114.111                                  119.556
+  Time: 0.054 sec(s)
+  
+  DAY                                              TOTAL_CPU_USAGE                            MIN_CPU_USAGE                            MAX_CPU_USAGE
+  ----------------------- ---------------------------------------- ---------------------------------------- ----------------------------------------
+  2013-01-01 00:00:00.000                                       35                                       35                                       35
+  2013-01-02 00:00:00.000                                      150                                       25                                      125
+  2013-01-03 00:00:00.000                                       88                                       88                                       88
+  2013-01-04 00:00:00.000                                       26                                        3                                       23
+  2013-01-05 00:00:00.000                                      550                                       75                                      475
+  2013-01-06 00:00:00.000                                       12                                       12                                       12
+  2013-01-08 00:00:00.000                                      345                                      345                                      345
+  2013-01-09 00:00:00.000                                      390                                       35                                      355
+  2013-01-10 00:00:00.000                                      345                                      345                                      345
+  2013-01-11 00:00:00.000                                      335                                      335                                      335
+  2013-01-12 00:00:00.000                                        5                                        5                                        5
+  2013-01-13 00:00:00.000                                      355                                      355                                      355
+  2013-01-14 00:00:00.000                                        5                                        5                                        5
+  2013-01-15 00:00:00.000                                      720                                       65                                      655
+  2013-01-16 00:00:00.000                                      785                                      785                                      785
+  2013-01-17 00:00:00.000                                     1590                                      355                                     1235
+  Time: 0.03 sec(s)
+  
+  HO                    TOTAL_ACTIVE_VISITORS
+  -- ----------------------------------------
+  EU                                      150
+  NA                                        1
+  Time: 0.017 sec(s)
 ```
 
 测试 ACID 事务，该测试需要开启两个终端按时间交互式执行，在commit之前另一终端是无法select得到新修改的数据的：
@@ -462,7 +465,7 @@ $ bin/psql.py 192.168.100.4,192.168.100.3,192.168.100.2:/hbase/hbs-r2t3jzjo exam
 终端一
 
 ```
-$ cd /usr/local/phoenix
+$ cd /opt/phoenix
 
 $ bin/sqlline.py 192.168.100.4,192.168.100.3,192.168.100.2:/hbase/hbs-r2t3jzjo
 
@@ -501,7 +504,7 @@ Commit complete (0 seconds)
 开启终端二
 
 ```
-$ cd /usr/local/phoenix
+$ cd /opt/phoenix
 
 $ bin/sqlline.py
 
@@ -552,19 +555,67 @@ No rows affected (2.668 seconds)
 0: jdbc:phoenix:> !quit
 ```
 
+## 如何用 Phoenix 映射 HBase 中已有的表
+
+以 test1 表为例，先创建表并写入数据：
+
+```
+  cd /opt/hbase
+
+  bin/hbase shell
+  
+  hbase(main):005:0> create 'test1', 'cf'
+  00:22:38.303 [main] INFO  org.apache.hadoop.hbase.client.HBaseAdmin - Operation: CREATE, Table Name: default:test1, procId: 65 completed
+  Created table test1
+  Took 0.8370 seconds
+  => Hbase::Table - test1
+  hbase(main):006:0> put 'test1', 'row1', 'cf:a', 'value1'
+  Took 0.0227 seconds
+  hbase(main):007:0> put 'test1', 'row2', 'cf:b', 'value2'
+  Took 0.0061 seconds
+  hbase(main):008:0> scan 'test1'
+  ROW                                  COLUMN+CELL
+   row1                                column=cf:a, timestamp=1576686165380, value=value1
+   row2                                column=cf:b, timestamp=1576686175402, value=value2
+  2 row(s)
+  Took 0.0218 seconds
+```
+
+在 Phoenix 中映射此表：
+
+```
+  cd /opt/phoenix
+
+  # 测试时需手动填写 Zookeeper 连接，该地址可通过 HBase 详情页左侧基本属性列表中获得，去掉端口
+  bin/sqlline.py 192.168.0.4,192.168.0.3,192.168.0.2:/hbase/cl-r2t3jzjo
+  
+  # 双引号是必须的，因为 phoenix 中表名和列名全部是大写。
+  # CREATE 操作会耗些时间。如果表建错了不要轻易 DROP，建议尝试 ALTER，否则 HBase 中的表会被删除。
+  0: jdbc:phoenix:> CREATE TABLE "test1" ( "ROW" varchar primary key, "cf"."a" varchar, "cf"."b" varchar, "cf"."c" varchar) column_encoded_bytes=0;
+  2 rows affected (6.303 seconds)
+  0: jdbc:phoenix:> select * from "test1";
+  +-------+---------+---------+----+
+  |  ROW  |    a    |    b    | c  |
+  +-------+---------+---------+----+
+  | row1  | value1  |         |    |
+  | row2  |         | value2  |    |
+  +-------+---------+---------+----+
+  2 rows selected (0.055 seconds)
+```
+
 ## 在线伸缩
 
 **增加节点**
 
 您可以在 HBase 详情页点击“新增节点”按钮增加从节点，可以对每个新增节点指定 IP 或选择自动分配。
 
-![](_images/add_hbase_node.png)
+![](../../_images/add_hbase_node.png)
 
 **删除节点**
 
 您可以在 大数据服务HBase 详情页选中需要删除的从节点，然后点击“删除”按钮，只能一次删除一个，并且必须等到上个节点删除后且 decommission 结束才能删除下一个节点，否则数据会丢失。 山河 大数据服务HBase 集群在此操作时会先迁移 region 再复制数据，确保用户业务不受影响。删除节点过程中会锁定 大数据服务HBase 集群不让对其进行其它的操作，同时这个 decommission 状态可以从 HDFS Name Node 的 50070 端口提供的监控信息观察到。Decommission 是在复制即将删除节点上的数据到别的节点上，如果您的数据量比较大，这个过程会比较长。 因为山河的 HDFS 副本因子默认为 2，所以当您 HBase 的从节点数为 3 的时候就不能再删除节点。同时要预先知道其它节点的总硬盘空间足够拷贝删除节点的内容，才能进行删除。
 
-![](_images/delete_hbase_node.png)
+![](../../_images/delete_hbase_node.png)
 
 >注解
 对集成 HDFS 的 HBase，删除节点是一个比较危险的操作，要仔细阅读上面的指南。
@@ -573,7 +624,7 @@ No rows affected (2.668 seconds)
 
 由于不同类节点压力并不同，所以山河 大数据服务HBase 支持对 HBase Master Node 主节点、HDFS Name Node 主节点 和 HBase 从节点分别进行纵向伸缩。通常情况下两个主节点的压力不会太大， 在创建 HBase 的时候我们自动给两个主节点分配较低配置，但随着压力增大您可能需要对这些节点扩容。
 
-![](_images/resize_hbase.png)
+![](../../_images/resize_hbase.png)
 
 ## 监控和告警
 
@@ -582,9 +633,9 @@ No rows affected (2.668 seconds)
 *   [http:/](http:/)/:16010
 *   [http:/](http:/)/:50070
 
-![](_images/hdfs_monitor1.png)
+![](../../_images/hdfs_monitor1.png)
 
-![](_images/yarn_monitor1.png)
+![](../../_images/yarn_monitor1.png)
 
 为了帮助用户更好的管理和维护 大数据服务HBase 集群，我们提供了部分针对 大数据服务HBase 服务的监控，包括：
 
@@ -610,7 +661,7 @@ No rows affected (2.668 seconds)
 
 默认情况下，我们会为每个用户创建一个缺省配置组。用户也可以创建新的配置组，如图所示：
 
-![](_images/create_hbase_parameter_group.png)
+![](../../_images/create_hbase_parameter_group.png)
 
 > 注解
 缺省配置组不可以被删除。
@@ -620,7 +671,7 @@ No rows affected (2.668 seconds)
 
 点击该新建的 HBase 配置组，我们可以对每项配置项进行修改，如图所示：
 
-![](_images/modify_hbase_parameters.png)
+![](../../_images/modify_hbase_parameters.png)
 
 修改完后，我们需要进行 “保存”，并点击 “应用” 让新的配置生效。
 
