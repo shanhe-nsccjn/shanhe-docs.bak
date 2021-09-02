@@ -12,9 +12,6 @@ section1:
 Section2:
   title: 用户指南
   children:
-    - title: 产品简介
-      content: 深度学习基础服务简介
-      url: "/ai/deeplearning/intro/infor"
 
     - title: 操作指南
       content: 云服务器操作指南

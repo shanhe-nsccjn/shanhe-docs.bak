@@ -145,7 +145,7 @@ qingcloud/deeplearning:1.1-rocm26 /bin/bash
 ```shell
 sudo docker run -it --rm --name CONTAIN_NAME -p HOST_PORT:CONTAIN_PORT \
 -v HOST_VOLUME:CONTAIN_VOLUME --net YOUR_DOCKER_NET --ip SPECIFIC_IP --expose=EXPOSED_PORTS \
-qingcloud/deeplearning:1.1-cpu /bin/bash
+qingcloud/deeplearning:1.1-cpu-optmize /bin/bash
 ```
 
 - 容器名字、容器 IP 地址、端口映射查看:
@@ -178,8 +178,8 @@ caffe 单机示例：
 
 ```shell
 cd /root/caffe-py3
-../data/mnist/get_mnist.sh
-../examples/mnist/create_mnist.sh
+./data/mnist/get_mnist.sh
+./examples/mnist/create_mnist.sh
 ../build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
 ```
 
@@ -187,9 +187,9 @@ cd /root/caffe-py3
 
 ```shell
 cd /opt/caffe-py3
-../data/mnist/get_mnist.sh
-../examples/mnist/create_mnist.sh
-../build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
+./data/mnist/get_mnist.sh
+./examples/mnist/create_mnist.sh
+./build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
 ```
 
 Caffe 训练过程
