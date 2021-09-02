@@ -39,17 +39,27 @@ Keras 是一个高层神经网络 API，由 Python 编写，通过调用其他�
 |企业版|NVIDIA Quadro RTX 6000|jn1a|
 |入门版|-|jn1a|
 
-- 内置深度学习框架
+- 内置镜像
 
-| Python 版本	|加速库版本	|内置框架版本	|描述  |
-| :-------- | :--------:| :--: | :--|
-| 3.9 |CUDA 10.1|tensorflow-gpu_2.4.1-keras_2.4.3|GPU 训练，CUDA 10.1 和 cuDNN 7.6.5 加速|
-| 3.6 |CUDA 10.0|tensorflow-gpu_2.0.0-keras_2.3.1|GPU 训练，CUDA 10.0 和 cuDNN 7.6.5 加速|
-| 3.6 |CUDA 10.0|tensorflow-gpu_1.15.0-keras_2.3.1|GPU 训练，CUDA 10.0 和 cuDNN 7.6.5 加速|
-| 3.9 |CUDA 11.1|pytorch-1.9.0|GPU 训练，CUDA 11.1|
-| 3.6 |CUDA 10.1|pytorch-1.6.0|GPU 训练，CUDA 10.1|
-| 3.6 |CUDA 10.0|pytorch-1.2.0|GPU 训练，CUDA 10.0|
-| 3.6 |CUDA 10.1|caffe-gpu-1.0|GPU 训练，CUDA 10.1|
+|系列 |版本	|Python 版本	|加速库版本	|内置镜像	|描述  |
+| :-------- | :--------:| :--: | :--|:--| :--|
+|企业版|v2.0n-cuda9.1|2.7/3.6|CUDA 9.1|qingcloud/deeplearning:1.1-cu91-cudnn7.1|GPU 训练，CUDA 9.1 和 cuDNN 7.1 加速|
+|企业版|v2.0n-cuda10.0|2.7/3.6|CUDA 10.0|qingcloud/deeplearning:1.1-cu10.0-cudnn7.6|GPU 训练，CUDA 10.0 和 cuDNN 7.6 加速|
+|基础版|v2.0a|2.7/3.6|ROCm 2.6.22|qingcloud/deeplearning:1.1-rocm26|GPU 训练，ROCm 加速|
+|入门版|v2.0c|2.7/3.6|MKLDNN 0.18.0|qingcloud/deeplearning:1.1-cpu-optimize|Intel CPU 优化，AVX/AVX2 指令集和 MKLDNN 库加速|
+
+
+为满足用户对不同 Deep Learning 框架版本、Python 版本和 CUDA 版本的需求，山河深度学习平台提供了匹配不同版本的多个[docker image](https://hub.docker.com/u/qingcloud/)，用户可依据需要拉取，多个版本的 docker image 以及获取命令见[image 获取命令](#docker_images_pulls)
+
+- 各深度学习框架的 Docker Hub Repository 地址
+
+|深度学习框架	|Repository地址	|
+| :-------- | :--|
+|TensorFlow|https://hub.docker.com/r/qingcloud/tensorflow/|
+|Keras|https://hub.docker.com/r/qingcloud/keras/|
+|Pytorch|https://hub.docker.com/r/qingcloud/pytorch/|
+|Caffe|https://hub.docker.com/r/qingcloud/caffe/|
+|TensorFlow+Keras+Pytorch+Caffe|https://hub.docker.com/r/qingcloud/deeplearning/|
 
 ## 部署深度学习基础服务服务
 
