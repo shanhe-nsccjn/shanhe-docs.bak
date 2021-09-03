@@ -59,7 +59,7 @@ _大数据服务ELK_ 为用户提供了以下组件，用以服务集群其他�
 
   > 注意：如需此功能，需要配置两个 Kibana 节点。此组件从版本 `大数据服务ELK 5.6.16 - shanhe 1.5.0` 起开始支持。
 
-## <a name="deploy-elk"></a>部署 ELK
+## 部署 ELK
 
 ### 基本设置
 
@@ -162,7 +162,7 @@ LS_IP=192.168.2.7
 KB_IP=192.168.2.9
 ```
 
-### <a name="es-intro"></a>Elasticsearch 基本用法
+### Elasticsearch 基本用法
 
 Elasticsearch 用索引（index）来组织数据，用户向 Elasticsearch 发送数据时需要指定目标索引，比如如下命令把数据（访问日志）以 JSON 格式发送到了名为 `access-log-2019.05.13` 的索引（索引名称可根据实际情况指定）：
 
@@ -182,7 +182,7 @@ POST access-log-2019.05.13/_doc
 curl -H "Content-Type: application/json" "$ES_IP:9200/access-log-2019.05.13/_search?q=*"
 ```
 
-### <a name="ls-intro"></a>Logstash 基本用法
+### Logstash 基本用法
 
 Logstash 可通过服务器端的数据处理流水线（pipeline），对来自多种数据源的数据进行转换后，发送到指定的多种目标（比如 Elasticsearch，对象存储服务OIS等）。
 
@@ -196,11 +196,11 @@ curl -d "This is a test message." $LS_IP:9700 # 发送测试数据
 curl $ES_IP:9200/logstash-*/_search # 查询
 ```
 
-### <a name="kibana-intro"></a>Kibana 基本用法
+### Kibana 基本用法
 
 Kibana 是 Elasticsearch 的可视化工具，可通过浏览器访问。在浏览器中输入 http://$KB_IP:5601/ 打开 Kibana，首先点击左侧栏的 `Management` 菜单，然后点击 `Create index pattern` 按钮来创建 index pattern，默认情况下，Kibana 认为您要访问的是通过 Logstash 导入 Elasticsearch 的数据。这时候您可以用默认的 `logstash-*` 作为您的 index pattern。
 
-> 如果显示 "Unable to fetch mapping. Do you have indices matching the pattern?"，可参考 [Logstash 基本用法](#ls-intro) 发送一些数据。
+> 如果显示 "Unable to fetch mapping. Do you have indices matching the pattern?"，可参考 [Logstash 基本用法](#logstash-基本用法) 发送一些数据。
 
 ![配置index](../images/config_index.png)
 
@@ -218,7 +218,7 @@ index pattern 创建成功后可点击左侧栏的 `Discover` 菜单查看导入
 >
 > 此外，Logstash 默认将日志输出到 Elasticsearch 中，用户可以通过 `output_es_content` 配置项，对这个输出过程进行定制。用户还可以通过 `output_conf_content` 配置项，选择将日志输出到除了 Elasticsearch 之外的其他位置，比如 对象存储服务OIS
 
-### <a name="elk-all-cn"></a>场景：ELK 中文日志搜索场景
+### 场景：ELK 中文日志搜索场景
 
 本场景为用户呈现了中文日志从 Logstash 导入到 Elasticsearch，再通过 Kibana 进行搜索的完整的过程。
 
@@ -245,30 +245,30 @@ template => "/data/elasticsearch/dicts/logstash.json"
 curl -d "中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首" $LS_IP:9700
 ```
 
-第四步，参照 [Kibana 基本用法](#kibana-intro) 在浏览器中访问 Kibana 节点并配置 index pattern。
+第四步，参照 [Kibana 基本用法](#kibana-基本用法) 在浏览器中访问 Kibana 节点并配置 index pattern。
 
 点击左侧的 `Discover` 菜单项，显示近期接收到的日志，在搜索栏中输入“中国”，点击右侧的“搜索”按钮。如图，“中国”被高亮显示并且中间没有空格分隔，测试成功。
 
 ![Kibana Search CN](../images/search_result.png)
 
-### <a name="elk-all-en"></a>场景：ELK 英文日志搜索场景
+### 场景：ELK 英文日志搜索场景
 
 本场景为用户呈现了英文日志从 Logstash 导入到 Elasticsearch ，再通过 Kibana 进行搜索的完整的过程。
 
-第一步，在集群详情页面找到任意 Logstash 节点的 IP 地址。参照 [Logstash 基本用法](#ls-intro)，执行如下命令将一条模拟日志发往 Logstash ：
+第一步，在集群详情页面找到任意 Logstash 节点的 IP 地址。参照 [Logstash 基本用法](#logstash-基本用法)，执行如下命令将一条模拟日志发往 Logstash ：
 
 ```bash
 curl -d "[09-07 15:57:26]: call_es_api [:10105/_cluster/health] Exception [error: [Errno -5] No address associated with hostname], try to sleep 10 second." $LS_IP:9700
 ```
 
-第二步，参照 [Kibana 基本用法](#kibana-intro) 在浏览器中访问 Kibana 节点并配置 index pattern：
+第二步，参照 [Kibana 基本用法](#kibana-基本用法) 在浏览器中访问 Kibana 节点并配置 index pattern：
 
 点击左侧的 `Discover` 菜单项，显示近期接收到的日志，在搜索栏中输入 `error` ，点击右侧的“搜索”按钮。如图，`error` 被高亮显示，测试成功。
 
 ![Kibana Search](../images/en_search_result.png)
 
 ***
-### <a name="es-custom-dicts-cn"></a>场景：Elasticsearch 使用 IK Analysis 插件和自定义字典进行中文分词
+### 场景：Elasticsearch 使用 IK Analysis 插件和自定义字典进行中文分词
 
 本场景为用户呈现了直接调用 Elasticsearch API 的中文分词使用方式，为了在 Elasticsearch 中获取更好的中文分词效果，ELK 集成了 IK Analysis 中文分词插件，并为该插件提供了结巴分词的词库和 IK 自带的搜狗词库，同时还支持用户上传自定义词典。IK Analysis 插件用法请参考 [IK Analysis plugin](https://github.com/medcl/elasticsearch-analysis-ik)。
 
@@ -361,7 +361,7 @@ sleep 5; for word in $words; do query "$word"; done
 
 第六步，可根据实际需要随时更新用户自定义字典，Elasticsearch 会自动检测 HTTP 响应头中的 Last-Modified 和 ETag 的变化，来进行分词字典的热更新。
 
-### <a name="es-synonym-cn"></a>场景：Elasticsearch 同义词词典配置与同义词搜索
+### 场景：Elasticsearch 同义词词典配置与同义词搜索
 
 首先需要上传同义词词典到所有 Elasticsearch 节点：
 
@@ -489,11 +489,11 @@ sleep 5; curl -s -H "Content-Type: application/json" -XPOST http://$ES_IP:9200/$
 ***
 > 对象存储服务OIS为用户提供了云端可无限扩展的通用数据存储服务，具有安全可靠、简单易用、高性能、低成本等特点。 用户可以将数据、日志、静态资源等多种文件类型，通过多种方式上传至 对象存储服务OIS中，以满足日常数据存储、归档、分析等需求。为了更好的满足用户的需求，山河提供了Elasticsearch、Logstash 等与 对象存储服务OIS的集成功能。
 
-### <a name="es-qingstor"></a>场景：Elasticsearch 与 对象存储服务OIS集成
+### 场景：Elasticsearch 与 对象存储服务OIS集成
 
 Elasticsearch 可以通过快照（snapshot）将指定 index 甚至整个 cluster 的数据存储到某远端仓库（repository）, 并能从该远端仓库存储的快照中恢复数据。本应用的 Elasticsearch 可以通过 S3 Repository Plugin 与 对象存储服务OIS集成以便生成快照将数据存储到 对象存储服务OIS 中，并可以在必要时从中恢复。
 
-<a name="es-qingstor-step-1"></a>第一步，创建一个 repository：
+第一步，创建一个 repository：
 
 ```
 PUT _snapshot/repo-qingstor
@@ -559,7 +559,7 @@ curl "$ES_IP:9200/_snapshot/repo-qingstor/_all"              # 查看指定repos
 curl -XDELETE "$ES_IP:9200/_snapshot/repo-qingstor/backup-2019.05.13" # 删除snapshot
 ```
 
-<a name="es-qingstor-step-5"></a>第五步，通过如下命令恢复存储在 对象存储服务OIS 的快照到 Elasticsearch 集群：
+第五步，通过如下命令恢复存储在 对象存储服务OIS 的快照到 Elasticsearch 集群：
 
 ```bash
 # 恢复包含集群所有index的snapshot
@@ -591,7 +591,7 @@ curl -H "Content-Type: application/json" -XPOST "$ES_IP:9200/_snapshot/repo-qing
 
 > __注意__：如果 ES 集群和 对象存储服务OIS 位于同一区域进行数据迁移耗公网流量，如果不在同一区域则需要消耗公网流量，比如位于 北京3区-A 的 ES 集群可以选择同一区域的 对象存储服务OIS （https://s3.pek3a.is.shanhe.com）避免产生公网流量。
 
-### <a name="es-hot-warm-cold"></a>场景：Elasticsearch 热-温-冷 数据架构
+### 场景：Elasticsearch 热-温-冷 数据架构
 
 在某些大规模数据分析场景（比如时间数据分析），可以采用此架构：基于时间创建 index，然后持续地把温/冷数据迁移到相应的数据节点。
 
@@ -637,7 +637,7 @@ PUT /last-year/_settings
 
 ![Hot Warm Cold - Move](../images/hot-warm-cold.gif)
 
-### <a name="es-view-logs"></a>场景：Elasticsearch 集群日志查看
+### 场景：Elasticsearch 集群日志查看
 
 可直接通过浏览器访问任意 Elasticsearch 节点的 80 端口 http://$ES_IP/logs/ 查看所有 Elasticsearch 节点的日志，如下图所示。
 
@@ -656,7 +656,7 @@ PUT /last-year/_settings
 ***
 > 下面几个场景将介绍如何对 ELK 中的 Logstash 进行个性化定制及使用
 
-### <a name="ls-qingstor"></a>场景：Logstash 与 对象存储服务OIS集成
+### 场景：Logstash 与 对象存储服务OIS集成
 
 Logstash 支持从 对象存储服务OIS输入数据到 Elasticsearch，或者从 Elasticsearch 导出数据到 对象存储服务OIS。
 
@@ -666,7 +666,7 @@ Logstash 支持从 对象存储服务OIS输入数据到 Elasticsearch，或者�
 | 5.6.16 | logstash-input/output-s3（**`推荐！`**）, logstash-input/output-qingstor
 | 5.5.1 | logstash-input/output-qingstor
 
-> 请先在 山河控制台 申请 [Access Key](https://console.shanhe.com/access_keys/) 和 [创建Bucket](https://docs.shanhe.com/qingstor/guide/bucket_manage.html#%E5%88%9B%E5%BB%BA-bucket)。
+> 请先在 山河控制台 申请 [Access Key](https://console.shanhe.com/access_keys/) 和 [创建Bucket](https://console.shanhe.com/jn1/qingstor/)。
 
 第一步，在集群详情页面，切换到参数配置页面，选择 Logstash 节点，修改 `input_conf_content` 配置项为如下，点击保存。
 
@@ -701,7 +701,7 @@ s3 {
 
 第三步，保存成功后请在您配置的 bucket 里上传日志文件。
 
-第四步，参照 [Kibana 基本用法](#kibana-intro) 使用浏览器输入 `http://$KB_IP:5601/` 打开 Kibana 界面，配置 index pattern 后，既可在 Discover 查看到导入的日志。
+第四步，参照 [Kibana 基本用法](#kibana-基本用法) 使用浏览器输入 `http://$KB_IP:5601/` 打开 Kibana 界面，配置 index pattern 后，既可在 Discover 查看到导入的日志。
 
 > Logstash 默认的 output 是 Elasticsearch， 并自动配置好了 Elasticsearch 集群的 hosts 选项。如果需要在 output 到 Elasticsearch 的过程中指定其他参数， 可以在`output_es_content`中指定，比如：
 >
@@ -746,7 +746,7 @@ s3 {
 >
 > 关于`logstash-input/output-qingstor`插件的更多细节信息请查看[相关文档](https://docs.shanhe.com/qingstor/third_party_integration/index.html)
 
-### <a name="ls-install-plugin"></a>场景：Logstash 插件安装使用方法
+### 场景：Logstash 插件安装使用方法
 
 > **注意**：此处仅讨论在线安装，需要有公网连接，如需离线安装，请参考 [官方文档](https://www.elastic.co/guide/en/logstash/6.7/offline-plugins.html)。下面以 logstash-output-influxdb 插件的安装为例，其他插件安装方式类似。
 
@@ -799,7 +799,7 @@ influxdb {
 
 在集群列表页面右键点击您的ELK集群，点击重启，选择 Logstash 节点，点击提交，此时 Logstash 节点将会重启。
 
-第七步，参考 [Logstash 基本用法](#ls-intro) 发送一条数据：
+第七步，参考 [Logstash 基本用法](#logstash-基本用法) 发送一条数据：
 
 ```bash
 curl -d "shanhe" $LS_IP:9700
@@ -807,7 +807,7 @@ curl -d "shanhe" $LS_IP:9700
 
 如成功，则 influxdb 中将新增一条 point ，说明插件配置生效，如发现 influxdb 中没有新增 point ，请查看 logstash 日志，位置为 `/data/logstash/logs/logstash-plain.log`。
 
-### <a name="ls-custom-plugin"></a>场景：Logstash 自定义插件支持
+### 场景：Logstash 自定义插件支持
 
 第一步，在集群列表页面的 Logstash 节点上点击节点 ID 右侧的显示器图标，打开 Web 终端。输入默认用户名 `ubuntu`、密码 `p12cHANgepwD`，进入 shell。
 
@@ -839,17 +839,17 @@ curl -d "shanhe" $LS_IP:9700
 
 在集群列表页面右键点击您的ELK集群，点击重启，选择 Logstash 节点，点击提交，此时 Logstash 节点将会重启。
 
-第六步，参考 [Logstash 基本用法](#ls-intro) 发送一条数据：
+第六步，参考 [Logstash 基本用法](#logstash-基本用法) 发送一条数据：
 
 ```bash
 curl -d "shanhe" $LS_IP:9700
 ```
 
-参照 [Kibana 基本用法](#kibana-intro) 在浏览器打开 Kibana 并进行必要配置，点击左侧的 Discover 菜单项，显示近期接收到的日志，如图，示例中的 `logstash_filter_abcd` 成功将原消息中的 `shanhe` 替换为了 `Hello World!` ，说明插件配置生效。
+参照 [Kibana 基本用法](#kibana-基本用法) 在浏览器打开 Kibana 并进行必要配置，点击左侧的 Discover 菜单项，显示近期接收到的日志，如图，示例中的 `logstash_filter_abcd` 成功将原消息中的 `shanhe` 替换为了 `Hello World!` ，说明插件配置生效。
 
 ![日志展示](../images/log_display.png)
 
-### <a name="ls-custom-config"></a>场景：Logstash 自定义启动配置文件
+### 场景：Logstash 自定义启动配置文件
 
 默认情况下， Logstash 的启动配置文件会根据 **配置参数** 中 ** Logstash 节点** 的 `input_conf_content、filter_conf_content、output_conf_content、output_es_content` 配置项自动生成，如果用户想自定义 logstash.conf 配置文件，只需在 `/data/logstash/config/` 目录创建 logstash.conf.lock 文件，系统就不再覆盖  logstash.conf 文件。
 
@@ -863,11 +863,11 @@ curl -d "shanhe" $LS_IP:9700
 >
 > `sudo docker exec -it $(docker ps -q) restart.sh`
 
-### <a name="ls-syslog-plugin"></a>场景：logstash-input-syslog 插件使用说明
+### 场景：logstash-input-syslog 插件使用说明
 
 Logstash 预置了 logstash-input-syslog 插件，通过此插件可在 Logstash 节点上运行 syslog 服务以收集日志。
 
-> 更多的预置 Logstash 插件请参见 [Logstash 预置插件列表](#logstash-plugins)。
+> 更多的预置 Logstash 插件请参见 [Logstash 预置插件列表](#logstash-集成插件列表)。
 
 第一步，在集群详情页面，切换到参数配置页面，选择 Logstash 节点，修改`input_conf_content`配置项为如下，点击保存。
 
@@ -965,7 +965,7 @@ Elasticsearch 本身的 API 没有提供安全机制，同时 Elasticsearch 的 
 
 第一步，根据 [部署 大数据服务ELK 服务](#deploy-elk) 创建 大数据服务ELK 集群。
 
-第二步，根据 [山河对象存储文档](https://docs.shanhe.com/qingstor/index.html) 创建对象存储的 Bucket。
+第二步，根据 [山河对象存储文档](https://docsv3.shanhe.com/storage/object-storage/) 创建对象存储的 Bucket。
 
 第三步，在山河控制台申请 [API 密钥](https://console.shanhe.com/access_keys/)。
 
@@ -1027,7 +1027,7 @@ curl -H 'Content-Type: application/json' -XPUT 'http://<ELK集群的某一节点
 curl -H 'Content-Type: application/json' -XPOST 'http://<ELK集群的某一节点的IP地址>:9200/_snapshot/repo-qingstor/migration-2019.05.13/_restore'
 ```
 
-> 注意！目前 对象存储服务OIS只开放了 `北京3区-A`、`北京3区-B`、`上海1区-A` 和 `广东2区`，这些区内的数据迁移是不耗公网网络流量的，其他区借助对象存储迁移是需要耗费公网流量的。
+> 注意！目前 对象存储服务OIS只开放了 `jn1a`、`jn1b`，这些区内的数据迁移是不耗公网网络流量的，其他区借助对象存储迁移是需要耗费公网流量的。
 
 #### 方法2: 使用 elasticdump 工具完成迁移
 
@@ -1077,7 +1077,7 @@ elasticdump --input=http://192.168.0.37:9200 --output=http://192.168.0.24:9200
 * mapper-murmur3 (1.2.1加入)
 * mapper-size (1.2.1加入)
 
-### <a name="logstash-plugins"></a>Logstash 集成插件列表
+### Logstash 集成插件列表
 
 * logstash-codec-cef
 * logstash-codec-collectd
@@ -1336,7 +1336,6 @@ ELK 5.5.1 - shanhe 1.1
 
 大数据服务ELK进行版本升级时，用户集群的应用版本的右侧会出现升级标志，用户可通过关闭集群，然后右键升级的方式来完成集群升级操作。
 
-##  旧版 Elasticsearch 服务文档
 
-请访问[这里](.../elasticsearch.html)
+
 

@@ -628,7 +628,7 @@ No rows affected (2.668 seconds)
 
 ## 监控和告警
 
-我们对 大数据服务HBase 集群的每个节点提供了资源的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。 同时，HBase 和 HDFS 提供了丰富的监控信息。如果需要通过公网访问这些信息您需要先申请一个公网 IP 绑定在路由器上，在路由器上设置端口转发，同时打开防火墙相应的下行端口。 HBase Master 默认端口16010，HDFS Name Node 默认端口是50070。为方便查看HBase UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置VPN，VPN 建立后可查看下述界面。
+我们对 大数据服务HBase 集群的每个节点提供了资源的监控和告警服务，包括 CPU 使用率、内存使用率、硬盘使用率等。 同时，HBase 和 HDFS 提供了丰富的监控信息。如果需要通过公网访问这些信息您需要先申请一个公网 IP 绑定在路由器上，在路由器上设置端口转发，同时打开防火墙相应的下行端口。 HBase Master 默认端口16010，HDFS Name Node 默认端口是50070。为方便查看HBase UI，请参考 [VPN 隧道指南](https://docsv3.shanhe.com/network/vpc/manual/tunnel/gre/) 配置VPN，VPN 建立后可查看下述界面。
 
 *   [http:/](http:/)/:16010
 *   [http:/](http:/)/:50070
@@ -707,14 +707,14 @@ No rows affected (2.668 seconds)
 *   **phoenix.functions.allowUserDefinedFunctions**: 是否开启允许 Phoenix UDF
 *   **phoenix.transactions.enabled**: 是否开启 Phoenix ACID 事务
 
-配置项的详细解释请参见 [HBase 官方配置文档](http://hbase.apache.org/book.html#config.files)。
+配置项的详细解释请参见 [HBase 官方配置文档](http://abloz.com/hbase/book.html)。
 
 ## 迁移
 
 当需要迁移 HBase 数据到新的 HBase 集群时, 可按照以下步骤操作:
 
 **第一步：**
-两个 HBase 集群所在路由器间建立 GRE 隧道, 可参考[GRE 隧道文档](https://docs.shanhe.com/product/network/gre)。
+两个 HBase 集群所在路由器间建立 GRE 隧道, 可参考[GRE 隧道文档](https://docsv3.shanhe.com/network/vpc/manual/tunnel/gre/)。
 
 > 注解
 当两个 HBase 在同一 VPC 下时, 无需建立隧道。

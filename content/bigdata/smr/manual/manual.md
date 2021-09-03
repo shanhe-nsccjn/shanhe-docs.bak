@@ -5,9 +5,6 @@ weight: 16
 draft: false
 ---
 
----
----
-
 # 大数据基础服务SMR 用户指南
 
 
@@ -15,19 +12,19 @@ draft: false
 
 山河 shanhe 大数据相关服务将会统一在 大数据基础服务SMR 下。 大数据基础服务SMR 目前已经集成了:
 
-- 分布式文件系统 *HDFS* 
+- 分布式文件系统 HDFS
 
-- 集群资源管理系统 *YARN*
+- 集群资源管理系统 YARN
 
-- 数据处理框架 *Hadoop MapReduce*、*Spark* 和 *Flink*
+- 数据处理框架 Hadoop MapReduce、Spark 和 Flink
 
-- 数据仓库工具 *Hive* 
+- 数据仓库工具 Hive
 
-- 极速海量数据 OLAP 分析引擎 *Kylin*
+- 极速海量数据 OLAP 分析引擎 Kylin
 
-陆续会有更多的基于 *HDFS* 的大数据应用被纳入到 大数据基础服务SMR 中。其他的大数据服务如 *大数据服务Storm* ，*消息队列消息队列Kafka* ， *大数据服务ZooKeeper* 等也将统一在 大数据基础服务SMR 品牌下。
+陆续会有更多的基于 HDFS 的大数据应用被纳入到 大数据基础服务SMR 中。其他的大数据服务如 大数据服务Storm ，消息队列消息队列Kafka ， 大数据服务ZooKeeper 等也将统一在 大数据基础服务SMR 品牌下。
 
-此外 大数据基础服务SMR 中的 *Hadoop MapReduce* ，*Spark* 和 *Hive* 都与 *对象存储服务OIS* 对象存储服务进行了有效的集成，使得用户可以高效地进行海量数据的低成本存储。
+此外 大数据基础服务SMR 中的 Hadoop MapReduce ，Spark 和 Hive 都与 对象存储服务OIS 进行了有效的集成，使得用户可以高效地进行海量数据的低成本存储。
 
 当前支持的组件及版本如下：
 
@@ -38,21 +35,19 @@ draft: false
 | 大数据基础服务SMR - Core 2.0.0 | 2.9.2 | 2.2.3 | 2.3.5 | - |
 | 大数据基础服务SMR - Core 2.5.2 | 2.9.2 | 2.2.3 | 2.3.5 | 1.9.0 |
 
- 备注：*Kyligence Enterprise* 作为 *Kylin* 的企业版也是构建在 大数据基础服务SMR 之上，如需使用可以[点击这里](https://appcenter.shanhe.com/apps/app-66xhycwj/Kyligence%20Enterprise%20%20-%20Apache%20Kylin%20%E4%BC%81%E4%B8%9A%E7%89%88)获取。
-
   > 更多组件，敬请期待
 
 
 ### 大数据基础服务SMR 功能概览
 
-#### *Hadoop* 服务简介
+#### Hadoop 服务简介
 
-提供 *Hadoop*  的 MapReduce、YARN、HDFS 等服务，其他特色功能包括：
+提供 Hadoop  的 MapReduce、YARN、HDFS 等服务，其他特色功能包括：
 - 支持用户自定义 Hadoop 代理用户及其能够代理哪些 hosts 和这些 hosts 中的哪些 groups
 - 支持上传自定义的 YARN 调度器 CapacityScheduler 和 FairScheduler，并支持在 CapacityScheduler 和 FairScheduler 之间进行切换
 
-#### *Spark* 服务简介
-提供 *Spark* 的 Spark streaming、Spark SQL、DataFrame and DataSet、Structed Streaming、MLlib、GraphX、SparkR 等服务，其他特色功能包括：
+#### Spark 服务简介
+提供 Spark 的 Spark streaming、Spark SQL、DataFrame and DataSet、Structed Streaming、MLlib、GraphX、SparkR 等服务，其他特色功能包括：
 - 同时支持 Spark Standalone 和 Spark on YARN 两种模式
 - 为了方便用户提交 Python Spark 应用，提供了 Anaconda 发行版的 Python 2.7.13 和 Python 3.6.1 。用户可以选择 Python Spark 应用的运行环境，支持在 Python2 和 Python3 之间进行切换
 - 为了方便用户开发 Python Spark 机器学习类的应用， 分别在 Anaconda 发行版的 Python2 和 Python3 内提供了 Anaconda 发行版的数据科学包 numpy, scikit-learn, scipy, Pandas, NLTK and Matplotlib
@@ -60,12 +55,12 @@ draft: false
 - 支持上传自定义的 Spark 应用内调度器 Fair Schudeler，并支持 spark 应用内调度模式在 FIFO 和 FAIR 切换
 - 支持基于 Spark 的分布式深度学习框架 BigDL （从 大数据基础服务SMR 2.0.0 开始支持）
 
-#### *Hive* 服务简介
-提供 *Hive*  的以 SQL 语法读、写和管理分布式大规模数据集的 SQL on Hadoop 数据仓库服务，其他特色功能包括：
+#### Hive 服务简介
+提供 Hive  的以 SQL 语法读、写和管理分布式大规模数据集的 SQL on Hadoop 数据仓库服务，其他特色功能包括：
 - 同时支持 Hive on MapReduce 和 Hive on Spark 两种模式并可进行切换 (其中 Hive on Spark 从 大数据基础服务SMR 1.3.0 开始支持)
 
-#### *Flink* 服务简介
-提供 *Flink* 的 DataStream and DataSet、CEP、Table、FlinkML、Gelly 等服务，其他特色功能包括：
+#### Flink 服务简介
+提供 Flink 的 DataStream and DataSet、CEP、Table、FlinkML、Gelly 等服务，其他特色功能包括：
 - 支持 Flink on YARN 模式
 
 #### 各组件公共服务简介
@@ -142,6 +137,8 @@ draft: false
 ![查看服务详情](../cluster_detail.png)
 
 创建成功后，点击集群列表页面相应集群可查看集群详情。可以看到集群分为 HDFS 主节点、主节点、从节点和 Client 节点四种角色。其中主节点上运行着诸多服务如 YARN Resource Manager ，Spark Standalone 模式下的 Spark Master（从1.1.0开始默认关闭），Hive Metastore（默认关闭），HiveServer2（默认关闭）；用户可以直接访问 client 节点，并通过该节点与集群交互如提交 Hadoop/Spark/Hive job 、查看/上传/下载 HDFS 文件、运行 Hive 查询等。
+
+> client 节点账户密码：ubuntu/p12cHANgepwD
 
 - 进入集群详情页面后，点击`服务详情`即可查看各节点的运行服务：
 
@@ -596,7 +593,7 @@ beeline -u jdbc:hive2:///
 
 ### 4. 与 对象存储服务OIS集成
 
-对象存储服务OIS为用户提供可无限扩展的通用数据存储服务，具有安全可靠、简单易用、高性能、低成本等特点。用户可将数据上传至 对象存储服务OIS中，以供数据分析。由于 对象存储服务OIS兼容 AWS S3 API，因此 Spark 与 Hadoop 都可以通过 AWS S3 API 与 对象存储服务OIS高效集成，以满足更多的大数据计算和存储场景。有关 对象存储服务OIS 的更多内容，请参考 [对象存储服务OIS用户指南](https://docs.shanhe.com/qingstor/guide/index.html)
+对象存储服务OIS为用户提供可无限扩展的通用数据存储服务，具有安全可靠、简单易用、高性能、低成本等特点。用户可将数据上传至 对象存储服务OIS中，以供数据分析。由于 对象存储服务OIS兼容 AWS S3 API，因此 Spark 与 Hadoop 都可以通过 AWS S3 API 与 对象存储服务OIS高效集成，以满足更多的大数据计算和存储场景。有关 对象存储服务OIS 的更多内容，请参考 [对象存储服务OIS用户指南](https://docsv3.shanhe.com/storage/object-storage/)
 >目前 对象存储服务OIS的开放了 jn1 区，后续还将开发其他区域。
 
 如需与对象存储服务OIS集成，需要首先在配置参数页面填写如下信息：  
@@ -884,7 +881,7 @@ YARN、HDFS、Spark 和 Hive 提供了丰富的监控信息。如果需要通过
 
 `主节点` 中 Resource Manager 默认端口 `8088` ， `HDFS 主节点` 默认端口是 `50070`，Spark 主节点 和主节点是同一个，其默认端口是 `8080`，HiveServer2 WEB UI 默认端口 `10002`。 (其中 HiveServer2 WEB UI 从 大数据基础服务SMR 1.3.0 开始支持)
 
-为方便查看 大数据基础服务SMR UI，请参考 [VPN 隧道指南](https://docs.shanhe.com/product/network/vpn) 配置 VPN，VPN 建立后可查看下述界面。
+为方便查看 大数据基础服务SMR UI，请参考 [VPN 隧道指南](https://docsv3.shanhe.com/network/vpc/manual/tunnel/ipsec/) 配置 VPN，VPN 建立后可查看下述界面。
 
 - http://< 主节点IP >:8088
 

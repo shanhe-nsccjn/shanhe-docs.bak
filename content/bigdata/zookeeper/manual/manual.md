@@ -5,9 +5,6 @@ weight: 16
 draft: false
 ---
 
----
----
-
 # 大数据服务ZooKeeper 指南
 
 大数据服务ZooKeeper 是一个高可用的分布式数据管理与系统协调软件，它可以为分布式应用提供状态同步、配置管理、名称服务、群组服务、分布式锁及队列、以及 Leader 选举等服务。
@@ -42,7 +39,7 @@ draft: false
 
 **第四步：测试 大数据服务ZooKeeper**
 
-大数据服务ZooKeeper 创建完成之后可以进行连接测试。下载 [大数据服务ZooKeeper](http://zookeeper.apache.org/releases.html) 并解压，您可以在本地测试，也可以在 大数据服务ZooKeeper 同一私有网络或跨网络测试，如果客户端和 大数据服务ZooKeeper 不在同一私有网络，您需要配置路由器端口转发， 请参考 [山河用户指南](https://docs.shanhe.com/product/network/appcenter_network_config/) 。
+大数据服务ZooKeeper 创建完成之后可以进行连接测试。下载 [大数据服务ZooKeeper](http://zookeeper.apache.org/releases.html) 并解压，您可以在本地测试，也可以在 大数据服务ZooKeeper 同一私有网络或跨网络测试，如果客户端和 大数据服务ZooKeeper 不在同一私有网络，您需要配置路由器端口转发， 请参考 [山河用户指南](https://docsv3.shanhe.com/network/vpc/manual/base/#管理配置) 。
 
 现假设客户端和 大数据服务ZooKeeper 在同一私有网络，大数据服务ZooKeeper 集群有三个节点，IP 地址分别为192.168.100.10,192.168.100.11,192.168.100.12， 您可以通过如下命令连接 大数据服务ZooKeeper。
 
@@ -76,7 +73,7 @@ bin/zkCli.sh|zkCli.cmd -server 192.168.100.10:2181,192.168.100.11:2181,192.168.1
 
 **测试条件**
 
-广东１区，1C2G　3个节点的 大数据服务ZooKeeper 集群。
+济南１区，1C2G　3个节点的 大数据服务ZooKeeper 集群。
 
 **测试一**
 
