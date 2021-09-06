@@ -22,7 +22,7 @@ draft: false
 
 ### 步骤二：磁盘选择
 
-_云数据库MongoDB 4.0.3 - shanhe 1.2.0_ 添加了企业级分布式 SAN（NeonSAN），最高可支持 50000G 的磁盘扩展，可满足您大容量的数据存储需求，该功能目前仅在 `北京 3B` 、 `上海1A` 和 `广东 2 区` 支持。
+_云数据库MongoDB 4.0.3 - shanhe 1.2.0_ 添加了企业级分布式 SAN（NeonSAN），最高可支持 50000G 的磁盘扩展，可满足您大容量的数据存储需求。
 
 ![](../../_images/step2.png)
 
@@ -54,7 +54,7 @@ _云数据库MongoDB 4.0.3 - shanhe 1.2.0_ 添加了企业级分布式 SAN（Neo
 
 ### 使用 mongo 客户端进行连接
 
-云数据库MongoDB 创建完成之后可以进行连接测试。参考文档 https://docs.云数据库MongoDB.com/manual/administration/install-on-linux/ 下载并安装 `云数据库MongoDB-org-shell`，您可以在 云数据库MongoDB 同一私有网络或跨网络的客户端上测试。现假设客户端和 云数据库MongoDB 在同一私有网络，云数据库MongoDB 集群有三个节点，IP 地址分别为`192.168.0.23,192.168.0.24,192.168.0.27`， 您创建的用户名为`qc_test`，密码为`Pwd00000`，可以通过如下命令连接 云数据库MongoDB：
+云数据库MongoDB 创建完成之后可以进行连接测试。参考文档 https://docs.mongodb.com/manual/administration/install-on-linux/ 下载并安装 `云数据库MongoDB-org-shell`，您可以在 云数据库MongoDB 同一私有网络或跨网络的客户端上测试。现假设客户端和 云数据库MongoDB 在同一私有网络，云数据库MongoDB 集群有三个节点，IP 地址分别为`192.168.0.23,192.168.0.24,192.168.0.27`， 您创建的用户名为`qc_test`，密码为`Pwd00000`，可以通过如下命令连接 云数据库MongoDB：
 
 ```shell
 mongo mongodb://qc_test:Pwd00000@192.168.0.23,192.168.0.24,192.168.0.27/admin?replicaSet=foobar
