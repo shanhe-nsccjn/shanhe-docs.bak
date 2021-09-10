@@ -31,6 +31,10 @@ Section2:
       content: 快速入门
       url: "quick-start/base"
 
+    - title: aip用户指南
+      content: aip用户指南
+      url: "aip/submit_job"
+
     - title: 操作指南
       content: 操作指南
       url: "manual/base"
