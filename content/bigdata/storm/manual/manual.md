@@ -5,15 +5,12 @@ weight: 16
 draft: false
 ---
 
----
----
-
 # Apache 大数据服务Storm on shanhe AppCenter 用户手册
 
 
 ## 简介
 
-大数据服务Storm 是一个开源的分布式实时计算系统，通常被比作＂实时的 Hadoop＂。大数据服务Storm 为实时计算提供了一些简单优美的原语，支持多种编程语言，并内建流式窗口 API 及分布式缓存 API，极大简化了流式数据处理过程。大数据服务Storm 不仅高可靠、易扩展，而且处理速度极快，每个计算节点每秒能处理上百万条元组信息（Tuple），因此常被用于实时分析、在线机器学习、连续计算、分布式 RPC、ETL 等。 关于 大数据服务Storm 更多的详细信息，请参阅 [Storm 官方网站](http://storm.apache.org/)，[Storm 官方中文文档](http://storm.apachecn.org/releases/cn/1.1.0/)。
+大数据服务Storm 是一个开源的分布式实时计算系统，通常被比作＂实时的 Hadoop＂。大数据服务Storm 为实时计算提供了一些简单优美的原语，支持多种编程语言，并内建流式窗口 API 及分布式缓存 API，极大简化了流式数据处理过程。大数据服务Storm 不仅高可靠、易扩展，而且处理速度极快，每个计算节点每秒能处理上百万条元组信息（Tuple），因此常被用于实时分析、在线机器学习、连续计算、分布式 RPC、ETL 等。 关于 大数据服务Storm 更多的详细信息，请参阅 [Storm 官方网站](http://storm.apache.org/)，[Storm 官方中文文档](http://storm.apachecn.org)。
 
 Storm 具有如下特点：
 
@@ -371,7 +368,3 @@ Flink 和 消息队列Kafka Stream 目前在生产环境中比较少见，主要
 在使用过程中如果遇到问题可以通过 `提交工单` 来获取帮助，我们将竭诚为您服务。
 
 Have a nice day on shanhe AppCenter !
-
-## Storm Paas 文档
-
-Storm Paas 文档请访问[这里](../storm.html)

@@ -76,7 +76,7 @@ _云数据库MongoDB 4.0.3 - shanhe 1.2.0_ 版本新增了「连接 URL」一栏
 
 Mongo 应用数据盘被占满会导致 mongod 服务进程挂掉
 
-我们在 _云数据库MongoDB 4.0.3 shanhe 1.4.0_ 版本中新增了「应用存储空间」自动伸缩的功能，您可以参照 [自动伸缩](https://docs.shanhe.com/product/operation/autoscaling) 来实现您的自动伸缩自定义
+我们在 _云数据库MongoDB 4.0.3 shanhe 1.4.0_ 版本中新增了「应用存储空间」自动伸缩的功能，您可以参照 [自动伸缩](https://docsv3.shanhe.com/operation/autoscaling/) 来实现您的自动伸缩自定义
 
 ### 同步日志
 
@@ -100,7 +100,7 @@ Mongo 应用数据盘被占满会导致 mongod 服务进程挂掉
 
 ### zabbix-agent 服务
 
-_云数据库MongoDB 4.0.3 - shanhe 1.3.0_ 版本新增了 zabbix-agent 服务（3.4 版本），方便您采用 zabbix-server 统一管理各个集群的监控信息，zabbix-agent 服务的控制见 「配置参数」，启动服务后，用户只需要在 zabbix-server 的 web 界面添加云服务器即可，为了实现多维数据监控，我们提供了 [监控模板](https://releases-qs.jn1a.is.shanhe.com/zabbix/zbx_mongodb_templates.xml?response-content-disposition=attachment)（点击即可下载到本地）。用户只需要将该模板导入到 zabbix-server 即可使用。
+_云数据库MongoDB 4.0.3 - shanhe 1.3.0_ 版本新增了 zabbix-agent 服务（3.4 版本），方便您采用 zabbix-server 统一管理各个集群的监控信息，zabbix-agent 服务的控制见 「配置参数」，启动服务后，用户只需要在 zabbix-server 的 web 界面添加云服务器即可，为了实现多维数据监控，我们提供了 [监控模板](https://jn1.is.shanhe.com/shanhe/docs/static/xml/zbx_mongodb_templates.xml)（点击即可下载到本地）。用户只需要将该模板导入到 zabbix-server 即可使用。
 
 > 「配置参数」中 「zabbix-server 地址」 填写的格式不正确，会导致 zabbix-agent 的不正确启停，该项的填写格式可参考 [配置文件](https://www.zabbix.com/documentation/3.4/manual/appendix/config/zabbix_agentd) 中的 「Server」 配置项。
 
