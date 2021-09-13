@@ -11,7 +11,7 @@ weight: 10
 
 ## 创建 etcd 集群
 
-1. 登录 [QingCloud 管理控制台](https://console.qingcloud.com/login)。
+1. 登录 [山河 管理控制台](https://console.shanhe.com/login)。
 2. 在顶部菜单栏中，选择**产品与服务** > **消息队列与中间件** > **etcd 服务**。
 
 3. 点击**立即部署**，进入 etcd 服务的部署页面。
