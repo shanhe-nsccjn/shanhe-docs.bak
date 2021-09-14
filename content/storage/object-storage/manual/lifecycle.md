@@ -26,7 +26,7 @@ weight: 7
 ## 如何配置生命周期规则？
 
 用户可以调用 Bucket Lifecycle API 来配置生命周期规则，也可以在控制台配置。
-QingStor 生命周期配置规则（Lifecycle Rules) 作为存储空间的子资源来存储,
+OIS 生命周期配置规则（Lifecycle Rules) 作为存储空间的子资源来存储,
 只有存储空间的所有者可以设置。
 
 ### 用 Bucket Lifecycle API 来配置生命周期规则

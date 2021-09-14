@@ -7,7 +7,7 @@ collapsible: false
 weight: 16
 ---
 
-Mountain Duck 是 Windows 平台上挂载访问对象存储的一种第三方客户端软件，推荐使用其作为 对象存储服务OIS的挂载工具。由 QingStor 为其提供无限容量的在线文件存储空间，而不占用本地磁盘空间。通过 Mountain Duck 您可以像操作本地磁盘(例如C盘、D盘等)一样方便、快捷地访问或存取 QingStor Bucket 中的各种类型文件，其运行后如下图(其中E盘对应着 QingStor 的 Bucket)所示：
+Mountain Duck 是 Windows 平台上挂载访问对象存储的一种第三方客户端软件，推荐使用其作为 对象存储服务OIS的挂载工具。由 OIS 为其提供无限容量的在线文件存储空间，而不占用本地磁盘空间。通过 Mountain Duck 您可以像操作本地磁盘(例如C盘、D盘等)一样方便、快捷地访问或存取 OIS Bucket 中的各种类型文件，其运行后如下图(其中E盘对应着 OIS 的 Bucket)所示：
 
 ![](run.png)
 
@@ -23,13 +23,13 @@ Mountain Duck 是 Windows 平台上挂载访问对象存储的一种第三方客
 
 ## 快速开始
 
-Mountain Duck 通过登录操作挂载 QingStor 中的 Bucket，挂载成功后即可像操作本地磁盘一样对 Bucket 中的文件进行读写、存取等操作，同时可通过托盘菜单对缓存设置、版本更新、帐户信息等进行查看或操作。
+Mountain Duck 通过登录操作挂载 OIS 中的 Bucket，挂载成功后即可像操作本地磁盘一样对 Bucket 中的文件进行读写、存取等操作，同时可通过托盘菜单对缓存设置、版本更新、帐户信息等进行查看或操作。
 
 ### 登录
 
 #### Host
 
-首先输入您需要挂载的 QingStor Host ，如下图所示如下图所示：
+首先输入您需要挂载的 OIS Host ，如下图所示如下图所示：
 
 ![](login_step1.png)
 

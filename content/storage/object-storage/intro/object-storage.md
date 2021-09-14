@@ -70,5 +70,5 @@ Object 命名规范:
 
 ## 服务等级协议
 
-我们承诺数据持久性不低于 99.99999999%, 对象存储的服务可用性不低于99.99%。详情请参看 [对象存储服务OIS服务等级协议](https://www.shanhe.com/terms#qingstor-terms)。
+我们承诺数据持久性不低于 99.99999999%, 对象存储的服务可用性不低于99.99%。详情请参看 [对象存储服务OIS服务等级协议](https://docsv3.shanhe.com/terms/object/intro/intro/)。
 
