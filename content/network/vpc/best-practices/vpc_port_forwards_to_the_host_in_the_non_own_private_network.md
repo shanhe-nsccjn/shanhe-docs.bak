@@ -35,7 +35,7 @@ weight: 1
 
 ### 1、两vpc之间通过ipsec隧道打通
 
-​	可以参考文档配置：[搭建ipsec隧道](https://docs.shanhe.com/product/network/ipsec)
+​	可以参考文档配置：[搭建ipsec隧道](https://docsv3.shanhe.com/network/vpc/manual/tunnel/ipsec/)
 
 ![](../_images/private_network_1.png)
 

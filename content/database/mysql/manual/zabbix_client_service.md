@@ -14,7 +14,7 @@ draft: false
 
 1. 在 shanhe 管理控制台，选择目标集群，点击**启动 zabbix 客户端**，并配置 Zabbix Server 端口和 IP 参数，确认启用服务。
 
-2. 在 Zabbix Server 的 Web 界面，可直接添加主机。并将[监控模板](https://releases-qs.jn1.is.shanhe.com/zabbix/zbx_export_templates.xml?response-content-disposition=attachment)到本地导入到 Zabbix Server ，即可成功启动服务。
+2. 在 Zabbix Server 的 Web 界面，可直接添加主机。并将[监控模板](https://jn1.is.shanhe.com/shanhe/docs/static/xml/zbx_export_templates.xml)到本地导入到 Zabbix Server ，即可成功启动服务。
 
 ![启动 Zabbix 客户端服务](../../_images/start_zabbix_agent.png)
 
