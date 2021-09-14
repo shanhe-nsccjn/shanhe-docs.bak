@@ -38,7 +38,7 @@ product:
 
     - time: 2017-12-08
       title: 兼容 AWS S3 v2/v4 参数签名
-      content: 为了使众多基于 AWS S3 开发的应用程序、SDK、及第三方服务在不修改代码的前提下，更容易的接入到 QingStor，QingStor 兼容了 AWS S3 的接口。
+      content: 为了使众多基于 AWS S3 开发的应用程序、SDK、及第三方服务在不修改代码的前提下，更容易的接入到 OIS，OIS 兼容了 AWS S3 的接口。
       url: /storage/object-storage/s3
 
     - time: 2017-12-08
