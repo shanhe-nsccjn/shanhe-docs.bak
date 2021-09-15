@@ -25,4 +25,16 @@ weight: 2
 
 ![](../_images/spack-install-soft.png)
 
+### 5、查找、加载本地软件
+
+    spack find
+
+    spack load software@version
+
+### 6、查找加载公共软件
+
+    spack-pub find
+
+    spack-pub load software@version
+
 

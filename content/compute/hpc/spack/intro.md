@@ -14,7 +14,7 @@ weight: 2
 
 ### 查看指定软件
 
-    spack load software
+    spack find software
 
 ![](../_images/spack-find-name.png)
 
