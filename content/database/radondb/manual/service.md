@@ -93,7 +93,7 @@ wget ftp:// SQL 节点 IP 地址/audit --ftp-user=ftpuser --ftp-password=ftppass
 
 ## 自动伸缩
 
-云数据库RadonDB 支持自动扩容应用存储空间，详细请参考[自动伸缩](https://docs.shanhe.com/product/operation/autoscaling)。
+云数据库RadonDB 支持自动扩容应用存储空间，详细请参考[自动伸缩](https://docsv3.shanhe.com/operation/autoscaling/)。
 
 ![自动伸缩](../../_images/autoscaling_1.png)
 
