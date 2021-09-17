@@ -17,7 +17,7 @@ draft: false
 
 ## 使用操作
 
-登录[shanhe 云平台控制台](https://console.shanhe.com/sh1a/nics/)，在 **计算** --> **网卡** 页面中，会看到如下的操作界面：
+登录[shanhe 云平台控制台](https://console.shanhe.com/jn1/nics/)，在 **计算** --> **网卡** 页面中，会看到如下的操作界面：
 
 ![](../_images/nic_ui.png)
 
