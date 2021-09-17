@@ -220,9 +220,53 @@ umount /mnt/nasdata
 
 **访问 Samba 共享存储目标**
 
-Windows 系统上默认安装了 Samba 客户端，如，NAS 服务器地址是 192.168.100.2，共享目录是 nas_smb，客户端账户的账户名是 smbtest， 密码是 test123。
+**1、安装Samba客户端**
 
-在 Windows 地址栏中输入地址：\\192.168.100.2\nas_smb ，在弹出登陆框中输入用户名和密码，即可访问 Samba 的共享数据。
+Win+R 打开“运行”，输入 control，“确定”以打开“控制面板”：
+
+![](../../_images/winr.png)
+
+进入 程序→程序和功能，点击“启用或关闭Windows功能”。
+
+在服务器管理器中点击添加角色和功能
+
+![](../../_images/add.png)
+
+点击下一步到功能，勾选中SMB 1.0/CIFS File Sharing Suppor
+
+![](../../_images/next.png)
+
+下一步，确认安装并重启服务器。
+
+**2、修改本地组策略**
+
+重启后再次 Win+R 打开“运行”，输入 gpedit.msc，“确定”以打开“本地组策略编辑器”。
+
+![](../../_images/gredit.png)
+
+按 计算机配置→管理模板→网络 的顺序，依次展开左侧目录树。
+
+点击“Lanman工作站”，右侧会显示该项目的详细设置。
+
+点击里面的“启用不安全的来宾登录”，将它由“未配置”改为“已启用”，应用并重启电脑。
+
+![](../../_images/final.png)
+
+**3、访问Samba共享目录**
+
+![](../../_images/share1.png)
+
+输入对应的samba服务器地址 
+
+![](../../_images/share2.png)
+
+输入前面设置的账号和密码 
+
+![](../../_images/share3.png)
+
+此时就可以看见Samba成功映射到了Win系统中
+
+![](../../_images/share4.png)
 
 **访问 NFS 共享存储目标**
 

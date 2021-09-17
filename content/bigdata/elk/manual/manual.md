@@ -222,9 +222,9 @@ index pattern 创建成功后可点击左侧栏的 `Discover` 菜单查看导入
 
 本场景为用户呈现了中文日志从 Logstash 导入到 Elasticsearch，再通过 Kibana 进行搜索的完整的过程。
 
-> 注意：从版本 `ELK 5.6.16 - shanhe 1.5.0` 起已内置用于指定 ik 分词器的模板文件，用户可以直接使用（在 Logstash 节点的 /data/elasticsearch/dicts 目录下）；如果是以前的版本，需要事先把 [模板文件](https://jn1.is.shanhe.com/shanhe/docs/static/json/logstash.json) 下载到 Logstash 节点的 `/data/elasticserach/dicts/` 目录下再进行后面的操作，否则 Logstash 会因找不到模板文件而无法启动（可以直接登录到节点下载，也可以通过如下命令上传，注意 URL 最后的 `/` 不能省略：
+> 注意：从版本 `ELK 5.6.16 - shanhe 1.5.0` 起已内置用于指定 ik 分词器的模板文件，用户可以直接使用（在 Logstash 节点的 /data/elasticsearch/dicts 目录下）；如果是以前的版本，需要事先把 [模板文件](https://jn2.is.shanhe.com/shanhe2/docs/static/json/logstash.json) 下载到 Logstash 节点的 `/data/elasticserach/dicts/` 目录下再进行后面的操作，否则 Logstash 会因找不到模板文件而无法启动（可以直接登录到节点下载，也可以通过如下命令上传，注意 URL 最后的 `/` 不能省略：
 > ```bash
-> curl -sL https://jn1.is.shanhe.com/shanhe/docs/static/json/logstash.json |
+> curl -sL https://jn2.is.shanhe.com/shanhe2/docs/static/json/logstash.json |
 >   curl -F "file=@-;filename=logstash.json" $LS_IP/dicts/
 > ```
 

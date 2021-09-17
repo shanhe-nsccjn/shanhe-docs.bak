@@ -17,7 +17,7 @@ enableToc: false
 
     3、给网卡发送队列绑定 cpu
 
-为了方便使用，我们提供了 网卡队列[配置脚本](https://jn1.is.shanhe.com/shanhe/docs/static/sh/nic_mq.sh) 配置这些参数，请把脚本放到/etc/rc.local中，开机自动配置。 详情请参考
+为了方便使用，我们提供了 网卡队列[配置脚本](https://jn2.is.shanhe.com/shanhe2/docs/static/sh/nic_mq.sh) 配置这些参数，请把脚本放到/etc/rc.local中，开机自动配置。 详情请参考
 
  [linux network scaling](https://www.kernel.org/doc/Documentation/networking/scaling.txt)
 
