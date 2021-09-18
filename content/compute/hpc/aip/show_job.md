@@ -6,7 +6,7 @@ description:
 weight: 2
 ---
 
-### 查看作业输出
+<!-- ### 查看作业输出
 
 cview 查看运行中的作业输出
 
@@ -14,7 +14,7 @@ Usage: cview [-h] [-V] [-f] [-m host_name | -q queue_name | -J job_name | jobId 
 
 ![](../_images/job1.png)
 
-![](../_images/job2.png)
+![](../_images/job2.png) -->
 
 ### 查看作业状态
 
