@@ -6,7 +6,7 @@ description:
 weight: 2
 ---
 
-### 通过脚本提交作业
+<!-- ### 通过脚本提交作业
 
 通过脚本提交作业，更容易阅读，同类型的作业可以复用脚本，修改关键的几个参数即可
 
@@ -22,7 +22,7 @@ weight: 2
 
 一个示例：
 
-![](../_images/sample.png)
+![](../_images/sample.png) -->
 
 ## 通过命令行提交作业
 
@@ -64,4 +64,6 @@ weight: 2
 
 无参数缺省队列，非交互模式，1个核 
 
-提交后台运行作业     % csub -o %J.out ls(其中 ls为作业命令 )
+提交后台运行作业 
+
+csub -o test.log -e test.err -n 56 -cwd ${PWD} ./run.sh
