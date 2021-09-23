@@ -20,9 +20,6 @@ weight: 2
 
 ![](../_images/sh.png)
 
-一个示例：
-
-![](../_images/sample.png)
 
 ## 通过命令行提交作业
 
