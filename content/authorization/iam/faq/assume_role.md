@@ -26,7 +26,7 @@ weight: 45
 
     ![demo1_AttachedPolicy](../../_images/demo1_AttachedPolicy.png)
 
-3. 访问该云服务器终端，可使用 pip 安装 SDK: （[点此了解更多 SDK 文档信息](https://docs.shanhe.com/product/sdk/)）
+3. 访问该云服务器终端，可使用 pip 安装 SDK: （[点此了解更多 SDK 文档信息](https://docsv3.shanhe.com/development_docs/sdk/)）
 
    ```bash
    pip install shanhe-sdk

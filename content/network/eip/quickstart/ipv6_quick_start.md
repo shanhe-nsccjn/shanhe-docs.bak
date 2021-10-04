@@ -113,7 +113,7 @@ IPv4 过渡到 IPv6 的[方案](https://tools.ietf.org/html/rfc6180)，大体分
 
 此外，不同操作系统、不同发行版的配置方法是不同的，需要根据您的操作系统版本和网络管理工具，并查阅相关文档，进行合理正确配置。
 
-操作系统开启 IPv6 自动化配置文档列出了 `CentOS 7.5` / `Ubuntu 18.04` / `Ubuntu 16.04` 的配置方法。点击[查看详情](https://docs.shanhe.com/product/network/IPv6_config#%E4%B8%BB%E6%9C%BA-ipv6-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE-)，如有其它发行版的需求，您可以通过提工单来与我们的技术人员交流。
+操作系统开启 IPv6 自动化配置文档列出了 `CentOS 7.5` / `Ubuntu 18.04` / `Ubuntu 16.04` 的配置方法。点击[查看详情](https://docsv3.shanhe.com/network/eip/manual/ipv6/inband_ipv6/#%E9%80%9A%E8%BF%87%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D-ipv6-%E5%92%8C%E8%87%AA%E5%8A%A8%E5%8C%96%E9%85%8D%E7%BD%AE)，如有其它发行版的需求，您可以通过提工单来与我们的技术人员交流。
 
 配置完成后，需要重启云服务器，以确保您的配置生效。
 
@@ -129,12 +129,12 @@ IPv4 过渡到 IPv6 的[方案](https://tools.ietf.org/html/rfc6180)，大体分
 
 ![](../../_images/IPv6_inbind_ip_create.png)
 
-手动申请的 IPv6 弹性 IP 的使用与[内部绑定](https://docs.shanhe.com/product/network/eip#%E4%BD%BF%E7%94%A8%E5%86%85%E9%83%A8%E7%BB%91%E5%AE%9A%E5%85%AC%E7%BD%91-ip)的公网 IP 类似，
+手动申请的 IPv6 弹性 IP 的使用与[内部绑定](https://docsv3.shanhe.com/network/eip/manual/ipv4/inband_ipv4/)的公网 IP 类似，
 将 IPv6 分配到云服务器后可以看到云服务器内多出一块还未分配 IP 地址的公网网卡。以镜像 centos75x64b 为例，如下图所示
 
 [![](../../_images/IPv6_inbind_nic.png)](../../_images/IPv6_inbind_nic.png)
 
-在绑定 IPv6 弹性 IP 后，您还需要手动为云服务器内的公网网卡进行网络配置，主要包括对网卡 IPv6 地址配置及路由配置，详情请见[IPv6网络配置指南](https://docs.shanhe.com/product/network/IPv6_config)。
+在绑定 IPv6 弹性 IP 后，您还需要手动为云服务器内的公网网卡进行网络配置，主要包括对网卡 IPv6 地址配置及路由配置，详情请见[IPv6网络配置指南](https://docsv3.shanhe.com/network/eip/manual/ipv6/inband_ipv6/)。
 
 ## 负载均衡器支持 IPv6
 

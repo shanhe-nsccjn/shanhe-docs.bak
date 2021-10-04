@@ -63,12 +63,12 @@ weight: 3
 > pod init
 ```
 
-打开 Podfile，增加 pod ‘对象存储服务OISSDK’ 到你对应的 Target，内容参考如下
+打开 Podfile，增加 pod QingStorSDK 到你对应的 Target，内容参考如下
 
 ```bash
 target '' do
   use_frameworks!
-  pod '对象存储服务OISSDK'
+  pod 'QingStorSDK'
 end
 ```
 
@@ -94,7 +94,7 @@ end
 要使用 SDK 的话，首先需要导入它，打开工程的 AppDelegate.swift 文件，在文件的顶部添加如下代码
 
 ```swift
-import 对象存储服务OISSDK
+import QingStorSDK
 ```
 
 在程序的启动入口，需要先做个全局的注册操作，代码如下

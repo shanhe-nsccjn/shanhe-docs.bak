@@ -36,7 +36,7 @@ VPC B
 
 ### 2.VPC A与 VPC B之间通过GRE隧道打通，配置步骤参考以下链接
 
-https://docs.shanhe.com/product/network/gre
+https://docsv3.shanhe.com/network/vpc/manual/tunnel/gre/
 
 ```
 172.20.0.0/16<==>172.21.0.0/16

@@ -16,7 +16,7 @@ weight: 4
 
 场景：私有网络云服务器统一通过 NAT 网关访问互联网，以实现公网 IP 地址的复用和带宽共享。
 
-假设，用户的私有网络“办公网络”（ 192.168.128.0/24 ）内的所有虚拟机希望统一通过 NAT 网关 （ nat-00001 ）访问互联网。[NAT网关配置详情](https://docs.shanhe.com/product/network/nat_gateway)
+假设，用户的私有网络“办公网络”（ 192.168.128.0/24 ）内的所有虚拟机希望统一通过 NAT 网关 （ nat-00001 ）访问互联网。[NAT网关配置详情](https://docsv3.shanhe.com/network/nat_gateway/)
 
 ### 创建路由表
 

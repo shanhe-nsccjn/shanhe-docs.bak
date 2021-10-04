@@ -9,7 +9,7 @@ weight: 8
 
 ## 背景信息
 
-[青云QingCloud 升级区域（Region）架构 轻松实现同城多活](https://log.qingcloud.com/archives/3981)
+[山河升级区域（Region）架构 轻松实现同城多活](https://log.shanhe.com/archives/3981)
 
 ## 注意事项
 

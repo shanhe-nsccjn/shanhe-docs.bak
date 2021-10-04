@@ -32,13 +32,13 @@ qsftpd 已在 GitHub 开源，更多详情可参见[GitHub](https://github.com/y
 
 ### 3) 下载安装
 
-qsftpd 支持 Linux、MacOS 和 Windows 操作系统，可访问 GitHub 项目的 [Releases](https://github.com/yunify/qsftpd/releases) 页面查看和下载历史版本。最新版本下载链接如下：
+qsftpd 支持 Linux、MacOS 和 Windows 操作系统，可访问 GitHub 项目的 [Releases](https://releases.qingstor.dev/) 页面查看和下载历史版本。最新版本下载链接如下：
 
-* Linux：[qsftpd-latest-linux_amd64](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-linux_amd64.tar.gz)
+* Linux：[qsftpd-latest-linux_amd64](https://releases.qingstor.dev/)
 
-* Windows：[qsftpd-latest-windows_amd64](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz)
+* Windows：[qsftpd-latest-windows_amd64](https://releases.qingstor.dev/)
 
-* macOS：[qsftpd-latest-darwin_amd64](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-darwin_amd64.tar.gz)
+* macOS：[qsftpd-latest-darwin_amd64](https://releases.qingstor.dev/)
 
 ## 2. Linux使用示例
 
@@ -49,8 +49,6 @@ qsftpd 支持 Linux、MacOS 和 Windows 操作系统，可访问 GitHub 项目�
 使用wget将tar包下载至linux主机中。
 
 ```shell
-yum -y install wget
-wget https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-linux_amd64.tar.gz
 tar -zxvf qsftpd-latest-linux_amd64.tar.gz
 ./qsftpd -h
 ```
@@ -79,7 +77,7 @@ host: is.shanhe.com
 
 # Bucket settings
 bucket_name: your_bucket_name
-zone: jn1b
+zone: jn1
 
 # FTP server settings
 listen_host: 127.0.0.1
@@ -130,8 +128,6 @@ ftp 127.0.0.1
 
 ### 1) 下载并解压tar包
 
-下载链接：[https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz)
-
 将tar.gz文件解压为.tar文件，再次解压，生成可执行文件qsftp.exe。
 
 ### 2) 创建配置文件
@@ -150,7 +146,7 @@ host: is.shanhe.com
 
 # Bucket settings
 bucket_name: your_bucket_name
-zone: jn1b
+zone: jn1
 
 # FTP server settings
 listen_host: 127.0.0.1

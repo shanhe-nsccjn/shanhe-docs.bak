@@ -45,7 +45,7 @@ weight: 32
 
 为了更方便地使用子账户身份功能，我们还可以在创建子账户时顺便为该子账号创建身份。
 
-1. 进入子账户管理面板，创建一个子账户。创建步骤参见：[创建子账户](https://docs.shanhe.com/product/security/sub_account#创建子账户)
+1. 进入子账户管理面板，创建一个子账户。
 
     创建成功后将弹出如下提示，点击“了解更多”：
 
@@ -179,7 +179,7 @@ IAM 身份的凭证是具备有效期的，表示代入该身份的会话最长�
 
 ## 使用身份
 
-当 shanhe IAM 身份创建成功后，您可以通过下载[shanhe 官方 SDK](https://docs.shanhe.com/product/sdk/)来更新您应用中的认证代码来调用身份，账户类身份也可以通过登陆 shanhe 控制台 UI 面板执行“切换身份”操作。
+当 shanhe IAM 身份创建成功后，您可以通过下载[shanhe 官方 SDK](https://docsv3.shanhe.com/development_docs/sdk/)来更新您应用中的认证代码来调用身份，账户类身份也可以通过登陆 shanhe 控制台 UI 面板执行“切换身份”操作。
 
 更多操作详情及注意事项，请参见：[如何代入身份使用？](../../faq/assume_role)
 

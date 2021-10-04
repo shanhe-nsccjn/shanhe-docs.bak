@@ -11,7 +11,7 @@ draft: false
 ## 准备事项
 
 * 云服务器已安装nginx
-* 已经申请并签发了SSL证书，如没有证书，请[购买SSL证书](https://console.shanhe.com/ssl_certificates)
+* 已经申请并签发了SSL证书
 * 申请SSL证书时绑定的域名已解析到服务器IP
 * 站点文件已上传至云服务器目录
 

@@ -6,9 +6,9 @@ draft: false
 weight: 5
 ---
 
-QingStor 通过请求中的[签名串](../../api/signature/) 来验证用户身份, 签名串中的 access key (API key) 需要用户事先从控制台申请并配置到应用程序中。如果没有经过签名的请求我们称做匿名用户。本章主要描述判断了用户身份之后如何进行权限的控制。
+OIS 通过请求中的[签名串](../../api/signature/) 来验证用户身份, 签名串中的 access key (API key) 需要用户事先从控制台申请并配置到应用程序中。如果没有经过签名的请求我们称做匿名用户。本章主要描述判断了用户身份之后如何进行权限的控制。
 
-QingStor 的访问控制方式有三种：
+OIS 的访问控制方式有三种：
 
 - Bucket Policy (存储空间策略)
 - Bucket ACL (存储空间访问控制列表)
@@ -17,9 +17,9 @@ QingStor 的访问控制方式有三种：
 ## 存储空间策略(Bucket Policy)
 
 通过 Bucket Policy，可以向其他山河 shanhe 用户赋予相应存储空间及其对象的访问权限, 其语义覆盖 API ACL, 及 Resource ACL。
-Bucket Policy 对于 QingStor 资源的访问控制粒度介于 Bucket ACL 和 Object ACL(对象访问控制列表，尚未推出) 的一种访问控制方式。Bucket Policy 可以通过细致地指定 API 级别的控制, 实现Bucket ACL 和 Object ACL 所不能实现的一些功能，比如防盗链。
+Bucket Policy 对于 OIS 资源的访问控制粒度介于 Bucket ACL 和 Object ACL(对象访问控制列表，尚未推出) 的一种访问控制方式。Bucket Policy 可以通过细致地指定 API 级别的控制, 实现Bucket ACL 和 Object ACL 所不能实现的一些功能，比如防盗链。
 
-一般情况下通过 Qingstor Console 界面进行[配置](/storage/object-storage/manual/bucket_manage/) 即可, 也支持通过以下 API 来设置。
+一般情况下通过 OIS Console 界面进行[配置](/storage/object-storage/manual/bucket_manage/) 即可, 也支持通过以下 API 来设置。
 
 ### 相关API
 
@@ -31,10 +31,10 @@ Bucket Policy 对于 QingStor 资源的访问控制粒度介于 Bucket ACL 和 O
 
 ## 存储空间访问控制列表(Bucket ACL)
 
-Bucket ACL 对于 QingStor 资源的访问控制粒度比起 Bucket Policy 和 Object ACL 要更大一些，使用起来也更加简单。其所授予被授权者的权限列表仅可为 “READ” (可读), “WRITE” (可写), 或 “FULL_CONTROL” (可读写)。
+Bucket ACL 对于 OIS 资源的访问控制粒度比起 Bucket Policy 和 Object ACL 要更大一些，使用起来也更加简单。其所授予被授权者的权限列表仅可为 “READ” (可读), “WRITE” (可写), 或 “FULL_CONTROL” (可读写)。
 Bucket 拥有者默认就有所有权限, 另外可配置公开读或公开写(即不附带认证信息的匿名访问), 也可以针对特定山河用户来配置读写权限.
 
-一般情况下通过 Qingstor Console 界面进行[配置](https://docs.shanhe.com/qingstor/guide/bucket_manage.html#%E4%BF%AE%E6%94%B9-bucket-%E6%9D%83%E9%99%90) 即可, 也支持通过以下 API 来设置.
+一般情况下通过 OIS Console 界面进行[配置](/storage/object-storage/manual/bucket_manage/) 即可, 也支持通过以下 API 来设置.
 
 ### 相关API
 
@@ -53,9 +53,9 @@ Bucket 拥有者默认就有所有权限, 另外可配置公开读或公开写(�
 
 ## 存储空间的跨域资源共享策略(Bucket CORS)
 
-当您利用 JavaScript AJAX 向 QingStor 发起的请求属于跨源请求时, 默认情况下浏览器为了安全考虑, 不允许调用不同域名下的资源 (因为您的网站域名跟 Qingstor的域名不一样), 这种情况下需要为 Bucket 配置 CORS 规则.
+当您利用 JavaScript AJAX 向 OIS 发起的请求属于跨源请求时, 默认情况下浏览器为了安全考虑, 不允许调用不同域名下的资源 (因为您的网站域名跟 OIS的域名不一样), 这种情况下需要为 Bucket 配置 CORS 规则.
 
-Bucket CORS 可以对请求来源的域名和请求头进行控制. 一般情况下通过 Qingstor Console 界面进行[配置](https://docs.shanhe.com/qingstor/guide/bucket_manage.html#%E8%AE%BE%E7%BD%AE-cors) 即可, 也支持通过 API 来设置.
+Bucket CORS 可以对请求来源的域名和请求头进行控制. 一般情况下通过 OIS Console 界面进行[配置](https://docs.shanhe.com/qingstor/guide/bucket_manage.html#%E8%AE%BE%E7%BD%AE-cors) 即可, 也支持通过 API 来设置.
 
 ### 相关API
 

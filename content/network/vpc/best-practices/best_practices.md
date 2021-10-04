@@ -118,7 +118,7 @@ VPN 服务也是基于 Internet 的传输加密方式，在单台机器而非整
 
 内网路由器还可以用于承接来自边界网关和 SD-WAN 的流量，发挥`边界路由`作用,与 SD-WAN 共同构建跨多地域多 VPC，云上云下一体的“`云网一体化`”方案。
 
-[SD -WAN](https://docs.shanhe.com/product/sd_wan/quick_start/cpe_connect_vpc)接入不受地域限制，只需要盒子连接公网；[专线接入](https://docs.shanhe.com/product/sd_wan/quick_start/line_connect_vpc)目前覆盖北上广一线城市，提供物理链路支持。
+[SD -WAN](https://docsv3.shanhe.com/sd-wan/sdwan/)接入不受地域限制，只需要盒子连接公网；[专线接入](https://docsv3.shanhe.com/sd-wan/sdwan/)目前覆盖北上广一线城市，提供物理链路支持。
 
 ![](../_images/best_10.jpg)
 

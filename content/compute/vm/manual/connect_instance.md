@@ -23,7 +23,7 @@ draft: false
 
 ![](/compute/vm/manual/_images/web-vnc.png)
 
-如果云服务器不接受您的密码，您可以先关闭云服务器，然后[修改云服务器密码](https://docs.shanhe.com/product/faq/#id7)。
+如果云服务器不接受您的密码，您可以先关闭云服务器，然后右键菜单-修改云服务器密码。
 
 ## Linux云服务器
 如果您使用的是 Windows 操作系统，除了通过 shanhe 控制台以外，您也可以通过软件连接至 Linux 云服务器，常见的软件有[PuTTY](https://www.putty.org/) ， [Xshell](https://www.netsarang.com/zh/xshell/)。

@@ -78,15 +78,15 @@ qsctl 支持的操作命令
 | 命令 | 描述 |
 |-|-|
 | cat | 输出远程对象内容到标准输出。|
-| [cp](#cp) | 复制本地文件到 QingStor 存储空间，或复制 QingStor 对象到本地。|
+| [cp](#cp) | 复制本地文件到 OIS 存储空间，或复制 OIS 对象到本地。|
 | [ls](#ls) | 所有的存储空间，或给定存储空间给定前缀下的所有对象。|
 | mb | 创建一个新的存储空间。|
-| [mv](#mv) | 移动本地文件到 QingStor 存储空间，或移动 QingStor 对象到本地。|
+| [mv](#mv) | 移动本地文件到 OIS 存储空间，或移动 OIS 对象到本地。|
 | presign | 生成指定对象的临时下载链接。|
 | rb | 删除一个空的存储空间，或强制删除一个非空的存储空间。|
-| rm | 删除一个 QingStor 对象或给定前缀下的所有对象。|
+| rm | 删除一个 OIS 对象或给定前缀下的所有对象。|
 | [stat](#stat) | 查看一个指定对象的信息。|
-| [sync](#sync) | 同步本地目录和 QingStor 目录。|
+| [sync](#sync) | 同步本地目录和 OIS 目录。|
 | [tee](#tee) | 从标准输入读取内容并上传。|
 
 ## 查看帮助文件
@@ -107,7 +107,7 @@ qsctl 支持的操作命令
 
 ### cp
 
-复制本地文件到 QingStor:
+复制本地文件到 OIS:
 ```bash
 $ qsctl cp /path/to/file qs://mybucket/filename
 File </path/to/file> copied to </filename>.
@@ -115,19 +115,19 @@ File </path/to/file> copied to </filename>.
 
 > filename 可忽略，会自动根据源文件名创建同名文件。
 
-复制本地文件夹到 QingStor:
+复制本地文件夹到 OIS:
 ```bash
 $ qsctl cp /path/to/folder qs://mybucket/parent/ -r
 Dir </path/to/folder> copied to </parent/folder>.
 ```
 
-复制本地文件夹下的所有文件到 QingStor:
+复制本地文件夹下的所有文件到 OIS:
 ```bash
 $ qsctl cp /path/to/folder/ qs://mybucket/parent/ -r
 Dir </path/to/folder> copied to </parent>.
 ```
 
-> 添加 `-r` 标志是用于递归地复制文件夹及其子文件夹，所以源路径与目标路径必须都是目录: 其中 QingStor 没有目录概念，所以必须以 `/` 结尾。
+> 添加 `-r` 标志是用于递归地复制文件夹及其子文件夹，所以源路径与目标路径必须都是目录: 其中 OIS 没有目录概念，所以必须以 `/` 结尾。
 如果源/目标路径中，本地文件夹不以 `/` 结尾(这里是指 Unix-like 系统，Windows 系统请替换为 `\`)，则会将整个目录 `cp` 到目标/源路径下；而如果本地文件夹以 `/` 结尾，则会将文件夹下的所有文件 `cp` 到目标/源路径下。
 
 ### ls
@@ -163,7 +163,7 @@ drwxr-xr-x    0B  Jan 01 00:00  test/
 
 ### stat
 
-查看 QingStor 对象信息:
+查看 OIS 对象信息:
 ```bash
 $ qsctl stat qs://mybucket/dir/to/test
          Key: dir/to/test
@@ -174,7 +174,7 @@ StorageClass: hot
    UpdatedAt: 2020-04-01 03:58:58 +0000 UTC
 ```
 
-查看 QingStor 对象信息，自定义格式输出:
+查看 OIS 对象信息，自定义格式输出:
 ```bash
 $ qsctl stat qs://mybucket/dir/to/test --format="name:%n, size:%s"
 name:dir1/cmd/qsctl/cat.go, size:1000
@@ -184,13 +184,13 @@ name:dir1/cmd/qsctl/cat.go, size:1000
 
 ### sync
 
-同步 QingStor 目录到本地文件夹:
+同步 OIS 目录到本地文件夹:
 ```bash
 $ qsctl sync qs://mybucket/test/ /path/to/dir/ -r
 Dir </test/> and </path/to/dir/> synced.
 ```
 
-> `sync` 操作的源路径与目标路径必须都是目录: 其中 QingStor 没有目录概念，所以必须以 `/` 结尾。
+> `sync` 操作的源路径与目标路径必须都是目录: 其中 OIS 没有目录概念，所以必须以 `/` 结尾。
 本地文件夹也必须以 `/` 结尾(这里是指 Unix-like 系统，Windows 系统请替换为 `\`)，否则会针对本地文件夹的父目录进行同步操作。
 
 仅同步本地文件夹中更新的文件(不同步目标路径中不存在的文件):
@@ -204,7 +204,7 @@ Dir </path/to/pwd/> and </test/> synced.
 
 ### tee
 
-从标准输入上传文件到 QingStor:
+从标准输入上传文件到 OIS:
 ```bash
 $ cat /path/to/file | qsctl tee qs://mybucket/filename
 Stdin copied to </filename>.

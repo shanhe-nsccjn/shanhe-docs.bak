@@ -13,7 +13,7 @@ weight: 2
 
 > 用户的 notify_url 需要能响应如下的 HTTP POST 请求，并返回 HTTP 200 状态码。如果请求超时，会重试 `3` 次，超时时间为 `5s` ，重试间隔为 `500ms` ，之后将放弃此次请求。
 >
-> 对象存储服务OIS数据处理服务不会对图普科技鉴黄的结果进行修改，结果将会放到字段 result 。 可参考 [图普科技的鉴黄服务文档](http://cloud.doc.tuputech.com/API/image/) 的接口描述。
+> 对象存储服务OIS数据处理服务不会对图普科技鉴黄的结果进行修改，结果将会放到字段 result 。 可参考 [图普科技的鉴黄服务文档](http://cloud.doc.tuputech.com/zh/API/image/base/porn.html) 的接口描述。
 
 ## 鉴黄结果
 

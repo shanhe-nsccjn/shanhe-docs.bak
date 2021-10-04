@@ -21,9 +21,9 @@ qsftpd 支持 Linux、macOS 和 Windows 操作系统，可访问 GitHub 项目�
 
 最新版本下载链接如下：
 
-- [qsftpd-latest-darwin_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-darwin_amd64.tar.gz)
-- [qsftpd-latest-linux_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-linux_amd64.tar.gz)
-- [qsftpd-latest-windows_amd64.tar.gz](https://jn1.is.shanhe.com/releases-qs/qsftpd/qsftpd-latest-windows_amd64.tar.gz)
+- [qsftpd-latest-darwin_amd64.tar.gz](https://releases.qingstor.dev/)
+- [qsftpd-latest-linux_amd64.tar.gz](https://releases.qingstor.dev/)
+- [qsftpd-latest-windows_amd64.tar.gz](https://releases.qingstor.dev/)
 
 ## 选项列表
 
@@ -53,7 +53,7 @@ qingstor:
 
 # 填写需要使用的 Bucket
 bucket_name: bucket_name_example
-zone: jn1a
+zone: jn1
 
 # FTP Server 配置，如监听的端口号和最大连接数
 listen_host: 127.0.0.1

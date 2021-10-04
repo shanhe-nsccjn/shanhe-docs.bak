@@ -27,11 +27,33 @@ weight: 7
 
    如果您想获取事件日志（包含访问控制日志、入侵防御日志以及流量控制日志），可通过配置远端主机来接收日志，每个区只可以配置一个远端主机。
 
-4. 在**配置远端主机**对话框中，按照下图配置远端主机。
+4. 按照下面步骤，配置 rsyslog：
+
+第一步：修改 /etc/rsyslog.conf， 添加下面几行：
+
+> UDPServerAddress 必须在 UDPServerRun 前面。
+
+   $ModLoad imudp
+
+   $UDPServerAddress 0.0.0.0
+
+   $UDPServerRun 514
+
+第二步：创建 /etc/rsyslog.d/haproxy.conf， 内容如下：
+
+   local0.* /var/log/haproxy.log
+
+第三步：重启服务
+
+   service rsyslog restart
+
+> 注解 在这个主机的防火墙放行 udp 514 端口。
+
+5. 在**配置远端主机**对话框中，按照下图配置远端主机。
 
    ![](../_images/set_vm.png)
 
-5. 单击**新增**完成远端主机配置。
+6. 单击**新增**完成远端主机配置。
 
 ## 操作日志
 

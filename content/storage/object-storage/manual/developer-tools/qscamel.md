@@ -21,7 +21,7 @@ qscamel 是一个用于在不同的端点 (Endpoint) 中高效迁移数据的工
 
   - 符合 POSIX 标准的文件系统 _(local fs, nfs, s3fs 等)_
   - 本地文件列表
-  - [QingStor](https://www.shanhe.com/products/qingstor)
+  - [OIS](https://www.shanhe.com/products/67)
   - [Aliyun OSS](https://www.aliyun.com/product/oss)
   - [Google Cloud Storage](https://cloud.google.com/storage/)
   - [Qiniu](https://www.qiniu.com/)
@@ -58,7 +58,7 @@ destination:
 qscamel run example-task -t example-task.yaml
 ```
 
-坐下来喝杯茶，你将会看到所有在 `/path/to/source` 目录下的文件都会被迁移到 QingStor 的 Bucket `example_bucket` 的 `/path/to/destination` 前缀下。
+坐下来喝杯茶，你将会看到所有在 `/path/to/source` 目录下的文件都会被迁移到 OIS 的 Bucket `example_bucket` 的 `/path/to/destination` 前缀下。
 
 可以通过 `qscamel -h` 或者 `qscamel --help` 来了解更多使用上的细节，并且阅读下面的文档。
 
@@ -235,33 +235,33 @@ address: example_address
 qingstor 端点有如下配置内容:
 
 ```yaml
-# protocol 控制访问 QingStor 的协议类型。
+# protocol 控制访问 OIS 的协议类型。
 # 可选值: https, http
 # 默认值: https
 protocol: https
-# host 控制访问 QingStor 的云服务器名。
+# host 控制访问 OIS 的云服务器名。
 # 默认值: is.shanhe.com
 host: is.shanhe.com
-# port 控制访问 QingStor 的端口号。
+# port 控制访问 OIS 的端口号。
 # 默认值: 443
 port: 443
-# zone 控制访问 QingStor 的区域.
+# zone 控制访问 OIS 的区域.
 # 默认值：自动检测，不需要手动配置
 # This will auto detected, no need to set.
-zone: jn1b
-# bucket_name 是 QingStor 的 bucket 名称。
+zone: jn1
+# bucket_name 是 OIS 的 bucket 名称。
 bucket_name: example_bucket
-# access_key_id 是 QingStor 的 access_key_id。
+# access_key_id 是 OIS 的 access_key_id。
 access_key_id: example_access_key_id
-# secret_access_key 是 QingStor 的 secret_access_key。
+# secret_access_key 是 OIS 的 secret_access_key。
 secret_access_key: example_secret_access_key
 
-# storage class 是 QingStor 所使用的存储级别
+# storage class 是 OIS 所使用的存储级别
 # 可选值: STANDARD, STANDARD_IA
 # 默认值: STANDARD
 storage_class: STANDARD
 
-# multipart boundary size 控制 QingStor 何时使用分段上传
+# multipart boundary size 控制 OIS 何时使用分段上传
 # 单位为 Byte ，当文件大于该数值时，将会使用分段上传
 # 可选值: 1 ~ 5368709120 (5G)
 # 默认值: 2147483648 (2G)
