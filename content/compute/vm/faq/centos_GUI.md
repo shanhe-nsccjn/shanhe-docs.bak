@@ -46,6 +46,6 @@ yum groupinstall -y "GNOME Desktop"
 
  ![centos_GUI_3](../_images/centos_GUI_3.png)
 
- vnc窗口按键操作中选择ctrl-alt-f2 可切换会命令行模式，选择ctrl-alt-f1 可再次切换回图形化桌面
+ vnc窗口按键操作中选择ctrl-alt-f6 可切换会命令行模式，选择ctrl-alt-f1 可再次切换回图形化桌面
 
  ![centos_GUI_4](../_images/centos_GUI_4.png)
