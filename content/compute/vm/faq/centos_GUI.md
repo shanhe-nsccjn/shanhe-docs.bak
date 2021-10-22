@@ -17,7 +17,11 @@ enableToc: false
 
   本次示例为安装 GNOME 图形化
 
-##  2、安装 xinit
+##  2、更新系统软件
+
+  yum upgrade
+
+##  3、安装 xinit
 
  安装图形化界面前，需先安装X WINDOWS控制功能插件
 
@@ -25,7 +29,7 @@ enableToc: false
  yum groupinstall "X Window System" 
 ```
 
-##  3、安装GNOME登录器 
+##  4、安装GNOME登录器 
 
  登录管理器 gnome display manager,简称 gdm
 
@@ -34,7 +38,7 @@ yum groupinstall -y "GNOME Desktop"
 ```
  ![centos_GUI_1](../_images/centos_GUI_1.png)
 
-##  4、启动图形化桌面
+##  5、启动图形化桌面
 
  从控制台vnc登入到云服务器内，命令输入inti 5 可进入图形化桌面
 
